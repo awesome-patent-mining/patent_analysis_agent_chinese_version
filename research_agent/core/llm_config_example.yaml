@@ -1,0 +1,12 @@
+fireworks_base: &fireworks_base
+  API_KEY: !ENV ${FIREWORKS_API_KEY}
+  additional_parameters:
+    top_k: 1
+    top_p: 0.1
+  url: https://api.fireworks.ai/inference/v1/chat/completions
+
+
+fireworks_llama_3p1_70b:
+  <<: *fireworks_base
+  model: accounts/fireworks/models/llama-v3p1-70b-instruct
+

@@ -1,0 +1,31 @@
+{% if role == "system" %}
+    You are a helpful assistant that summarizes a chunk of a paper.
+    You will be given a chunk of a paper and you will need to summarize it.
+    You will need to return a summary of the chunk in a few sentences.
+    Input format:
+    - Topic: The main research topic you focus on
+    - Language: language used for writing the summary
+    - Chunk: This is a chunk from a paper, you need to summarize it into a few sentences
+
+    You need to draft a few sentences based on the above materials.
+    Content Requirements:
+       - Composed using an academic tone.
+       - The focus is on summarizing content related to the topic from the chunk
+       - Clarity and Readability
+
+    The output must be in valid JSON format with a single key "summary" containing the summary.
+        Example format:
+        {
+            "summary": "string"
+        }
+{% else %}
+    Input Parameters:
+    - Topic: {{topic}}
+    - Language: {{language}}
+    - Chunk:{{chunk}}
+
+    Task: You are given a chunk of a paper, and a research topic.
+    You will need to return a summary of the chunk in a few sentences in {{language}}, with focus on the provided topic.
+    Output: Must output the summary in valid JSON format, with a single key "summary" containing the summary in {{language}} without any other information.
+
+{% endif %}

@@ -1,0 +1,49 @@
+{% if role == "system" %}
+
+### **Task Description**  
+Your task is to verify whether each of the citations in the **citation_paper** field supports the provided statement. For each statement, check if each referenced paper provides sufficient evidence or arguments to support the statement.
+
+---
+
+### **Task Instructions**  
+
+#### 1: Contextual Analysis**  
+1. **Relevance to Topic**: Confirm whether the citation is directly relevant to the topic of the statement.  
+2. **Temporal Alignment**: Check if the publication date of the paper aligns with the contextual timeline of the statement.
+
+#### 2: Content Validation**  
+1. **Direct Evidence Verification**  
+   - Identify experimental data, theoretical proofs, or explicit conclusions in the paper.  
+   - Compare quantitative claims in the statement with the data from the paper.  
+2. **Indirect Support Assessment**  
+   - Verify logical consistency between the content of the paper and the statement.  
+   - Assess whether the paper provides implicit or suggestive supporting evidence.
+
+#### 3: Conflict Resolution**  
+- **Methodological Differences**: Check if the paper and the statement use the same or similar research methodologies.  
+- **Conclusion Direction**: Ensure the conclusions of the paper align with the statement.  
+- **Data Interpretation**: Verify if the paper's interpretation of data is consistent with the statement.
+
+---
+
+### **Return Format**  
+- Make sure to use `<sup>` and `</sup>` to wrap the content instead of `[]` or any other symbols.
+```json
+{
+  "statement": "[Full text of the statement]",
+  "supported_papers": [
+    "<sup>{chunk_id: "Chunk ID", paper_id: "Paper ID"}</sup>",
+    "<sup>{chunk_id: "Chunk ID", paper_id: "Paper ID"}</sup>"
+  ],
+  "unsupported_papers": [
+    "<sup>{chunk_id: "Chunk ID", paper_id: "Paper ID"}</sup>",
+    "<sup>{chunk_id: "Chunk ID", paper_id: "Paper ID"}</sup>"
+  ]
+}
+{% else %}
+
+statement_with_citations: {{ statement_with_citations }}
+retrieved_chunk: {{ retrieved_chunk }}
+Please verify whether each citation supports the provided statement, and return only the JSON format without any additional information.
+
+{% endif %}

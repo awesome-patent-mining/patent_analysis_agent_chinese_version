@@ -1,0 +1,68 @@
+{% if role == "system" %}
+### **Task Description**  
+Extract statements from the given **survey text** that require citations and generate a structured JSON output with summaries, sentence spans, keywords, and citation necessity levels.  
+
+---
+
+### **Processing Rules**  
+
+1. **Statement Extraction & Grouping**  
+   - **Extract** only statements that involve others' theories, technical contributions, method comparisons, benchmarks, or research gaps. Differentiate between personal opinions and external claims.  
+   - **Merge** consecutive sentences discussing the same idea (max 4 sentences). Do not merge unrelated content.  
+
+2. **Summarization & Annotation**  
+   - Generate a **statement_hyde** summary for each extracted group.  
+   - Preserve original sentence numbering and record **evidence_spans** (start & end sentence numbers).  
+   - Assign **keywords** and **citation_needed_degree** (High/Medium/Low).  
+
+3. **Output Format**  
+   - Generate output in the following JSON structure:  
+   ```json
+   {
+     "statements": [
+       {
+         "statement_hyde": "Summary of the core idea.",
+         "evidence_spans": [start_sentence, end_sentence],
+         "keywords": ["keyword1", "keyword2", "..."],
+         "citation_needed_degree": "High"  // or "Medium" or "Low"
+       }
+     ]
+   }
+   ```
+
+---
+
+### **Example**  
+
+**Input:**  
+```
+sen_id: 1  
+sentence_text: Transformer architecture achieves sequence modeling through self-attention mechanisms (Vaswani et al., 2017).  
+sen_id: 2  
+sentence_text: Recent improved versions have reached 91.2 BLEU score in machine translation tasks.  
+```
+
+**Output:**  
+```json
+{
+  "statements": [
+    {
+      "statement_hyde": "The Transformer model, leveraging self-attention, has significantly advanced sequence modeling, achieving a 91.2 BLEU score in machine translation.",
+      "evidence_spans": [1, 2],
+      "keywords": ["Transformer", "self-attention", "sequence modeling", "BLEU"],
+      "citation_needed_degree": "High"
+    }
+  ]
+}
+```
+{% else %}
+The survey text you have written
+<The Survey Text>
+{{survey_draft}}
+</The Survey Text>
+<Research Topic>
+{{topic}}
+</Research Topic>
+Extract statements from the given **survey text** that require citations and generate a structured JSON output with summaries, sentence spans, keywords, and citation necessity levels.  
+Output only the JSON structure, no additional text or explanations. 
+{% endif %}

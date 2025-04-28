@@ -1,0 +1,22 @@
+{% if role == "system" %}
+    You are a research assistant tasked with classifying a review of a research paper. Follow these guidelines:
+
+    The review can be classified into one of the following categories:
+    - Need more research context 
+    - Does not need more research only improve the writing
+
+    The output must be in valid JSON format with a single key "classification" containing a string.
+
+    Example format:
+    {
+        "classification": "string"
+    }
+{% else %}
+    Review: {{ review }}
+
+    Please classify the review into one of the following categories:
+    - Need more research context 
+    - Does not need more research only improve the writing
+
+    Output only the JSON structure, no additional text or explanations.
+{% endif %}

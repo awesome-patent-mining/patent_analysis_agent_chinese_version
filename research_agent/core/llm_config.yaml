@@ -1,0 +1,43 @@
+deepseek-chat:
+  API_KEY: sk-b37943bec0a845ed983a2104f09d2d8b
+  additional_parameters: &id001
+    top_k: 5
+    top_p: 0.1
+  max_tokens: 4095
+  model: deepseek-chat
+  temperature: 0.1
+  url: https://api.deepseek.com/v1/chat/completions
+deepseek_base:
+  API_KEY: sk-b37943bec0a845ed983a2104f09d2d8b
+  additional_parameters: *id001
+  max_tokens: 4095
+  url: https://api.deepseek.com/v1/chat/completions
+glm-4:
+  API_KEY: 229cf24a218b44d7a105a692ea8d1f14.QkxZcYV3WzikWq09
+  RERANK_API_KEY: 229cf24a218b44d7a105a692ea8d1f14.QkxZcYV3WzikWq09
+  additional_parameters: &id003
+    top_k: 1
+    top_p: 0.1
+  max_tokens: 4095
+  model: glm-4-flash
+  temperature: 0.1
+  url: https://open.bigmodel.cn/api/paas/v4/chat/completions
+volcengine-deepseek-chat:
+  API_KEY: 3bd0a1b8-e019-44fa-80f6-4a3a920c7783
+  additional_parameters: &id002
+    top_k: 5
+    top_p: 0.1
+  max_tokens: 4095
+  model: ep-20250218092034-g7bdl
+  temperature: 0.1
+  url: https://ark.cn-beijing.volces.com/api/v3/chat/completions
+volcengine_base:
+  API_KEY: 3bd0a1b8-e019-44fa-80f6-4a3a920c7783
+  additional_parameters: *id002
+  max_tokens: 4095
+  url: https://ark.cn-beijing.volces.com/api/v3/chat/completions
+zhipu_base:
+  API_KEY: fa33c6afaae8a833c464d3ad4cd14791.ndoM9UzoVPp1WMdk
+  additional_parameters: *id003
+  max_tokens: 4095
+  url: https://open.bigmodel.cn/api/paas/v4/chat/completions

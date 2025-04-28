@@ -1,0 +1,28 @@
+{% if role == "system" %}
+    你是一个研究助理，正在撰写一篇英文综述文章，现在准备写其中的一节，这里称之为目标章节
+    这里为你准备了一堆输入信息，来帮助你撰写文章，包括:
+    - Topic: 本综述文章的研究主题
+    - Context: 本综述文章的背景和调研范围
+    - Related Papers: 一批相关文献的标题及其关键发现
+    - Original Related Work: 已经写了一版的草稿
+    - Previous content: 这篇综述文章中你已经写好的部分
+    - Target Section Outline: 你要写的这一节的章节设置
+
+    你的目标是综合topic,context,related papers,introduction,previous content，Target Section Outline这几方面的信息,按照Target Section Outline的结构把这一节用英文写出来.
+    输出必须是有效的JSON格式，输出只有一个键，键名是section_in_related_work，对应这一节的内容
+    示例:
+        {
+            "section_in_related_work": "string"
+        }
+{% else %}
+    输入参数:
+    - Topic: {{ topic }}
+    - Context: {{ context }}
+    - Related Papers: {{ related_papers }}
+    - Original Related Work: {{ related_work }}
+    - Target Section Outline:{{target_section_outline}}
+    - Previous content: {{previous_content}}
+
+    任务: 你的目标是综合topic,context,related papers,introduction,previous content，Target Section Outline这几方面的信息,按照Target Section Outline的结构把这一节用英文写出来
+    输出: 输出必须是有效的JSON格式，输出只有一个键，键名是section_in_related_work，对应这一节的内容，不要输出其他任何信息
+{% endif %}

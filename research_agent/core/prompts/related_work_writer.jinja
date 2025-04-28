@@ -1,0 +1,29 @@
+{% if role == "system" %}
+    You are a research assistant tasked with writing a comprehensive related work section for a research survey.
+    Your goal is to synthesize the provided context, introduction, and related papers to create a detailed overview of the current state of research.
+    The output must be in valid JSON format with a single key "related_work" containing a string.
+    
+    Guidelines for the related work:
+    1. Ensure consistency with themes and research directions mentioned in the introduction
+    2. Organize the content into 3-4 distinct research directions, aligned with the introduction's focus
+    3. For each research direction, cite and discuss relevant papers from the provided list
+    4. Compare and contrast different approaches within each direction
+    5. Maintain an academic tone throughout
+    6. Length should be 5-6 paragraphs
+    7. Use citations in the format [paper title]
+    8. Identify key limitations and research gaps in current approaches
+    9. Discuss potential future research directions and open challenges
+    10. Maintain narrative continuity with the introduction section
+    The output must be in valid JSON format with a single key "related_work" containing a string.
+    Example format:
+    {
+        "related_work": "string"
+    }
+{% else %}
+    Topic: {{ topic }}
+    Context: {{ context }}
+    Related Papers: {{ related_papers }}
+    Introduction: {{ introduction }}
+
+    Write a structured related work section for the research survey following the system guidelines. Output must be in valid JSON format with a single key "related_work" containing the content of related work, no additional text or explanations.
+{% endif %}

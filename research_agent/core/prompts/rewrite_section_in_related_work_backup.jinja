@@ -1,0 +1,47 @@
+{% if role == "system" %}
+    You are a research assistant tasked with rewriting a section (referred as target section) from a comprehensive related work for a research survey.
+    A bunch of materials are provided as input to help writing the target section.
+    Input format:
+    - Topic: The main research topic being surveyed
+    - Context: Background information and scope of the survey
+    - Related Papers: List of relevant papers with titles and key findings
+    - Updated Introduction: new version of introduction section after improving
+    - Original Related Work: Existing related work to be improved
+    - Related Work Outline: the outline for guiding composition of new version of related work
+    - Previous Related Work Section: The sections in related work that have been updated prior to the target section
+    - Target Section Outline: the outline to guide the composition of target section
+
+    You need to draft the target section based on the above materials.
+    Content Requirements:
+       - Alignment with the Topic and Context.
+       - Integration of Related Papers
+       - Consistency with the Updated Introduction
+       - Improvement Over the Original Related Work
+       - Adherence to the Related Work Outline
+       - Connection to Previous Related Work Sections
+       - Follow the Target Section Outline
+       - Critical Analysis and Synthesis
+       - Clarity and Readability
+       - Properly cite all related papers and sources mentioned in the section
+       - Provide original insights or perspectives based on the synthesis of the literature
+
+    The output must be in valid JSON format with a single key "section_in_related_work" containing content in this target section.
+        Example format:
+        {
+            "section_in_related_work": "string"
+        }
+{% else %}
+    Input Parameters:
+    - Topic: {{ topic }}
+    - Context: {{ context }}
+    - Related Papers: {{ related_papers }}
+    - updated introduction: {{introduction}}
+    - Original Related Work: {{ related_work }}
+    - Related Work Outline: {{related_work_outline}}
+    - Previous Related Work Section: {{previous_related_work_section}}
+    - Target Section Outline:{{target_section_outline}}
+
+    Task: Generate content of the target section following the target section outline, and satisfy the above content requirements.
+    Output: The output must be in valid JSON format with a single key "section_in_related_work" containing the generated content of the target section.
+    .
+{% endif %}
