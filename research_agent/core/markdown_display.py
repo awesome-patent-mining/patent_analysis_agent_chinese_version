@@ -49,7 +49,7 @@ def parse_markdown_with_images(markdown_content):
     
     return parts
 
-def display_markdown_with_images_from_file(time_dir):
+def display_markdown_with_images_from_file(markdown_file_path,time_dir):
     """
     从文件路径读取 Markdown 内容并在 Streamlit 上显示。
     
@@ -58,8 +58,9 @@ def display_markdown_with_images_from_file(time_dir):
         time_dir (str): 图片文件所在的目录路径。
     """
     # 读取 Markdown 文件
-    markdown_file_path = os.path.join(time_dir, '专利分析报告.md')
-    Word_file_path = os.path.join(time_dir, '专利分析报告.docx')
+    #markdown_file_path = os.path.join(time_dir, '专利分析报告.md')
+    #Word_file_path = os.path.join(time_dir, '专利分析报告.docx')
+    Word_file_path = markdown_file_path.replace('.md', '.docx')
     # 转换为 docx
     pypandoc.convert_file(
     markdown_file_path, 'docx', outputfile=Word_file_path,

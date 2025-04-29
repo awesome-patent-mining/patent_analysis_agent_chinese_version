@@ -22,9 +22,9 @@ class Config:
     COS_THRESHOLD = 0.5
     RERANK_THRESHOLD = 19
     MAX_TOKENS = 4095
-    YAML_CONFIG = 'C:\\Users\\admin\\patent_analysis_agent\\patent_analysis_agent\\research_agent\\core\\llm_config.yaml'
+    #YAML_CONFIG = 'C:\\Users\\admin\\patent_analysis_agent\\patent_analysis_agent\\research_agent\\core\\llm_config.yaml'
     #YAML_CONFIG = r"./research_agent/core/llm_config.yaml"            # yaml配置文件路径
-    #YAML_CONFIG = r"/root/patent_analysis_agent/patent_analysis_agent/research_agent/core/llm_config.yaml"
+    YAML_CONFIG = r"/root/patent_analysis_agent_english_version/research_agent/core/llm_config.yaml"
     # 最大token数
     # 其他配置参数
     TOP_K = 10              # query_by_content返回前多少个相关文档
@@ -47,4 +47,4 @@ class Config:
     MYSQL_CHARSET = "utf8mb4"
     patent_table = "patent_info"
     # Word模版文件路径
-    REFERENCE_DOC = r'D:\Users\SUYUNYI\ISTIC\ChenLiang\2025\Microsoft_agent\patent_analysis_agent-main\research_agent\core\reference.docx'
+    REFERENCE_DOC = r"/root/patent_analysis_agent_english_version/research_agent/core/reference.docx"

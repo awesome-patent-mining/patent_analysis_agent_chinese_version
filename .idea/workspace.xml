@@ -6,10 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="858cba73-7f4f-4fcb-9a83-93d9e348428a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/research_agent/core/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/core/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/research_agent/core/markdown_display.py" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/core/markdown_display.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/research_agent/core/patent_tech_analysis_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/core/patent_tech_analysis_1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/research_agent/core/query_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/core/query_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/research_agent/core/reference.docx" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/core/reference.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/research_agent/core/storage.py" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/core/storage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/research_agent/general_analysis_output/1/country_count.png" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/general_analysis_output/1/country_count.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/research_agent/general_analysis_output/1/patent_report.md" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/general_analysis_output/1/patent_report.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/research_agent/general_analysis_output/1/year_count.png" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/general_analysis_output/1/year_count.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +104,7 @@
       <recent name="C:\Users\admin\patent_analysis_agent\patent_analysis_agent" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.patent_tech_analysis_1">
+  <component name="RunManager" selected="Python.storage">
     <configuration name="generate_tech_genealogy" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="FX15_policy_agent" />
       <option name="ENV_FILES" value="" />
@@ -242,10 +248,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.storage" />
         <item itemvalue="Python.patent_tech_analysis_1" />
         <item itemvalue="Python.query" />
         <item itemvalue="Python.patent_tech_analysis" />
-        <item itemvalue="Python.storage" />
         <item itemvalue="Python.generate_tech_genealogy" />
       </list>
     </recent_temporary>
@@ -342,9 +348,13 @@
           <option name="timeStamp" value="53" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app.py</url>
-          <line>161</line>
-          <option name="timeStamp" value="72" />
+          <url>file://$PROJECT_DIR$/research_agent/core/patent_tech_analysis_1.py</url>
+          <line>141</line>
+          <option name="timeStamp" value="74" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/research_agent/core/storage.py</url>
+          <option name="timeStamp" value="75" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

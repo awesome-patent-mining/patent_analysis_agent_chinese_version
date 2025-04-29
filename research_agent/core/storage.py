@@ -50,7 +50,7 @@ class PatentDatabase:
     def create_patents_table(self):
         """创建专利数据表（如果不存在）"""
         create_table_query = """
-        CREATE TABLE IF NOT EXISTS patent_info (
+        CREATE TABLE patent_info (
             id INT AUTO_INCREMENT PRIMARY KEY,
             patent_id VARCHAR(36) NOT NULL UNIQUE,
             patent_number VARCHAR(20),
@@ -71,6 +71,7 @@ class PatentDatabase:
         )
         """
         try:
+            self.cursor.execute("DROP TABLE IF EXISTS patent_info;")
             self.cursor.execute(create_table_query)
             self.connection.commit()
             self.logger.info("专利表创建成功或已存在")
@@ -203,7 +204,7 @@ if __name__ == "__main__":
     try:
         db.connect()
         db.create_patents_table()
-        db.insert_patents_batch(sample_patents)
+        #db.insert_patents_batch(sample_patents)
     except Exception as e:
         db.logger.error(f"操作数据库时发生错误: {e}")
     finally:
