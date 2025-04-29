@@ -139,13 +139,19 @@ class Query:
             processed_batch = await self.get_simple_bibliography_async(patent_id_batch_string)
             for patent_item in processed_batch['data']:
                 patent_id = patent_item['patent_id']
-                abstract = patent_item['bibliographic_data']['abstracts'][0]['text']
+                abstract_package = patent_item['bibliographic_data'].get('abstracts', [])
+                if abstract_package!=[]:
+                    abstract = abstract_package[0]['text']
+                else:
+                    abstract = ''
                 ipc = patent_item['bibliographic_data']['classification_data']['classification_ipcr'][
                     'main']
                 # 专利受理局
                 patent_office = patent_item['bibliographic_data']['publication_reference']['country']
+                app_country = patent_item['bibliographic_data']['publication_reference']['country']
 
-                patent_info = {'patent_id':patent_id,'abstract': abstract, 'ipc': ipc, 'patent_office': patent_office}
+
+                patent_info = {'patent_id':patent_id,'abstract': abstract, 'ipc': ipc, 'patent_office': patent_office,'app_country': app_country}
 
                 results.append(patent_info)
 
@@ -161,8 +167,8 @@ class Query:
         all_patent_result = []  # 存储处理结果
         #将技术图谱转换为队列
         for tech_node in tech_map:
-            main_techs = tech_node.get("一级技术", [])
-            sub_techs = tech_node.get("二级技术", [])
+            main_techs = tech_node.get("Primary Technology", [])
+            sub_techs = tech_node.get("Secondary Technology", [])
             for main_tech in main_techs:
                 for sub in sub_techs:
                     key = f"{main_tech} - {sub}"
@@ -186,11 +192,11 @@ class Query:
     async def query_by_content(
             self,
             text: str,
-            limit: int = 10,
-            apd_from: Optional[int] = 20200101,
-            apd_to: Optional[int] = 20220101,
-            pbd_from: Optional[int] = 20200101,
-            pbd_to: Optional[int] = 20220101,
+            limit: int = 5,
+            apd_from: Optional[int] = 19500101,
+            apd_to: Optional[int] = 20250101,
+            pbd_from: Optional[int] = 19500101,
+            pbd_to: Optional[int] = 20250101,
             offset: int = 0,
             countries: Optional[List[str]] = None,
             relevancy: Optional[str] = None

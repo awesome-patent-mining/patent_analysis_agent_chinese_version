@@ -102,9 +102,9 @@ class PatentTechAnalyzer:
 
         plt.figure(figsize=(12, 6))
         year_count.plot(kind='bar', color='steelblue')
-        plt.title("专利年度趋势分析", fontsize=14)
-        plt.xlabel("年份", fontsize=12)
-        plt.ylabel("专利数量", fontsize=12)
+        plt.title("Annual Patent Trend Analysis", fontsize=14)
+        plt.xlabel("Year", fontsize=12)
+        plt.ylabel("Patent Count", fontsize=12)
         plt.xticks(rotation=45)
         plt.grid(axis='y', linestyle='--', alpha=0.7)
 
@@ -121,8 +121,8 @@ class PatentTechAnalyzer:
 
         plt.figure(figsize=(10, 6))
         country_count.head(10).plot(kind='barh', color='darkgreen')
-        plt.title("国家/地区分布（前10）", fontsize=14)
-        plt.xlabel("专利数量", fontsize=12)
+        plt.title("Countries/Regions Distribution", fontsize=14)
+        plt.xlabel("Patent Count", fontsize=12)
         plt.grid(axis='x', linestyle='--', alpha=0.7)
 
         plt.savefig(fname=save_dir + '/country_count.png', bbox_inches='tight', dpi=120)
@@ -205,21 +205,25 @@ class PatentTechAnalyzer:
 
         return tech_counts, year_count, country_count, year_img, country_img
 
-    def report(self, save_dir,all_results):
+    def report(self, save_dir,all_results,unique_patent_df):
         """生成最终报告
         :param save_dir: 保存文件夹路径
-        :param all_results: 所有技术领域和对应的专利列表"""
+        :param all_results: 所有技术领域和对应的专利列表
+        :param unique_patent_df: 去重后的专利数据集"""
         report_lines = []
 
         # 生成总体统计数据
         tech_counts, year_counts, country_counts, year_img, country_img = self._generate_overall_stats(save_dir,all_results)
 
-        report_lines.append("### 专利数据概况")
+        report_lines.append("### Patent Data Overview")
         report_lines.append("---")
 
         if tech_counts:
             # 各技术专利数量 - 优化后的表格
-            report_lines.append("#### 各技术领域专利数量")
+            report_lines.append("#### Overview---")
+            report_lines.append(f"- **Total Number of Patents**: {unique_patent_df.shape[0]}\n\n")
+            #report_lines.append("#### 各技术领域专利数量")
+            '''
             tech_df = pd.DataFrame({
                 '技术领域': list(tech_counts.keys()),
                 '专利数量': list(tech_counts.values())
@@ -237,52 +241,53 @@ class PatentTechAnalyzer:
             # 重新拼接表格
             centered_table = "\n".join(lines)
             report_lines.append(centered_table)
+            '''
 
         # 总体年份趋势
         if year_counts is not None and not year_counts.empty:
-            report_lines.append("#### 专利年度趋势分析")
+            report_lines.append("#### Patent Application Yearly Trend")
             if year_img:
-                report_lines.append(f'![趋势图](year_count.png)')
+                report_lines.append(f'![Trend Chart](year_count.png)')
             #report_lines.append("**详细数据:**")
 
-            markdown_table = year_counts.to_markdown(index=False, tablefmt="github")
-            lines = markdown_table.split("\n")
+            #markdown_table = year_counts.to_markdown(index=False, tablefmt="github")
+            #lines = markdown_table.split("\n")
 
             # 修改分隔符行：将默认的 "---" 替换为 ":---:"
-            new_separator = "|".join([":---:"] * 2)
-            new_separator = '|' + new_separator + '|'  # +1 是考虑索引列
-            lines[1] = new_separator
+            #new_separator = "|".join([":---:"] * 2)
+            #new_separator = '|' + new_separator + '|'  # +1 是考虑索引列
+            #lines[1] = new_separator
 
             # 重新拼接表格
-            centered_table = "\n".join(lines)
-            report_lines.append(centered_table)
+            #centered_table = "\n".join(lines)
+            #report_lines.append(centered_table)
 
             #report_lines.append(year_counts.to_markdown())
 
         # 总体国家分布
         if country_counts is not None and not country_counts.empty:
-            report_lines.append("#### 国家/地区分布分析")
+            report_lines.append("#### Patent Distribution by Country/Region")
             if country_img:
-                report_lines.append(f'![国家专利图](country_count.png)')
+                report_lines.append(f'![Country Patent Chart](country_count.png)')
             #report_lines.append("**Top 10 国家/地区:**")
 
-            markdown_table = country_counts.to_markdown(index=False, tablefmt="github")
-            lines = markdown_table.split("\n")
+            #markdown_table = country_counts.to_markdown(index=False, tablefmt="github")
+            #lines = markdown_table.split("\n")
 
             # 修改分隔符行：将默认的 "---" 替换为 ":---:"
-            new_separator = "|".join([":---:"] * 2)
-            new_separator = '|' + new_separator + '|'  # +1 是考虑索引列
-            lines[1] = new_separator
+            #new_separator = "|".join([":---:"] * 2)
+            #new_separator = '|' + new_separator + '|'  # +1 是考虑索引列
+            #lines[1] = new_separator
 
             # 重新拼接表格
-            centered_table = "\n".join(lines)
-            report_lines.append(centered_table)
+            #centered_table = "\n".join(lines)
+            #report_lines.append(centered_table)
 
         # 保存报告
         with open(save_dir+'/patent_report.md', 'w', encoding='utf-8',newline="\n") as f:
             for line in report_lines:
                 f.write(line+'\n\n')
-        print(f"专利分析报告已生成：{save_dir}/patent_report.md")
+        print(f"Patent analysis report generated:{save_dir}/patent_report.md")
 
     async def run(self,save_dir:str,tech_map:List[dict]):
         """主运行逻辑，统一去重存库
@@ -312,6 +317,12 @@ class PatentTechAnalyzer:
         added_columns = await self.query.batch_query_simple_bibliography(deque(df_all['patent_id']))
         df_added_columns = pd.DataFrame(added_columns)
         merged_df = pd.merge(df_all, df_added_columns, on='patent_id', how='inner')
+        print(merged_df)
+        #merged_df中有个字段apdt和pbdt,这两个字段是整数，请将其处理成字符串，并取其前四位更新到apdt和pbdt中
+        merged_df['apdt'] = merged_df['apdt'].astype(str).str[:4]
+        merged_df['pbdt'] = merged_df['pbdt'].astype(str).str[:4]
+        #请新建一个字段'app_country',将‘patent_office’字段对应的内容赋予'app_country'字段
+        merged_df['app_country'] = merged_df['patent_office']
         #在patent_result_deque中增加新添加的字段
         for idx,patent_result_i in enumerate(patent_result_deque):
             patent_list_i = patent_result_i.get('patents', [])
@@ -325,7 +336,7 @@ class PatentTechAnalyzer:
         field_list = [
             'patent_id', 'pn', 'apno', 'title', 'original_assignee',
             'current_assignee', 'inventor', 'apdt', 'pbdt', 'abstract',
-            'ipc', 'patent_office', 'relevancy'
+            'ipc', 'patent_office', 'relevancy','app_country'
         ]
 
         # 确保字段对齐并填充缺失列
@@ -357,7 +368,7 @@ class PatentTechAnalyzer:
             db.disconnect()
 
         # 继续原有报告等后续功能
-        self.report(save_dir,all_results)
+        self.report(save_dir,all_results,merged_df)
 
     @staticmethod
     def get_full_patent_data(patent_list, full_patent_df):
@@ -382,8 +393,8 @@ class PatentTechAnalyzer:
 if __name__ == "__main__":
     # 示例数据（实际使用时从Query类获取）
     analyzer = PatentTechAnalyzer()
-    asyncio.run(analyzer.run('../general_analysis_output/1',  [{'Primary Technology': ['Machine Learning'], 'Secondary Technology': ['Supervised Learning', 'Unsupervised Learning', 'Reinforcement Learning']}]))
-    # [{'Primary Technology': ['Machine Learning'], 'Secondary Technology': ['Supervised Learning', 'Unsupervised Learning', 'Reinforcement Learning']}, {'Primary Technology': ['Natural Language Processing'], 'Secondary Technology': ['Text Analysis', 'Speech Recognition', 'Language Generation']}, {'Primary Technology': ['Computer Vision'], 'Secondary Technology': ['Image Recognition', 'Object Detection', 'Video Analysis']}, {'Primary Technology': ['Robotics'], 'Secondary Technology': ['Autonomous Navigation', 'Manipulation and Control', 'Human-Robot Interaction']}, {'Primary Technology': ['Expert Systems'], 'Secondary Technology': ['Knowledge Representation', 'Inference Engines', 'Decision Support Systems']}]
+    asyncio.run(analyzer.run('../general_analysis_output/1', [{'Primary Technology': ['Machine Learning'], 'Secondary Technology': ['Supervised Learning', 'Unsupervised Learning', 'Reinforcement Learning']}]))
+
     '''
     sample_patents = [
         {

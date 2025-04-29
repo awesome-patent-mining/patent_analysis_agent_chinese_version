@@ -49,17 +49,29 @@ def parse_markdown_with_images(markdown_content):
     
     return parts
 
+<<<<<<< HEAD
 def display_markdown_with_images_from_file(markdown_file_path, time_dir):
+=======
+def display_markdown_with_images_from_file(markdown_file_path,time_dir):
+>>>>>>> f25ddd0a645c2222dedc03c23f45fff000423fe5
     """
     Read Markdown content from file path and display on Streamlit.
     
     Args:
         time_dir (str): Directory path where image files are located.
     """
+<<<<<<< HEAD
     # Read Markdown file
     word_file_path = markdown_file_path.replace('.md', '.docx')
     
     # Convert to docx
+=======
+    # 读取 Markdown 文件
+    #markdown_file_path = os.path.join(time_dir, '专利分析报告.md')
+    #Word_file_path = os.path.join(time_dir, '专利分析报告.docx')
+    Word_file_path = markdown_file_path.replace('.md', '.docx')
+    # 转换为 docx
+>>>>>>> f25ddd0a645c2222dedc03c23f45fff000423fe5
     pypandoc.convert_file(
         markdown_file_path, 'docx', outputfile=word_file_path,
         extra_args=[f'--resource-path={time_dir}',

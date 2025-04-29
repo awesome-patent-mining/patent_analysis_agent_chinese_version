@@ -50,7 +50,7 @@ class PatentDatabase:
     def create_patents_table(self):
         """创建专利数据表（如果不存在）"""
         create_table_query = """
-        CREATE TABLE IF NOT EXISTS patents (
+        CREATE TABLE patent_info (
             id INT AUTO_INCREMENT PRIMARY KEY,
             patent_id VARCHAR(36) NOT NULL UNIQUE,
             patent_number VARCHAR(20),
@@ -59,18 +59,25 @@ class PatentDatabase:
             original_assignee TEXT,
             current_assignee TEXT,
             inventor TEXT,
+<<<<<<< HEAD
             application_year INT,
             publication_year INT,
+=======
+            application_date VARCHAR(20),
+            publication_date VARCHAR(20),
+>>>>>>> f25ddd0a645c2222dedc03c23f45fff000423fe5
             abstract LONGTEXT,
             ipc VARCHAR(50),
             patent_office VARCHAR(10),
             app_country VARCHAR(10),
             relevancy VARCHAR(10),
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-            updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+            updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+            app_country VARCHAR(10)
         )
         """
         try:
+            self.cursor.execute("DROP TABLE IF EXISTS patent_info;")
             self.cursor.execute(create_table_query)
             self.connection.commit()
             self.logger.info("专利表创建成功或已存在")
@@ -81,16 +88,16 @@ class PatentDatabase:
     def insert_patent(self, patent_data: Dict):
         """插入单条专利数据到数据库"""
         insert_query = """
-        INSERT INTO patents (
+        INSERT INTO patent_info (
             patent_id, patent_number, application_number, title, 
             original_assignee, current_assignee, inventor, 
             application_date, publication_date, abstract, 
-            ipc, patent_office, relevancy
+            ipc, patent_office, relevancy,app_country
         ) VALUES (
             %(patent_id)s, %(pn)s, %(apno)s, %(title)s, 
             %(original_assignee)s, %(current_assignee)s, %(inventor)s, 
             %(apdt)s, %(pbdt)s, %(abstract)s, 
-            %(ipc)s, %(patent_office)s, %(relevancy)s
+            %(ipc)s, %(patent_office)s, %(relevancy)s,%(app_country)s
         ) ON DUPLICATE KEY UPDATE
             patent_number = VALUES(patent_number),
             application_number = VALUES(application_number),
@@ -103,7 +110,8 @@ class PatentDatabase:
             abstract = VALUES(abstract),
             ipc = VALUES(ipc),
             patent_office = VALUES(patent_office),
-            relevancy = VALUES(relevancy)
+            relevancy = VALUES(relevancy),
+            app_country = VALUES(app_country)
         """
         try:
             self.cursor.execute(insert_query, patent_data)
@@ -133,19 +141,20 @@ class PatentDatabase:
                 patent.get('abstract'),
                 patent.get('ipc'),
                 patent.get('patent_office'),
-                patent.get('relevancy')
+                patent.get('relevancy'),
+                patent.get('app_country')
             )
             data_to_insert.append(patent_tuple)
         if not data_to_insert:
             print("本批次没有有效的 patent_id，不进行插入。")
             return
         insert_query = """
-        INSERT INTO patents (
+        INSERT INTO patent_info (
             patent_id, patent_number, application_number, title,
             original_assignee, current_assignee, inventor,
             application_date, publication_date, abstract,
-            ipc, patent_office, relevancy
-        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            ipc, patent_office, relevancy,app_country
+        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
         ON DUPLICATE KEY UPDATE
             patent_number = VALUES(patent_number),
             application_number = VALUES(application_number),
@@ -158,7 +167,8 @@ class PatentDatabase:
             abstract = VALUES(abstract),
             ipc = VALUES(ipc),
             patent_office = VALUES(patent_office),
-            relevancy = VALUES(relevancy)
+            relevancy = VALUES(relevancy),
+            app_country = VALUES(app_country)
         """
         self.cursor.executemany(insert_query, data_to_insert)
         self.connection.commit()
@@ -200,7 +210,7 @@ if __name__ == "__main__":
     try:
         db.connect()
         db.create_patents_table()
-        db.insert_patents_batch(sample_patents)
+        #db.insert_patents_batch(sample_patents)
     except Exception as e:
         db.logger.error(f"操作数据库时发生错误: {e}")
     finally:

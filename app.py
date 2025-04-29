@@ -33,6 +33,9 @@ if 'current_step' not in st.session_state:
 # Initialize technical topic
 if 'tech_topic' not in st.session_state:
     st.session_state.tech_topic = ""
+if 'patent_data_generated' not in st.session_state:
+    st.session_state.patent_data_generated = False  # To track whether patent data has already been generated
+
 
 if 'tech_genealogy' not in st.session_state:
     st.session_state.tech_genealogy = None
@@ -146,36 +149,43 @@ with content:
 
     elif st.session_state.current_step == 3:
         st.header("🚀 Step 3 - Retrieve Patent Data")
-        report_container = st.container()
-        with report_container:
-            with st.spinner('⏳ Retrieving patent data, please wait...'):
-                try:
-                    loop = asyncio.new_event_loop()
-                    asyncio.set_event_loop(loop)
-                    start_time = time.time()
-                    save_dir = os.path.join(os.path.dirname(
-                        os.path.abspath(__file__)), "research_agent/general_analysis_output")
-                    time_str = datetime.now().strftime("%Y%m%d_%H%M%S")
-                    save_dir = os.path.join(save_dir, time_str)
-                    os.mkdir(save_dir)
+        if not st.session_state.patent_data_generated:  # Check if data has been generated
+            report_container = st.container()
+            with report_container:
+                with st.spinner('⏳ Retrieving patent data, please wait...'):
+                    try:
+                        loop = asyncio.new_event_loop()
+                        asyncio.set_event_loop(loop)
+                        start_time = time.time()
+                        save_dir = os.path.join(os.path.dirname(
+                            os.path.abspath(__file__)), "research_agent/general_analysis_output")
+                        time_str = datetime.now().strftime("%Y%m%d_%H%M%S")
+                        save_dir = os.path.join(save_dir, time_str)
+                        os.mkdir(save_dir)
 
-                    loop.run_until_complete(
-                        general_report_generator.run(save_dir=save_dir, tech_map=st.session_state.tech_genealogy))
-                    end_time = time.time()
-                    elapsed_time = end_time - start_time
-                    print(f"Patent statistics report generated and saved to: {save_dir}")
-                    print(f"Total time: {elapsed_time:.2f} seconds")
+                        loop.run_until_complete(
+                            general_report_generator.run(save_dir=save_dir, tech_map=st.session_state.tech_genealogy))
+                        end_time = time.time()
+                        elapsed_time = end_time - start_time
+                        print(f"Patent statistics report generated and saved to: {save_dir}")
+                        print(f"Total time: {elapsed_time:.2f} seconds")
 
-                    general_report_path = os.path.join(save_dir, 'patent_report.md')
-                    if os.path.exists(general_report_path):
-                        display_markdown_with_images_from_file(
-                            markdown_file_path=general_report_path, time_dir=save_dir)
-                    else:
-                        st.error("Patent statistics file not found")
+                        general_report_path = os.path.join(save_dir, 'patent_report.md')
+                        if os.path.exists(general_report_path):
+                            display_markdown_with_images_from_file(
+                                general_report_path, save_dir)
+                        else:
+                            st.error("Patent statistics file not found")
 
-                except Exception as e:
-                    st.error(f"Patent statistics generation failed: {str(e)}")
-                    st.exception(e)
+                        # Mark data as generated
+                        st.session_state.patent_data_generated = True
+
+                    except Exception as e:
+                        st.error(f"Patent statistics generation failed: {str(e)}")
+                        st.exception(e)
+        else:
+            st.info("Patent data has already been retrieved. Proceed to the next step.")
+
 
     elif st.session_state.current_step == 4:
         st.header("📊 Step 4 - Generate Patent Report")
@@ -200,6 +210,7 @@ with content:
                         print(f"Total time: {elapsed_time:.2f} seconds")
 
                         report_path = os.path.join(time_dir, 'patent_analysis_report.md')
+                        word_file_path = os.path.join(time_dir, 'patent_analysis_report.docx')
                         if os.path.exists(report_path):
                             display_markdown_with_images_from_file(markdown_file_path=report_path, time_dir=time_dir)
                                     # Add Word download button
