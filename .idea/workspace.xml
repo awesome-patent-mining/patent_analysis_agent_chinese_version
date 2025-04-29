@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="858cba73-7f4f-4fcb-9a83-93d9e348428a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/core/markdown_display.py" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/core/markdown_display.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/research_agent/core/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/core/config.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
