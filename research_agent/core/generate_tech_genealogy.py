@@ -63,7 +63,7 @@ class Tech_Gene_Generator:
         """
         absolute_path = os.path.abspath(Config.YAML_CONFIG)
         configs = parse_config(absolute_path)
-        self.language = ""
+        self.language = Config.LANGUAGE
         self.llm = LLM(config=configs[Config.DEFAULT_MODEL])
         self.question_proposer = QuestionProposer()
         self.hydeResolver_webSearch = HYDEResolver_via_WebSearch()

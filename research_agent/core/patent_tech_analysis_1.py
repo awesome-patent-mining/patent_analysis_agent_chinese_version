@@ -382,8 +382,8 @@ class PatentTechAnalyzer:
 if __name__ == "__main__":
     # 示例数据（实际使用时从Query类获取）
     analyzer = PatentTechAnalyzer()
-    asyncio.run(analyzer.run('../general_analysis_output/1', [{'一级技术': ['机器学习'], '二级技术': ['监督学习', '无监督学习', '强化学习']}, {'一级技术': ['深度学习'], '二级技术': ['卷积神经网络', '循环神经网络', '生成对抗网络']}]))
-
+    asyncio.run(analyzer.run('../general_analysis_output/1',  [{'Primary Technology': ['Machine Learning'], 'Secondary Technology': ['Supervised Learning', 'Unsupervised Learning', 'Reinforcement Learning']}]))
+    # [{'Primary Technology': ['Machine Learning'], 'Secondary Technology': ['Supervised Learning', 'Unsupervised Learning', 'Reinforcement Learning']}, {'Primary Technology': ['Natural Language Processing'], 'Secondary Technology': ['Text Analysis', 'Speech Recognition', 'Language Generation']}, {'Primary Technology': ['Computer Vision'], 'Secondary Technology': ['Image Recognition', 'Object Detection', 'Video Analysis']}, {'Primary Technology': ['Robotics'], 'Secondary Technology': ['Autonomous Navigation', 'Manipulation and Control', 'Human-Robot Interaction']}, {'Primary Technology': ['Expert Systems'], 'Secondary Technology': ['Knowledge Representation', 'Inference Engines', 'Decision Support Systems']}]
     '''
     sample_patents = [
         {

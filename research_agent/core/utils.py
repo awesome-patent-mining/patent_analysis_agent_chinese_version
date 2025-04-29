@@ -90,6 +90,17 @@ def flatten_tech_structure_zh(data):
         result["二级技术"].extend(second_levels)
     return result
 
+def flatten_tech_structure_en(data):
+    print(data)
+    result = {"Primary Technology": [], "Secondary Technology": []}
+    for item in data:
+        first_level = item["Primary Technology"][0] if item["Primary Technology"] else ""
+        second_levels = item["Secondary Technology"]
+        # 一级技术出现一次，后面空补齐与二级长度相同
+        result["Primary Technology"].extend([first_level] + [""] * (len(second_levels) - 1))
+        result["Secondary Technology"].extend(second_levels)
+    return result
+
 def transform_data_zh(input_data):
     first_level = []  # 存储处理后的"一级技术"列表
     second_level = []  # 存储处理后的"二级技术"列表

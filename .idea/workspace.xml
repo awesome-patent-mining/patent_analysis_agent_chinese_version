@@ -5,65 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="858cba73-7f4f-4fcb-9a83-93d9e348428a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/research_agent/core/patent_tech_analysis_1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/research_agent/core/query_1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/core/applicant_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/core/applicant_analysis.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/research_agent/core/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/core/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/core/general_llm.py" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/core/general_llm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/core/patent_tech_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/core/patent_tech_analysis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/core/query.py" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/core/query.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/core/resolve_HYDE_via_WebSearch.py" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/core/resolve_HYDE_via_WebSearch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/core/storage.py" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/core/storage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/core/survey.py" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/core/survey.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250421_162550/analysis_log.json" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250421_162550/analysis_log.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250421_162550/专利主体-专利技术热力图.png" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250421_162550/专利主体-专利技术热力图.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250421_162550/专利主体-专利数量柱状图.png" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250421_162550/专利主体-专利数量柱状图.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250421_162550/专利申请人分析报告.md" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250421_162550/专利申请人分析报告.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250421_164522/analysis_log.json" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250421_164522/analysis_log.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250421_164522/专利主体-专利技术热力图.png" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250421_164522/专利主体-专利技术热力图.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250421_164522/专利主体-专利数量柱状图.png" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250421_164522/专利主体-专利数量柱状图.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250421_164522/专利申请人分析报告.md" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250421_164522/专利申请人分析报告.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250425_161638/analysis_log.json" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250425_161638/analysis_log.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250425_161638/patent_trand_analysis.md" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250425_161638/patent_trand_analysis.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250425_161638/专利主体-专利技术热力图.png" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250425_161638/专利主体-专利技术热力图.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250425_161638/专利主体-专利数量柱状图.png" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250425_161638/专利主体-专利数量柱状图.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250425_161638/专利分析报告.md" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250425_161638/专利分析报告.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250425_161638/趋势图.png" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250425_161638/趋势图.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250425_173441/analysis_log.json" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250425_173441/analysis_log.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250425_173812/analysis_log.json" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250425_173812/analysis_log.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250425_174221/analysis_log.json" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250425_174221/analysis_log.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250425_174221/patent_trand_analysis.md" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250425_174221/patent_trand_analysis.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250425_174221/专利主体-专利技术热力图.png" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250425_174221/专利主体-专利技术热力图.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250425_174221/专利主体-专利数量柱状图.png" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250425_174221/专利主体-专利数量柱状图.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250425_174221/专利分析报告.md" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250425_174221/专利分析报告.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250425_174221/趋势图.png" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250425_174221/趋势图.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250425_184132/趋势图.png" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250425_184132/趋势图.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250425_184234/analysis_log.json" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250425_184234/analysis_log.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250425_184234/patent_trand_analysis.md" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250425_184234/patent_trand_analysis.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250425_184234/专利主体-专利技术热力图.png" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250425_184234/专利主体-专利技术热力图.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250425_184234/专利主体-专利数量柱状图.png" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250425_184234/专利主体-专利数量柱状图.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250425_184234/专利分析报告.md" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250425_184234/专利分析报告.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250425_184234/趋势图.png" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250425_184234/趋势图.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250425_185418/analysis_log.json" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250425_185418/analysis_log.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250425_185418/patent_trand_analysis.md" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250425_185418/patent_trand_analysis.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250425_185418/专利主体-专利技术热力图.png" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250425_185418/专利主体-专利技术热力图.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250425_185418/专利主体-专利数量柱状图.png" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250425_185418/专利主体-专利数量柱状图.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250425_185418/专利分析报告.md" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250425_185418/专利分析报告.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250425_185418/趋势图.png" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250425_185418/趋势图.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250425_191803/analysis_log.json" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250425_191803/analysis_log.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250425_191803/patent_trand_analysis.md" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250425_191803/patent_trand_analysis.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250425_191803/专利主体-专利技术热力图.png" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250425_191803/专利主体-专利技术热力图.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250425_191803/专利主体-专利数量柱状图.png" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250425_191803/专利主体-专利数量柱状图.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250425_191803/专利分析报告.md" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250425_191803/专利分析报告.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250425_191803/趋势图.png" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250425_191803/趋势图.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250425_193338/analysis_log.json" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250425_193338/analysis_log.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250425_193338/patent_trand_analysis.md" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250425_193338/patent_trand_analysis.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250425_193338/专利主体-专利技术热力图.png" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250425_193338/专利主体-专利技术热力图.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250425_193338/专利主体-专利数量柱状图.png" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250425_193338/专利主体-专利数量柱状图.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250425_193338/专利分析报告.md" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250425_193338/专利分析报告.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/output/20250425_193338/趋势图.png" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/detail_analysis_output/20250425_193338/趋势图.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/research_agent/core/generate_tech_genealogy.py" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/core/generate_tech_genealogy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/research_agent/core/patent_tech_analysis_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/core/patent_tech_analysis_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/research_agent/core/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/core/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,15 +27,15 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "awesome-patent-mining"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;awesome-patent-mining&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
-    "url": "git@github.com:awesome-patent-mining/patent_analysis_agent.git",
+    "url": "git@github.com:awesome-patent-mining/patent_analysis_agent_english_version.git",
     "accountId": "673dfe58-5d90-421e-b21e-e4ff86e67390"
   }
 }]]></component>
@@ -117,7 +64,7 @@
     "Python.mysql_utils.executor": "Run",
     "Python.paper_review.executor": "Run",
     "Python.patent_tech_analysis.executor": "Run",
-    "Python.patent_tech_analysis_1.executor": "Debug",
+    "Python.patent_tech_analysis_1.executor": "Run",
     "Python.propose_question.executor": "Debug",
     "Python.query.executor": "Debug",
     "Python.run_app.executor": "Debug",
@@ -131,8 +78,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "deletionFromPopupRequiresConfirmation": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/admin/patent_analysis_agent/patent_analysis_agent/research_agent/core",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/admin/patent_analysis_agent_english_version",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "two.files.diff.last.used.file": "C:/Users/admin/patent_analysis_agent/patent_analysis_agent/research_agent/core/patent_tech_analysis_1.py"
   }
@@ -152,7 +99,7 @@
       <recent name="C:\Users\admin\patent_analysis_agent\patent_analysis_agent" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.run_app">
+  <component name="RunManager" selected="Python.patent_tech_analysis_1">
     <configuration name="generate_tech_genealogy" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="FX15_policy_agent" />
       <option name="ENV_FILES" value="" />
@@ -255,7 +202,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$USER_HOME$/anaconda3/envs/python_class_310/lib/site-packages/streamlit" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../anaconda3/envs/python_class_310/lib/site-packages/streamlit" />
       <option name="PARAMETERS" value="run app.py" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -414,6 +361,16 @@
           <url>file://$PROJECT_DIR$/research_agent/core/patent_tech_analysis_1.py</url>
           <line>247</line>
           <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app.py</url>
+          <line>161</line>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/research_agent/core/patent_tech_analysis_1.py</url>
+          <line>295</line>
+          <option name="timeStamp" value="73" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

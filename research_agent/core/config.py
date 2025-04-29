@@ -7,7 +7,7 @@ class Config:
     WEB_SEARCH_API_KEY = "sk-8dc49d891f2043fe87120bb70dfa8603"
     # DEFAULT_MODEL = "deepseek-chat"                     # 默认文本生成模型
     WEB_SEARCH_TOP_N = 5
-    LANGUAGE='Chinese'
+    LANGUAGE='English'
     BATCHSIZE_BIBLIOGRAPHY = 100
     #DEFAULT_MODEL = "deepseek-chat"
     CPM_FOR_SIMPLE_BIBLIOGRAPHY =  10
@@ -22,9 +22,9 @@ class Config:
     COS_THRESHOLD = 0.5
     RERANK_THRESHOLD = 19
     MAX_TOKENS = 4095
-    #YAML_CONFIG = 'C:\\Users\\admin\\patent_analysis_agent\\patent_analysis_agent\\research_agent\\core\\llm_config.yaml'
+    YAML_CONFIG = 'C:\\Users\\admin\\patent_analysis_agent\\patent_analysis_agent\\research_agent\\core\\llm_config.yaml'
     #YAML_CONFIG = r"./research_agent/core/llm_config.yaml"            # yaml配置文件路径
-    YAML_CONFIG = r"/root/patent_analysis_agent/patent_analysis_agent/research_agent/core/llm_config.yaml"
+    #YAML_CONFIG = r"/root/patent_analysis_agent/patent_analysis_agent/research_agent/core/llm_config.yaml"
     # 最大token数
     # 其他配置参数
     TOP_K = 10              # query_by_content返回前多少个相关文档
