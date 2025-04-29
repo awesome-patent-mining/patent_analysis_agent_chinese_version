@@ -169,7 +169,7 @@ with content:
                     general_report_path = os.path.join(save_dir, 'patent_report.md')
                     if os.path.exists(general_report_path):
                         display_markdown_with_images_from_file(
-                            general_report_path, save_dir)
+                            markdown_file_path=general_report_path, time_dir=save_dir)
                     else:
                         st.error("Patent statistics file not found")
 
@@ -199,10 +199,17 @@ with content:
                         print(f"Patent report generated and saved to: {time_dir}")
                         print(f"Total time: {elapsed_time:.2f} seconds")
 
-                        report_path = os.path.join(time_dir, 'Patent Analysis Report.md')
+                        report_path = os.path.join(time_dir, 'patent_analysis_report.md')
                         if os.path.exists(report_path):
-                            display_markdown_with_images_from_file(
-                                report_path, time_dir)
+                            display_markdown_with_images_from_file(markdown_file_path=report_path, time_dir=time_dir)
+                                    # Add Word download button
+                            with open(word_file_path, "rb") as file:
+                                st.download_button(
+                                    label="📥 Download Patent Report (Word)",
+                                    data=file,
+                                    file_name="patent_analysis_report.docx",
+                                    mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                                ) 
                         else:
                             st.error("Patent report file not found")
 
@@ -211,10 +218,25 @@ with content:
                         st.exception(e)
 
     elif st.session_state.current_step == 5:
-        st.header("📊 Step 5 - Finished. Would you like to continue with the patent analysis?")
-        st.success("✅ Process result is ready!")
+        st.header("📊 Step 5 - Analysis Completed")
+        st.success("✅ Processing results are ready!")
         st.metric("Processing Efficiency", "98.7%", "1.2%")
         st.progress(80)
+        
+        # Add options for continuing analysis
+        col1, col2 = st.columns(2)
+        with col1:
+            if st.button("🔄 Start New Patent Analysis", key="continue_analysis"):
+                # Reset session state
+                st.session_state.current_step = 1
+                st.session_state.uploaded_file = None
+                st.session_state.file_details = None
+                st.session_state.analysis_started = False
+                st.rerun()
+        
+        with col2:
+            if st.button("🏁 End Analysis", key="end_analysis"):
+                st.success("Thank you for using the Patent Analysis System!")
 
 # Navigation buttons
 col1, col2, col3 = st.columns([1, 2, 1])
@@ -253,22 +275,21 @@ if next_btn and not next_disabled:
             st.rerun()
         else:
             st.session_state.show_topic_warn = False
-            if (
-                    st.session_state.tech_topic != st.session_state.last_used_topic or
-                    st.session_state.data_source_type != st.session_state.last_used_data_source_type or
-                    not st.session_state.tech_genealogy
-            ):
-                st.session_state.tech_genealogy = asyncio.run(
-                    tech_genealogy_generator.generate_tech_genealogy(
-                        topic=st.session_state.tech_topic,
-                        genealogy_type=st.session_state.data_source_type
+            with st.spinner('⏳ Generating technical map, please wait...'):
+                try:
+                    # Generate technical map
+                    st.session_state.tech_genealogy = asyncio.run(
+                        tech_genealogy_generator.generate_tech_genealogy(
+                            topic=st.session_state.tech_topic,
+                            genealogy_type=st.session_state.data_source_type
+                        )
                     )
-                )
-                st.session_state.last_used_topic = st.session_state.tech_topic
-                st.session_state.last_used_data_source_type = st.session_state.data_source_type
-
-            st.session_state.current_step += 1
-            st.rerun()
+                    st.session_state.last_used_topic = st.session_state.tech_topic
+                    st.session_state.last_used_data_source_type = st.session_state.data_source_type
+                    st.session_state.current_step += 1
+                    st.rerun()
+                except Exception as e:
+                    st.error(f"Error generating technical map: {str(e)}")
     else:
         st.session_state.current_step += 1
         st.session_state.show_topic_warn = False

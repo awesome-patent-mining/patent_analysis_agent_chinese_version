@@ -1,0 +1,824 @@
+{
+  "applicant_rank": [
+    [
+      "谷歌有限责任公司",
+      "CN(7)",
+      7
+    ],
+    [
+      "MICROSOFT TECHNOLOGY LICENSING, LLC",
+      "US(5), WO(1)",
+      6
+    ],
+    [
+      "国际商业机器公司",
+      "CN(4)",
+      4
+    ],
+    [
+      "ORACLE INTERNATIONAL CORPORATION",
+      "US(3)",
+      3
+    ],
+    [
+      "维萨国际服务协会",
+      "CN(3)",
+      3
+    ]
+  ],
+  "applicant_data": [
+    [
+      "US11803758B2",
+      "Adversarial pretraining of machine learning models",
+      "This document relates to training of machine learning models. One example method involves providing a machine learning model having one or more mapping layers. The one or more mapping layers can include at least a first mapping layer configured to map components of pretraining examples into first representations in a space. The example method also includes performing a pretraining stage on the one or more mapping layers using the pretraining examples. The pretraining stage can include adding noise to the first representations of the components of the pretraining examples to obtain noise-adjusted first representations. The pretraining stage can also include performing a self-supervised learning process to pretrain the one or more mapping layers using at least the first representations of the training data items and the noise-adjusted first representations of the training data items.",
+      "MICROSOFT TECHNOLOGY LICENSING, LLC"
+    ],
+    [
+      "US11526812B2",
+      "Generalized reinforcement learning agent",
+      "An apparatus has a memory storing a reinforcement learning policy with an optimization component and a data collection component. The apparatus has a regularization component which applies regularization selectively between the optimization component of the reinforcement learning policy and the data collection component of the reinforcement learning policy. A processor carries out a reinforcement learning process by: triggering execution of an agent according to the policy and with respect to a first task; observing values of variables comprising: an observation space of the agent, an action of the agent; and updating the policy using reinforcement learning according to the observed values and taking into account the regularization.",
+      "MICROSOFT TECHNOLOGY LICENSING, LLC"
+    ],
+    [
+      "WO2021221801A1",
+      "Training reinforcement machine learning systems with a sub-goal based shaped reward function",
+      "A method of training a reinforcement machine learning computer system. The method comprises providing a machine-learning computer programming language including a pre-defined plurality of reinforcement machine learning criterion statements, and receiving a training specification authored in the machine-learning computer programming language. The training specification defines a plurality of training sub-goals with a corresponding plurality of the reinforcement machine learning criterion statements supported by the machine-learning computer programming language. The method further comprises computer translating the plurality of training sub-goals from the training specification into a shaped reward function configured to score a reinforcement machine learning model configuration with regard to the plurality of training sub-goals. The method further comprises running a training experiment with the reinforcement machine learning model configuration, scoring the reinforcement machine learning model in the training experiment with the shaped reward function, and adjusting the reinforcement machine learning model configuration based on the shaped reward function.",
+      "MICROSOFT TECHNOLOGY LICENSING, LLC"
+    ],
+    [
+      "US20210334696A1",
+      "Training reinforcement machine learning systems",
+      "A method of training a reinforcement machine learning computer system. The method comprises providing a machine-learning computer programming language including a pre-defined plurality of reinforcement machine learning criterion statements, and receiving a training specification authored in the machine-learning computer programming language. The training specification defines a plurality of training sub-goals with a corresponding plurality of the reinforcement machine learning criterion statements supported by the machine-learning computer programming language. The method further comprises computer translating the plurality of training sub-goals from the training specification into a shaped reward function configured to score a reinforcement machine learning model configuration with regard to the plurality of training sub-goals. The method further comprises running a training experiment with the reinforcement machine learning model configuration, scoring the reinforcement machine learning model in the training experiment with the shaped reward function, and adjusting the reinforcement machine learning model configuration based on the shaped reward function.",
+      "MICROSOFT TECHNOLOGY LICENSING, LLC"
+    ],
+    [
+      "US20210326751A1",
+      "Adversarial pretraining of machine learning models",
+      "This document relates to training of machine learning models. One example method involves providing a machine learning model having one or more mapping layers. The one or more mapping layers can include at least a first mapping layer configured to map components of pretraining examples into first representations in a space. The example method also includes performing a pretraining stage on the one or more mapping layers using the pretraining examples. The pretraining stage can include adding noise to the first representations of the components of the pretraining examples to obtain noise-adjusted first representations. The pretraining stage can also include performing a self-supervised learning process to pretrain the one or more mapping layers using at least the first representations of the training data items and the noise-adjusted first representations of the training data items.",
+      "MICROSOFT TECHNOLOGY LICENSING, LLC"
+    ],
+    [
+      "US20240013055A1",
+      "Adversarial pretraining of machine learning models",
+      "This document relates to training of machine learning models. One example method involves providing a machine learning model having one or more mapping layers. The one or more mapping layers can include at least a first mapping layer configured to map components of pretraining examples into first representations in a space. The example method also includes performing a pretraining stage on the one or more mapping layers using the pretraining examples. The pretraining stage can include adding noise to the first representations of the components of the pretraining examples to obtain noise-adjusted first representations. The pretraining stage can also include performing a self-supervised learning process to pretrain the one or more mapping layers using at least the first representations of the training data items and the noise-adjusted first representations of the training data items.",
+      "MICROSOFT TECHNOLOGY LICENSING, LLC"
+    ],
+    [
+      "US20230237348A1",
+      "Chatbot for defining a machine learning (ML) solution",
+      "The present disclosure relates to systems and methods for an intelligent assistant (e.g., a chatbot) that can be used to enable a user to generate a machine learning system. Techniques can be used to automatically generate a machine learning system to assist a user. In some cases, the user may not be a software developer and may have little or no experience in either machine learning techniques or software programming. In some embodiments, a user can interact with an intelligent assistant. The interaction can be aural, textual, or through a graphical user interface. The chatbot can translate natural language inputs into a structural representation of a machine learning solution using an ontology. In this way, a user can work with artificial intelligence without being a data scientist to develop, train, refine, and compile machine learning models as stand-alone executable code.",
+      "ORACLE INTERNATIONAL CORPORATION"
+    ],
+    [
+      "US12020131B2",
+      "Sparse ensembling of unsupervised models",
+      "Techniques are provided for sparse ensembling of unsupervised machine learning models. In an embodiment, the proposed architecture is composed of multiple unsupervised machine learning models that each produce a score as output and a gating network that analyzes the inputs and outputs of the unsupervised machine learning models to select an optimal ensemble of unsupervised machine learning models. The gating network is trained to choose a minimal number of the multiple unsupervised machine learning models whose scores are combined to create a final score that matches or closely resembles a final score that is computed using all the scores of the multiple unsupervised machine learning models.",
+      "ORACLE INTERNATIONAL CORPORATION"
+    ],
+    [
+      "US11847578B2",
+      "Chatbot for defining a machine learning (ML) solution",
+      "The present disclosure relates to systems and methods for an intelligent assistant (e.g., a chatbot) that can be used to enable a user to generate a machine learning system. Techniques can be used to automatically generate a machine learning system to assist a user. In some cases, the user may not be a software developer and may have little or no experience in either machine learning techniques or software programming. In some embodiments, a user can interact with an intelligent assistant. The interaction can be aural, textual, or through a graphical user interface. The chatbot can translate natural language inputs into a structural representation of a machine learning solution using an ontology. In this way, a user can work with artificial intelligence without being a data scientist to develop, train, refine, and compile machine learning models as stand-alone executable code.",
+      "ORACLE INTERNATIONAL CORPORATION"
+    ],
+    [
+      "CN113692594A",
+      "通过强化学习的公平性改进",
+      "可以提供一种用于提高有监督机器学习模型中的公平性的计算机实现的方法。该方法包括将有监督机器学习模型链接到强化学习元模型，选择超参数的列表和有监督机器学习模型的参数，以及通过由涉及强化学习元模型的强化学习引擎基于多个冲突的目标函数计算奖励函数来调整所述超参数的列表的超参数值和有监督机器学习模型的参数的参数值，控制有监督机器学习模型的至少一个方面。该方法进一步包括迭代地重复选择和控制的步骤，用于改进有监督机器学习模型的公平性值。",
+      "国际商业机器公司"
+    ],
+    [
+      "CN112005255B",
+      "促进数据匿名化的方法和系统",
+      "提供了促进数据的分层随机匿名化的技术。在一个示例中，一种系统包括机器学习组件和评估组件。机器学习组件对与一个或多个特征相关联的第一数据执行机器学习过程，以生成指示与第一数据在相似度内的一个或多个示例数据集的第二数据。第一数据和第二数据包括相应的数据格式。评估组件从一个或多个特征中为特定特征评估第二数据，并生成指示第二数据的置信度得分的第三数据。",
+      "国际商业机器公司"
+    ],
+    [
+      "CN112005255A",
+      "数据的分层随机匿名化",
+      "提供了促进数据的分层随机匿名化的技术。在一个示例中，一种系统包括机器学习组件和评估组件。机器学习组件对与一个或多个特征相关联的第一数据执行机器学习过程，以生成指示与第一数据在相似度内的一个或多个示例数据集的第二数据。第一数据和第二数据包括相应的数据格式。评估组件从一个或多个特征中为特定特征评估第二数据，并生成指示第二数据的置信度得分的第三数据。",
+      "国际商业机器公司"
+    ],
+    [
+      "CN112488307A",
+      "使用占有测度对强化学习动作进行自动解释",
+      "本公开涉及使用占有测度对强化学习动作进行自动解释。在本公开中，自动识别驱动强化学习模型以推荐感兴趣动作的特征。该识别是基于与强化学习模型相关联的状态‑动作对的占有测度的计算。某些状态‑动作对的高占有测度指示这些对的状态可能包括所寻求的特征。",
+      "国际商业机器公司"
+    ],
+    [
+      "CN114730389B",
+      "用于隐私保护无监督学习的系统和方法",
+      "本文描述了用于隐私保护无监督学习的系统和技术。所公开的系统和方法可以使得由单独实体操作的单独计算机能够基于其相应数据池而联合执行无监督学习，同时保护隐私。所述系统能提高效率和可扩展性，同时保护隐私并避免泄漏集群标识。所述系统可以基于N取1不经意传输(OT)经由来自所述计算机的相应数据值x和y的隐私保护乘法联合计算安全距离。在各种实施例中，N可以是2、4或一些其它数目的共享数。第一计算机可以用基数N表达其数据值x。第二计算机可形成包括l个随机数nu、o和剩余元素的lxN矩阵。所述第一计算机可以从所述OT接收具有分量的输出向量。",
+      "维萨国际服务协会"
+    ],
+    [
+      "CN110869943A",
+      "GPU增强的图形模型构建和评分引擎",
+      "公开了一种用于使用多个图形处理单元(GPU)加快机器学习的方法，其涉及接收图形数据以生成多个随机样本以及跨多个GPU分布所述随机样本。所述方法可包括：使用由每个GPU执行的无监督学习根据所述随机样本确定多个社区。多个样本群组可以从所述社区生成，并且可以跨所述GPU分布，其中每个GPU通过收敛到最优相似度来合并每个样本群组中的社区。另外，所述方法还可包括：从所述被合并社区生成多个子图；将每个子图划分成多个重叠簇；跨所述多个GPU分布所述多个重叠簇；以及对所述多个重叠簇中的每个簇评分以训练AI模型。",
+      "维萨国际服务协会"
+    ],
+    [
+      "CN116756602A",
+      "用于隐私保护无监督学习的系统和方法",
+      "本文描述了用于隐私保护无监督学习的系统和技术。所公开的系统和方法可以使得由单独实体操作的单独计算机能够基于其相应数据池而联合执行无监督学习，同时保护隐私。所述系统能提高效率和可扩展性，同时保护隐私并避免泄漏集群标识。所述系统可以基于N取1不经意传输(OT)经由来自所述计算机的相应数据值x和y的隐私保护乘法联合计算安全距离。在各种实施例中，N可以是2、4或一些其它数目的共享数。第一计算机可以用基数N表达其数据值x。第二计算机可形成包括l个随机数nu、o和剩余元素mi，o＝(yjN<sup>i</sup>‑mi，o)mod&nbsp;N<sup>l</sup>的lxN矩阵。所述第一计算机可以从所述OT接收具有分量mi＝(yxi&nbsp;N<sup>i</sup>‑mi，o)mod&nbsp;N<sup>l</sup>的输出向量。",
+      "维萨国际服务协会"
+    ],
+    [
+      "CN113826125A",
+      "使用无监督数据增强来训练机器学习模型",
+      "用于训练机器学习模型的方法、系统和装置，包括编码在计算机存储介质上的计算机程序。所述方法之一包括接收包括多个未标记训练输入和多个标记训练输入的训练数据；生成经增强的训练数据，包括针对所述多个未标记训练输入中的每一个通过将数据增强技术应用于所述未标记训练输入来生成相应的经增强的训练输入；以及在经增强的训练数据上训练机器学习模型。特别地，但不排他地，可针对感知任务(例如，与视觉或语音有关的任务)训练模型。",
+      "谷歌有限责任公司"
+    ],
+    [
+      "CN111758105A",
+      "学习数据增强策略",
+      "方法、系统和装置，包括编码在计算机存储介质上的计算机程序，其用于学习用于训练机器学习模型的数据增强策略。在一个方面，一种方法包括：接收用于训练机器学习模型以执行特定机器学习任务的训练数据；确定多个数据增强策略，包括在多个时间步长中的每一个：基于在先前时间步长处生成的数据增强策略的质量度量，生成当前数据增强策略；使用当前数据增强策略，在训练数据上训练机器学习模型；以及，在使用当前数据增强策略已经对机器学习模型进行训练之后，使用该机器学习模型确定当前数据增强策略的质量度量；以及基于所确定的数据增强策略的质量度量，选择最终数据增强策略。",
+      "谷歌有限责任公司"
+    ],
+    [
+      "CN114600117A",
+      "通过样本一致性评估的主动学习",
+      "一种主动学习的方法(400)包括获取未标记的训练样本集合(112U)，和对于每一个样本扰动样本以生成增强训练样本(112A)。方法包括使用机器学习模型(130)来生成两种样本的预测标签(134P)，并确定所述未标记的训练样本的不一致值(142)，不一致值(142)表示未标记的样本和增强训练样本的预测标签之间的差。方法包括基于所述不一致值对未标记的训练样本进行排序，以及对于从排序的样本中选择的阈值数量的样本(112U<sub>T</sub>)获取地面真实标签(134G)。方法包括选择当前的标记的训练样本集合，其包括与对应的地面真实标签配对的每个选择的未标记的训练样本。方法包括使用当前的集合和未标记的训练样本的适当子集(112U<sub>P</sub>)来训练机器学习模型。",
+      "谷歌有限责任公司"
+    ],
+    [
+      "CN118607671A",
+      "利用信息检索反馈的强化学习",
+      "本公开涉及利用信息检索反馈的强化学习。提供了一种用于生成用于训练机器学习的智能体模型的反馈信号的示例的计算机实现的方法，包括：获得机器学习的智能体模型的输出，该输出包括由该机器学习的智能体模型基于先前状态的序列而生成的下一状态特征。该示例方法可包括：使用机器学习的奖励模型来处理该输出和该先前状态的序列，以鉴于该先前状态来生成质量指示符，该质量指示符指示该下一状态特征的质量。该机器学习的奖励模型可通过以下方式来训练：从参考数据源检索参考数据，并且鉴于相应的训练输入和输出以及该参考数据来计算一个或多个质量指示符。该示例方法可包括：将该质量指示符输出到模型训练器，以用于更新该机器学习的智能体模型。",
+      "谷歌有限责任公司"
+    ],
+    [
+      "CN109643323A",
+      "使用强化学习来选择内容项",
+      "用于使用机器学习模型的方法、系统和装置，包括编码在计算机存储介质上的计算机程序，所述机器学习模型已经通过强化学习被训练为选择内容项。其中一种所述方法包括：接收表征第一场境的第一数据，在所述第一场境中，可以在呈现环境中将第一内容项呈现给第一用户；以及将所述第一数据作为输入提供给长期参与机器学习模型，所述模型已经通过强化学习被训练为：接收多个输入，并且处理所述多个输入中的每个输入以生成每个输入的相应参与分值，所述相应参与分值表示如果在所述相应场境中呈现了所述相应内容项则在所述呈现环境中向所述相应用户呈现的未来内容项的所述相应用户进行的预测的、根据时间调节的总选择数。",
+      "谷歌有限责任公司"
+    ],
+    [
+      "CN116134453A",
+      "机器学习模型层的无监督联邦学习",
+      "本文公开的实施方式针对全局机器学习(“ML”)模型层的无监督联邦训练，该ML模型层在联邦训练之后可以与附加层组合，从而产生组合的ML模型。处理器可以：检测捕获客户端设备用户的口述话语的音频数据；使用本地ML模型处理音频数据以生成预测输出；使用在客户端设备本地的无监督学习基于预测输出来生成梯度；将梯度传输到远程系统；基于梯度来更新全局ML模型层的权重；在更新权重之后，在远程系统上远程使用监督学习训练组合的ML模型，所述组合的ML模型包括更新的全局ML模型层和附加层；将组合的ML模型传输到客户端设备；并使用组合的ML模型在客户端设备上进行预测。",
+      "谷歌有限责任公司"
+    ],
+    [
+      "CN111652378A",
+      "学习来选择类别特征的词汇",
+      "本公开涉及学习来选择类别特征的词汇。方法、系统和设备，包括在计算机存储介质上编码的计算机程序，以用于针对一个或多个类别特征中的每个类别特征确定在由机器学习模型对输入进行处理期间应该有效的所述类别特征的类别特征值的相应词汇。在一个方面中，一种方法包括：生成一个批次的输出序列，所述批次中的每个输出序列针对所述类别特征中的每个类别特征指定应该有效的所述类别特征的类别特征值的相应词汇；对于所述批次中的每个输出序列，在所述机器学习模型已经被训练成在仅由所述输出序列指定的每个类别特征的类别特征值的相应词汇有效的情况下执行机器学习任务之后确定所述机器学习模型在所述机器学习任务上的性能度量。",
+      "谷歌有限责任公司"
+    ]
+  ],
+  "dataframe": [
+    {
+      "id": "US11803758B2",
+      "title": "Adversarial pretraining of machine learning models",
+      "abstract": "This document relates to training of machine learning models. One example method involves providing a machine learning model having one or more mapping layers. The one or more mapping layers can include at least a first mapping layer configured to map components of pretraining examples into first representations in a space. The example method also includes performing a pretraining stage on the one or more mapping layers using the pretraining examples. The pretraining stage can include adding noise to the first representations of the components of the pretraining examples to obtain noise-adjusted first representations. The pretraining stage can also include performing a self-supervised learning process to pretrain the one or more mapping layers using at least the first representations of the training data items and the noise-adjusted first representations of the training data items.",
+      "company": "MICROSOFT TECHNOLOGY LICENSING, LLC"
+    },
+    {
+      "id": "US11526812B2",
+      "title": "Generalized reinforcement learning agent",
+      "abstract": "An apparatus has a memory storing a reinforcement learning policy with an optimization component and a data collection component. The apparatus has a regularization component which applies regularization selectively between the optimization component of the reinforcement learning policy and the data collection component of the reinforcement learning policy. A processor carries out a reinforcement learning process by: triggering execution of an agent according to the policy and with respect to a first task; observing values of variables comprising: an observation space of the agent, an action of the agent; and updating the policy using reinforcement learning according to the observed values and taking into account the regularization.",
+      "company": "MICROSOFT TECHNOLOGY LICENSING, LLC"
+    },
+    {
+      "id": "WO2021221801A1",
+      "title": "Training reinforcement machine learning systems with a sub-goal based shaped reward function",
+      "abstract": "A method of training a reinforcement machine learning computer system. The method comprises providing a machine-learning computer programming language including a pre-defined plurality of reinforcement machine learning criterion statements, and receiving a training specification authored in the machine-learning computer programming language. The training specification defines a plurality of training sub-goals with a corresponding plurality of the reinforcement machine learning criterion statements supported by the machine-learning computer programming language. The method further comprises computer translating the plurality of training sub-goals from the training specification into a shaped reward function configured to score a reinforcement machine learning model configuration with regard to the plurality of training sub-goals. The method further comprises running a training experiment with the reinforcement machine learning model configuration, scoring the reinforcement machine learning model in the training experiment with the shaped reward function, and adjusting the reinforcement machine learning model configuration based on the shaped reward function.",
+      "company": "MICROSOFT TECHNOLOGY LICENSING, LLC"
+    },
+    {
+      "id": "US20210334696A1",
+      "title": "Training reinforcement machine learning systems",
+      "abstract": "A method of training a reinforcement machine learning computer system. The method comprises providing a machine-learning computer programming language including a pre-defined plurality of reinforcement machine learning criterion statements, and receiving a training specification authored in the machine-learning computer programming language. The training specification defines a plurality of training sub-goals with a corresponding plurality of the reinforcement machine learning criterion statements supported by the machine-learning computer programming language. The method further comprises computer translating the plurality of training sub-goals from the training specification into a shaped reward function configured to score a reinforcement machine learning model configuration with regard to the plurality of training sub-goals. The method further comprises running a training experiment with the reinforcement machine learning model configuration, scoring the reinforcement machine learning model in the training experiment with the shaped reward function, and adjusting the reinforcement machine learning model configuration based on the shaped reward function.",
+      "company": "MICROSOFT TECHNOLOGY LICENSING, LLC"
+    },
+    {
+      "id": "US20210326751A1",
+      "title": "Adversarial pretraining of machine learning models",
+      "abstract": "This document relates to training of machine learning models. One example method involves providing a machine learning model having one or more mapping layers. The one or more mapping layers can include at least a first mapping layer configured to map components of pretraining examples into first representations in a space. The example method also includes performing a pretraining stage on the one or more mapping layers using the pretraining examples. The pretraining stage can include adding noise to the first representations of the components of the pretraining examples to obtain noise-adjusted first representations. The pretraining stage can also include performing a self-supervised learning process to pretrain the one or more mapping layers using at least the first representations of the training data items and the noise-adjusted first representations of the training data items.",
+      "company": "MICROSOFT TECHNOLOGY LICENSING, LLC"
+    },
+    {
+      "id": "US20240013055A1",
+      "title": "Adversarial pretraining of machine learning models",
+      "abstract": "This document relates to training of machine learning models. One example method involves providing a machine learning model having one or more mapping layers. The one or more mapping layers can include at least a first mapping layer configured to map components of pretraining examples into first representations in a space. The example method also includes performing a pretraining stage on the one or more mapping layers using the pretraining examples. The pretraining stage can include adding noise to the first representations of the components of the pretraining examples to obtain noise-adjusted first representations. The pretraining stage can also include performing a self-supervised learning process to pretrain the one or more mapping layers using at least the first representations of the training data items and the noise-adjusted first representations of the training data items.",
+      "company": "MICROSOFT TECHNOLOGY LICENSING, LLC"
+    },
+    {
+      "id": "US20230237348A1",
+      "title": "Chatbot for defining a machine learning (ML) solution",
+      "abstract": "The present disclosure relates to systems and methods for an intelligent assistant (e.g., a chatbot) that can be used to enable a user to generate a machine learning system. Techniques can be used to automatically generate a machine learning system to assist a user. In some cases, the user may not be a software developer and may have little or no experience in either machine learning techniques or software programming. In some embodiments, a user can interact with an intelligent assistant. The interaction can be aural, textual, or through a graphical user interface. The chatbot can translate natural language inputs into a structural representation of a machine learning solution using an ontology. In this way, a user can work with artificial intelligence without being a data scientist to develop, train, refine, and compile machine learning models as stand-alone executable code.",
+      "company": "ORACLE INTERNATIONAL CORPORATION"
+    },
+    {
+      "id": "US12020131B2",
+      "title": "Sparse ensembling of unsupervised models",
+      "abstract": "Techniques are provided for sparse ensembling of unsupervised machine learning models. In an embodiment, the proposed architecture is composed of multiple unsupervised machine learning models that each produce a score as output and a gating network that analyzes the inputs and outputs of the unsupervised machine learning models to select an optimal ensemble of unsupervised machine learning models. The gating network is trained to choose a minimal number of the multiple unsupervised machine learning models whose scores are combined to create a final score that matches or closely resembles a final score that is computed using all the scores of the multiple unsupervised machine learning models.",
+      "company": "ORACLE INTERNATIONAL CORPORATION"
+    },
+    {
+      "id": "US11847578B2",
+      "title": "Chatbot for defining a machine learning (ML) solution",
+      "abstract": "The present disclosure relates to systems and methods for an intelligent assistant (e.g., a chatbot) that can be used to enable a user to generate a machine learning system. Techniques can be used to automatically generate a machine learning system to assist a user. In some cases, the user may not be a software developer and may have little or no experience in either machine learning techniques or software programming. In some embodiments, a user can interact with an intelligent assistant. The interaction can be aural, textual, or through a graphical user interface. The chatbot can translate natural language inputs into a structural representation of a machine learning solution using an ontology. In this way, a user can work with artificial intelligence without being a data scientist to develop, train, refine, and compile machine learning models as stand-alone executable code.",
+      "company": "ORACLE INTERNATIONAL CORPORATION"
+    },
+    {
+      "id": "CN113692594A",
+      "title": "通过强化学习的公平性改进",
+      "abstract": "可以提供一种用于提高有监督机器学习模型中的公平性的计算机实现的方法。该方法包括将有监督机器学习模型链接到强化学习元模型，选择超参数的列表和有监督机器学习模型的参数，以及通过由涉及强化学习元模型的强化学习引擎基于多个冲突的目标函数计算奖励函数来调整所述超参数的列表的超参数值和有监督机器学习模型的参数的参数值，控制有监督机器学习模型的至少一个方面。该方法进一步包括迭代地重复选择和控制的步骤，用于改进有监督机器学习模型的公平性值。",
+      "company": "国际商业机器公司"
+    },
+    {
+      "id": "CN112005255B",
+      "title": "促进数据匿名化的方法和系统",
+      "abstract": "提供了促进数据的分层随机匿名化的技术。在一个示例中，一种系统包括机器学习组件和评估组件。机器学习组件对与一个或多个特征相关联的第一数据执行机器学习过程，以生成指示与第一数据在相似度内的一个或多个示例数据集的第二数据。第一数据和第二数据包括相应的数据格式。评估组件从一个或多个特征中为特定特征评估第二数据，并生成指示第二数据的置信度得分的第三数据。",
+      "company": "国际商业机器公司"
+    },
+    {
+      "id": "CN112005255A",
+      "title": "数据的分层随机匿名化",
+      "abstract": "提供了促进数据的分层随机匿名化的技术。在一个示例中，一种系统包括机器学习组件和评估组件。机器学习组件对与一个或多个特征相关联的第一数据执行机器学习过程，以生成指示与第一数据在相似度内的一个或多个示例数据集的第二数据。第一数据和第二数据包括相应的数据格式。评估组件从一个或多个特征中为特定特征评估第二数据，并生成指示第二数据的置信度得分的第三数据。",
+      "company": "国际商业机器公司"
+    },
+    {
+      "id": "CN112488307A",
+      "title": "使用占有测度对强化学习动作进行自动解释",
+      "abstract": "本公开涉及使用占有测度对强化学习动作进行自动解释。在本公开中，自动识别驱动强化学习模型以推荐感兴趣动作的特征。该识别是基于与强化学习模型相关联的状态‑动作对的占有测度的计算。某些状态‑动作对的高占有测度指示这些对的状态可能包括所寻求的特征。",
+      "company": "国际商业机器公司"
+    },
+    {
+      "id": "CN114730389B",
+      "title": "用于隐私保护无监督学习的系统和方法",
+      "abstract": "本文描述了用于隐私保护无监督学习的系统和技术。所公开的系统和方法可以使得由单独实体操作的单独计算机能够基于其相应数据池而联合执行无监督学习，同时保护隐私。所述系统能提高效率和可扩展性，同时保护隐私并避免泄漏集群标识。所述系统可以基于N取1不经意传输(OT)经由来自所述计算机的相应数据值x和y的隐私保护乘法联合计算安全距离。在各种实施例中，N可以是2、4或一些其它数目的共享数。第一计算机可以用基数N表达其数据值x。第二计算机可形成包括l个随机数nu、o和剩余元素的lxN矩阵。所述第一计算机可以从所述OT接收具有分量的输出向量。",
+      "company": "维萨国际服务协会"
+    },
+    {
+      "id": "CN110869943A",
+      "title": "GPU增强的图形模型构建和评分引擎",
+      "abstract": "公开了一种用于使用多个图形处理单元(GPU)加快机器学习的方法，其涉及接收图形数据以生成多个随机样本以及跨多个GPU分布所述随机样本。所述方法可包括：使用由每个GPU执行的无监督学习根据所述随机样本确定多个社区。多个样本群组可以从所述社区生成，并且可以跨所述GPU分布，其中每个GPU通过收敛到最优相似度来合并每个样本群组中的社区。另外，所述方法还可包括：从所述被合并社区生成多个子图；将每个子图划分成多个重叠簇；跨所述多个GPU分布所述多个重叠簇；以及对所述多个重叠簇中的每个簇评分以训练AI模型。",
+      "company": "维萨国际服务协会"
+    },
+    {
+      "id": "CN116756602A",
+      "title": "用于隐私保护无监督学习的系统和方法",
+      "abstract": "本文描述了用于隐私保护无监督学习的系统和技术。所公开的系统和方法可以使得由单独实体操作的单独计算机能够基于其相应数据池而联合执行无监督学习，同时保护隐私。所述系统能提高效率和可扩展性，同时保护隐私并避免泄漏集群标识。所述系统可以基于N取1不经意传输(OT)经由来自所述计算机的相应数据值x和y的隐私保护乘法联合计算安全距离。在各种实施例中，N可以是2、4或一些其它数目的共享数。第一计算机可以用基数N表达其数据值x。第二计算机可形成包括l个随机数nu、o和剩余元素mi，o＝(yjN<sup>i</sup>‑mi，o)mod&nbsp;N<sup>l</sup>的lxN矩阵。所述第一计算机可以从所述OT接收具有分量mi＝(yxi&nbsp;N<sup>i</sup>‑mi，o)mod&nbsp;N<sup>l</sup>的输出向量。",
+      "company": "维萨国际服务协会"
+    },
+    {
+      "id": "CN113826125A",
+      "title": "使用无监督数据增强来训练机器学习模型",
+      "abstract": "用于训练机器学习模型的方法、系统和装置，包括编码在计算机存储介质上的计算机程序。所述方法之一包括接收包括多个未标记训练输入和多个标记训练输入的训练数据；生成经增强的训练数据，包括针对所述多个未标记训练输入中的每一个通过将数据增强技术应用于所述未标记训练输入来生成相应的经增强的训练输入；以及在经增强的训练数据上训练机器学习模型。特别地，但不排他地，可针对感知任务(例如，与视觉或语音有关的任务)训练模型。",
+      "company": "谷歌有限责任公司"
+    },
+    {
+      "id": "CN111758105A",
+      "title": "学习数据增强策略",
+      "abstract": "方法、系统和装置，包括编码在计算机存储介质上的计算机程序，其用于学习用于训练机器学习模型的数据增强策略。在一个方面，一种方法包括：接收用于训练机器学习模型以执行特定机器学习任务的训练数据；确定多个数据增强策略，包括在多个时间步长中的每一个：基于在先前时间步长处生成的数据增强策略的质量度量，生成当前数据增强策略；使用当前数据增强策略，在训练数据上训练机器学习模型；以及，在使用当前数据增强策略已经对机器学习模型进行训练之后，使用该机器学习模型确定当前数据增强策略的质量度量；以及基于所确定的数据增强策略的质量度量，选择最终数据增强策略。",
+      "company": "谷歌有限责任公司"
+    },
+    {
+      "id": "CN114600117A",
+      "title": "通过样本一致性评估的主动学习",
+      "abstract": "一种主动学习的方法(400)包括获取未标记的训练样本集合(112U)，和对于每一个样本扰动样本以生成增强训练样本(112A)。方法包括使用机器学习模型(130)来生成两种样本的预测标签(134P)，并确定所述未标记的训练样本的不一致值(142)，不一致值(142)表示未标记的样本和增强训练样本的预测标签之间的差。方法包括基于所述不一致值对未标记的训练样本进行排序，以及对于从排序的样本中选择的阈值数量的样本(112U<sub>T</sub>)获取地面真实标签(134G)。方法包括选择当前的标记的训练样本集合，其包括与对应的地面真实标签配对的每个选择的未标记的训练样本。方法包括使用当前的集合和未标记的训练样本的适当子集(112U<sub>P</sub>)来训练机器学习模型。",
+      "company": "谷歌有限责任公司"
+    },
+    {
+      "id": "CN118607671A",
+      "title": "利用信息检索反馈的强化学习",
+      "abstract": "本公开涉及利用信息检索反馈的强化学习。提供了一种用于生成用于训练机器学习的智能体模型的反馈信号的示例的计算机实现的方法，包括：获得机器学习的智能体模型的输出，该输出包括由该机器学习的智能体模型基于先前状态的序列而生成的下一状态特征。该示例方法可包括：使用机器学习的奖励模型来处理该输出和该先前状态的序列，以鉴于该先前状态来生成质量指示符，该质量指示符指示该下一状态特征的质量。该机器学习的奖励模型可通过以下方式来训练：从参考数据源检索参考数据，并且鉴于相应的训练输入和输出以及该参考数据来计算一个或多个质量指示符。该示例方法可包括：将该质量指示符输出到模型训练器，以用于更新该机器学习的智能体模型。",
+      "company": "谷歌有限责任公司"
+    },
+    {
+      "id": "CN109643323A",
+      "title": "使用强化学习来选择内容项",
+      "abstract": "用于使用机器学习模型的方法、系统和装置，包括编码在计算机存储介质上的计算机程序，所述机器学习模型已经通过强化学习被训练为选择内容项。其中一种所述方法包括：接收表征第一场境的第一数据，在所述第一场境中，可以在呈现环境中将第一内容项呈现给第一用户；以及将所述第一数据作为输入提供给长期参与机器学习模型，所述模型已经通过强化学习被训练为：接收多个输入，并且处理所述多个输入中的每个输入以生成每个输入的相应参与分值，所述相应参与分值表示如果在所述相应场境中呈现了所述相应内容项则在所述呈现环境中向所述相应用户呈现的未来内容项的所述相应用户进行的预测的、根据时间调节的总选择数。",
+      "company": "谷歌有限责任公司"
+    },
+    {
+      "id": "CN116134453A",
+      "title": "机器学习模型层的无监督联邦学习",
+      "abstract": "本文公开的实施方式针对全局机器学习(“ML”)模型层的无监督联邦训练，该ML模型层在联邦训练之后可以与附加层组合，从而产生组合的ML模型。处理器可以：检测捕获客户端设备用户的口述话语的音频数据；使用本地ML模型处理音频数据以生成预测输出；使用在客户端设备本地的无监督学习基于预测输出来生成梯度；将梯度传输到远程系统；基于梯度来更新全局ML模型层的权重；在更新权重之后，在远程系统上远程使用监督学习训练组合的ML模型，所述组合的ML模型包括更新的全局ML模型层和附加层；将组合的ML模型传输到客户端设备；并使用组合的ML模型在客户端设备上进行预测。",
+      "company": "谷歌有限责任公司"
+    },
+    {
+      "id": "CN111652378A",
+      "title": "学习来选择类别特征的词汇",
+      "abstract": "本公开涉及学习来选择类别特征的词汇。方法、系统和设备，包括在计算机存储介质上编码的计算机程序，以用于针对一个或多个类别特征中的每个类别特征确定在由机器学习模型对输入进行处理期间应该有效的所述类别特征的类别特征值的相应词汇。在一个方面中，一种方法包括：生成一个批次的输出序列，所述批次中的每个输出序列针对所述类别特征中的每个类别特征指定应该有效的所述类别特征的类别特征值的相应词汇；对于所述批次中的每个输出序列，在所述机器学习模型已经被训练成在仅由所述输出序列指定的每个类别特征的类别特征值的相应词汇有效的情况下执行机器学习任务之后确定所述机器学习模型在所述机器学习任务上的性能度量。",
+      "company": "谷歌有限责任公司"
+    }
+  ],
+  "applicant-tech-class": [
+    {
+      "classification_results": {
+        "CN113826125A": [
+          "Overall Structural Design Technology of Gas Generators",
+          "Ignition System Technology"
+        ],
+        "CN111758105A": [
+          "Overall Structural Design Technology of Gas Generators",
+          "Inflation Method Technology"
+        ],
+        "CN114600117A": [
+          "High-Pressure Gas Sealing and Storage Technology",
+          "Manufacturing Process Technology"
+        ],
+        "CN118607671A": [
+          "High-Pressure Gas Sealing and Storage Technology",
+          "Resistant Material Technology"
+        ],
+        "CN109643323A": [
+          "High Burn Rate, High Heat, Low Hygroscopic Gas Generating Agent Formulation Technology",
+          "Propellant Manufacturing Process Technology"
+        ],
+        "CN116134453A": [
+          "High Burn Rate, High Heat, Low Hygroscopic Gas Generating Agent Formulation Technology",
+          "Propellant Formulation Technology"
+        ],
+        "CN111652378A": [
+          "Overall Structural Design Technology of Gas Generators",
+          "Component Structure Technology"
+        ]
+      },
+      "verification_status": "Confirmed processing patents 0-7",
+      "comprehensive_technology_mining": {
+        "Core Technology Directions": [
+          "Machine Learning Model Training",
+          "Data Augmentation Strategies",
+          "Active Learning Techniques",
+          "Reinforcement Learning Applications",
+          "Unsupervised Federated Learning"
+        ],
+        "Technical Problem Solving Analysis": {
+          "CN113826125A": {
+            "Technical Pain Points": "Training machine learning models with limited labeled data",
+            "Proposed Solutions": "Using unsupervised data augmentation to generate enhanced training data",
+            "Effect Indicators": "Improved model performance on perception tasks"
+          },
+          "CN111758105A": {
+            "Technical Pain Points": "Determining effective data augmentation strategies for model training",
+            "Proposed Solutions": "Learning data augmentation strategies through iterative quality assessment",
+            "Effect Indicators": "Enhanced model accuracy through optimized data augmentation"
+          },
+          "CN114600117A": {
+            "Technical Pain Points": "Efficiently labeling large datasets for model training",
+            "Proposed Solutions": "Active learning through sample consistency evaluation",
+            "Effect Indicators": "Reduced labeling effort with maintained model performance"
+          },
+          "CN118607671A": {
+            "Technical Pain Points": "Generating quality feedback for reinforcement learning models",
+            "Proposed Solutions": "Using information retrieval feedback to train reward models",
+            "Effect Indicators": "Improved model decision-making through better feedback signals"
+          },
+          "CN116134453A": {
+            "Technical Pain Points": "Training machine learning models in a federated setting without labeled data",
+            "Proposed Solutions": "Unsupervised federated learning of global model layers",
+            "Effect Indicators": "Enhanced model performance in distributed environments"
+          }
+        },
+        "Representative Case Description": [
+          {
+            "Patent ID": "CN113826125A",
+            "Description": "This patent addresses the challenge of training machine learning models with limited labeled data by using unsupervised data augmentation. The method generates enhanced training data, which improves model performance on perception tasks such as vision and speech."
+          },
+          {
+            "Patent ID": "CN111758105A",
+            "Description": "This patent focuses on learning effective data augmentation strategies for model training. By iteratively assessing the quality of data augmentation strategies, the method enhances model accuracy through optimized data augmentation."
+          },
+          {
+            "Patent ID": "CN114600117A",
+            "Description": "This patent introduces an active learning technique that reduces the effort required to label large datasets. By evaluating sample consistency, the method efficiently selects samples for labeling, maintaining model performance with less labeled data."
+          },
+          {
+            "Patent ID": "CN118607671A",
+            "Description": "This patent leverages information retrieval feedback to improve reinforcement learning models. By training a reward model with reference data, the method generates better feedback signals, enhancing model decision-making."
+          },
+          {
+            "Patent ID": "CN116134453A",
+            "Description": "This patent addresses the challenge of training machine learning models in a federated setting without labeled data. Through unsupervised federated learning, the method enhances model performance in distributed environments."
+          }
+        ]
+      },
+      "company_name": "谷歌有限责任公司"
+    },
+    {
+      "classification_results": {
+        "US11803758B2": [
+          "Overall Structural Design Technology of Gas Generators",
+          "Component Structure Technology"
+        ],
+        "US11526812B2": [
+          "Overall Structural Design Technology of Gas Generators",
+          "Component Structure Technology"
+        ],
+        "WO2021221801A1": [
+          "Overall Structural Design Technology of Gas Generators",
+          "Component Structure Technology"
+        ],
+        "US20210334696A1": [
+          "Overall Structural Design Technology of Gas Generators",
+          "Component Structure Technology"
+        ],
+        "US20210326751A1": [
+          "Overall Structural Design Technology of Gas Generators",
+          "Component Structure Technology"
+        ],
+        "US20240013055A1": [
+          "Overall Structural Design Technology of Gas Generators",
+          "Component Structure Technology"
+        ]
+      },
+      "verification_status": "Confirmed processing patents 0-6",
+      "comprehensive_technology_mining": {
+        "Core Technology Directions": [
+          "Adversarial Pretraining of Machine Learning Models",
+          "Generalized Reinforcement Learning Agents",
+          "Training Reinforcement Machine Learning Systems with Sub-Goal Based Shaped Reward Functions"
+        ],
+        "Technical Problem Solving Analysis": {
+          "Technical Pain Points": [
+            "Improving the robustness and generalization of machine learning models",
+            "Enhancing the efficiency and effectiveness of reinforcement learning processes",
+            "Optimizing the training of reinforcement learning systems through structured sub-goals"
+          ],
+          "Proposed Solutions": [
+            "Adversarial pretraining with noise addition and self-supervised learning (US11803758B2, US20210326751A1, US20240013055A1)",
+            "Selective regularization in reinforcement learning policies (US11526812B2)",
+            "Sub-goal based shaped reward functions for training reinforcement learning systems (WO2021221801A1, US20210334696A1)"
+          ],
+          "Effect Indicators": [
+            "Increased model robustness and generalization capabilities",
+            "Improved policy optimization and data collection efficiency",
+            "Enhanced training accuracy and model configuration adjustments"
+          ]
+        },
+        "Representative Case Description": [
+          {
+            "Patent ID": "US11803758B2",
+            "Description": "This patent introduces a method for adversarial pretraining of machine learning models by adding noise to representations and using self-supervised learning, enhancing model robustness."
+          },
+          {
+            "Patent ID": "US11526812B2",
+            "Description": "This patent describes a generalized reinforcement learning agent with selective regularization, improving the efficiency of reinforcement learning processes."
+          },
+          {
+            "Patent ID": "WO2021221801A1",
+            "Description": "This patent outlines a method for training reinforcement learning systems using sub-goal based shaped reward functions, optimizing training through structured sub-goals."
+          }
+        ]
+      },
+      "company_name": "MICROSOFT TECHNOLOGY LICENSING, LLC"
+    },
+    {
+      "classification_results": {
+        "CN113692594A": [
+          "Overall Structural Design Technology of Gas Generators",
+          "Ignition System Technology"
+        ],
+        "CN112005255B": [
+          "High-Pressure Gas Sealing and Storage Technology",
+          "Manufacturing Process Technology"
+        ],
+        "CN112005255A": [
+          "High-Pressure Gas Sealing and Storage Technology",
+          "Manufacturing Process Technology"
+        ],
+        "CN112488307A": [
+          "High Burn Rate, High Heat, Low Hygroscopic Gas Generating Agent Formulation Technology",
+          "Propellant Manufacturing Process Technology"
+        ]
+      },
+      "verification_status": "Confirmed processing patents 0-4",
+      "comprehensive_technology_mining": {
+        "Core Technology Directions": [
+          "Fairness Improvement in Supervised Machine Learning Models",
+          "Hierarchical Random Anonymization of Data",
+          "Automatic Interpretation of Reinforcement Learning Actions"
+        ],
+        "Technical Problem Solving Analysis": {
+          "CN113692594A": {
+            "Technical Pain Points": "Improving fairness in supervised machine learning models",
+            "Proposed Solutions": "Linking supervised machine learning models to reinforcement learning meta-models and iteratively adjusting hyperparameters and model parameters",
+            "Effect Indicators": "Improved fairness values in supervised machine learning models"
+          },
+          "CN112005255B": {
+            "Technical Pain Points": "Data anonymization in machine learning processes",
+            "Proposed Solutions": "Using machine learning components to generate similar datasets and evaluating confidence scores for specific features",
+            "Effect Indicators": "Enhanced data anonymization and confidence in anonymized data"
+          },
+          "CN112005255A": {
+            "Technical Pain Points": "Data anonymization in machine learning processes",
+            "Proposed Solutions": "Using machine learning components to generate similar datasets and evaluating confidence scores for specific features",
+            "Effect Indicators": "Enhanced data anonymization and confidence in anonymized data"
+          },
+          "CN112488307A": {
+            "Technical Pain Points": "Interpretation of actions in reinforcement learning models",
+            "Proposed Solutions": "Using occupancy measures to automatically identify features driving reinforcement learning models to recommend actions",
+            "Effect Indicators": "Improved interpretability of reinforcement learning actions"
+          }
+        },
+        "Representative Case Description": [
+          {
+            "Patent ID": "CN113692594A",
+            "Description": "This patent addresses the challenge of improving fairness in supervised machine learning models by linking them to reinforcement learning meta-models and iteratively adjusting hyperparameters and model parameters. The result is an improved fairness value in the supervised machine learning model."
+          },
+          {
+            "Patent ID": "CN112005255B",
+            "Description": "This patent focuses on enhancing data anonymization in machine learning processes by generating similar datasets and evaluating confidence scores for specific features. The outcome is better anonymization and increased confidence in the anonymized data."
+          },
+          {
+            "Patent ID": "CN112488307A",
+            "Description": "This patent tackles the issue of interpreting actions in reinforcement learning models by using occupancy measures to automatically identify features that drive the model to recommend actions. This leads to improved interpretability of the model's actions."
+          }
+        ]
+      },
+      "company_name": "国际商业机器公司"
+    },
+    {
+      "classification_results": {
+        "US20230237348A1": [
+          "Overall Structural Design Technology of Gas Generators",
+          "Component Structure Technology"
+        ],
+        "US12020131B2": [
+          "High-Pressure Gas Sealing and Storage Technology",
+          "Manufacturing Process Technology"
+        ],
+        "US11847578B2": [
+          "Overall Structural Design Technology of Gas Generators",
+          "Component Structure Technology"
+        ]
+      },
+      "verification_status": "Confirmed processing patents 0-3",
+      "comprehensive_technology_mining": {
+        "Core Technology Directions": [
+          "Intelligent Assistant Systems for Machine Learning",
+          "Natural Language Processing for Machine Learning Solutions",
+          "Sparse Ensembling of Unsupervised Models"
+        ],
+        "Technical Problem Solving Analysis": {
+          "Technical Pain Points": [
+            "Lack of expertise in machine learning and software programming among users",
+            "Complexity in generating and optimizing machine learning models",
+            "Inefficiency in selecting optimal ensembles of unsupervised models"
+          ],
+          "Proposed Solutions": [
+            "Use of chatbots to translate natural language inputs into structural representations of machine learning solutions",
+            "Automated generation of machine learning systems to assist non-expert users",
+            "Implementation of gating networks to select optimal ensembles of unsupervised models"
+          ],
+          "Effect Indicators": [
+            "Increased accessibility of machine learning for non-expert users",
+            "Reduced complexity in developing and training machine learning models",
+            "Improved efficiency in model selection and optimization"
+          ]
+        },
+        "Representative Case Description": [
+          {
+            "Patent ID": "US20230237348A1",
+            "Description": "This patent introduces a chatbot that enables users to generate machine learning systems through natural language interactions, making AI accessible to non-experts."
+          },
+          {
+            "Patent ID": "US12020131B2",
+            "Description": "This patent addresses the inefficiency in model selection by proposing a sparse ensembling technique that uses a gating network to choose an optimal ensemble of unsupervised models."
+          },
+          {
+            "Patent ID": "US11847578B2",
+            "Description": "Similar to US20230237348A1, this patent also focuses on a chatbot that assists users in developing machine learning models, emphasizing the use of ontologies to translate natural language inputs."
+          }
+        ]
+      },
+      "company_name": "ORACLE INTERNATIONAL CORPORATION"
+    },
+    {
+      "classification_results": {
+        "CN114730389B": [
+          "Overall Structural Design Technology of Gas Generators",
+          "Ignition System Technology"
+        ],
+        "CN110869943A": [
+          "Overall Structural Design Technology of Gas Generators",
+          "Inflation Method Technology"
+        ],
+        "CN116756602A": [
+          "Overall Structural Design Technology of Gas Generators",
+          "Component Structure Technology"
+        ]
+      },
+      "verification_status": "Confirmed processing patents 0-3",
+      "comprehensive_technology_mining": {
+        "Core Technology Directions": [
+          "Privacy Protection in Unsupervised Learning",
+          "GPU-Accelerated Machine Learning",
+          "Secure Distance Computation"
+        ],
+        "Technical Problem Solving Analysis": [
+          {
+            "Technical Pain Point": "Privacy leakage in unsupervised learning",
+            "Solution": "Use of N-out-of-1 Oblivious Transfer (OT) for secure distance computation",
+            "Effect Indicators": "Improved efficiency, scalability, and privacy protection"
+          },
+          {
+            "Technical Pain Point": "Slow processing in machine learning tasks",
+            "Solution": "Distribution of random samples across multiple GPUs for parallel processing",
+            "Effect Indicators": "Faster community detection and model training"
+          },
+          {
+            "Technical Pain Point": "Cluster identity leakage",
+            "Solution": "Privacy-preserving multiplication via OT",
+            "Effect Indicators": "Enhanced privacy and security in data processing"
+          }
+        ],
+        "Representative Case Description": [
+          {
+            "Patent ID": "CN114730389B",
+            "Description": "This patent addresses the issue of privacy leakage in unsupervised learning by introducing a system that uses N-out-of-1 Oblivious Transfer (OT) to compute secure distances between data points, thereby protecting privacy while improving efficiency and scalability."
+          },
+          {
+            "Patent ID": "CN110869943A",
+            "Description": "This patent tackles the problem of slow processing in machine learning by distributing random samples across multiple GPUs, enabling parallel processing and faster community detection, which ultimately speeds up the training of AI models."
+          },
+          {
+            "Patent ID": "CN116756602A",
+            "Description": "This patent focuses on preventing cluster identity leakage in unsupervised learning by employing privacy-preserving multiplication techniques via OT, ensuring that privacy is maintained while processing data from multiple entities."
+          }
+        ]
+      },
+      "company_name": "维萨国际服务协会"
+    }
+  ],
+  "tech_trend_analysis": {
+    "overall_trend": "The patent application trend analysis reveals a significant increase in patent applications globally, particularly from 2017 onwards. Chinese patent applications show a rapid growth trajectory, especially from 2017 to 2020, while US applications remain relatively stable with minor fluctuations. The global trend mirrors the growth in Chinese applications, indicating China's increasing influence in this technological field. The data suggests that the technology has entered a phase of rapid development and scaling, particularly in China.",
+    "period_info": [
+      {
+        "period": "Initial Development Period",
+        "start_year": "2007",
+        "end_year": "2013",
+        "description": "During this period, patent applications were minimal, with only a few applications recorded globally. Both China and the US had very low application numbers, indicating the early stages of technological exploration and development."
+      },
+      {
+        "period": "Growth Period",
+        "start_year": "2013",
+        "end_year": "2017",
+        "description": "This period marks the beginning of growth in patent applications, particularly in China. The number of applications started to increase, with China showing a more significant rise compared to the US. This suggests a shift towards more active research and development in this field."
+      },
+      {
+        "period": "Rapid Development Period",
+        "start_year": "2017",
+        "end_year": "2020",
+        "description": "This period is characterized by a sharp increase in patent applications, especially in China. Chinese applications surged, reaching a peak in 2020, while US applications also increased but at a slower rate. The global trend reflects the dominance of Chinese applications, indicating a phase of rapid technological advancement and scaling."
+      },
+      {
+        "period": "Stabilization Period",
+        "start_year": "2020",
+        "end_year": "2024",
+        "description": "After the peak in 2020, patent applications began to decline, suggesting a stabilization phase. Both Chinese and US applications decreased, with China still maintaining a higher number of applications compared to the US. This period indicates a maturing technology with reduced innovation activity."
+      }
+    ]
+  },
+  "company_tech": {
+    "谷歌有限责任公司": [
+      "Ignition System Technology",
+      "Manufacturing Process Technology",
+      "Inflation Method Technology",
+      "Component Structure Technology",
+      "Propellant Manufacturing Process Technology",
+      "Propellant Formulation Technology",
+      "Resistant Material Technology"
+    ],
+    "MICROSOFT TECHNOLOGY LICENSING, LLC": [
+      "Component Structure Technology"
+    ],
+    "国际商业机器公司": [
+      "Manufacturing Process Technology",
+      "Propellant Manufacturing Process Technology",
+      "Ignition System Technology"
+    ],
+    "ORACLE INTERNATIONAL CORPORATION": [
+      "Manufacturing Process Technology",
+      "Component Structure Technology"
+    ],
+    "维萨国际服务协会": [
+      "Inflation Method Technology",
+      "Ignition System Technology",
+      "Component Structure Technology"
+    ]
+  },
+  "search_result": [
+    "谷歌有限责任公司在技术布局与发展方面专注于多个领域。在点火系统技术方面，其研发了高效点火装置；在制造工艺技术上，采用先进自动化生产线；在膨胀方法技术中，创新了材料膨胀技术；在组件结构技术上，优化了结构设计；在推进剂制造工艺上，提升了生产效率；在推进剂配方技术中，开发了高性能配方；在耐材技术领域，研发了耐高温、耐腐蚀材料。这些技术共同推动了公司产品的高性能与可靠性。",
+    "Microsoft Technology Licensing, LLC, a subsidiary of Microsoft, specializes in technology licensing and development. Their focus on Component Structure Technology involves creating modular, scalable software components that enhance interoperability and efficiency. By leveraging advanced programming languages and frameworks, they develop robust, reusable components that streamline software development processes, fostering innovation and compatibility across diverse platforms. Their work in this area supports Microsoft's commitment to open-source technologies and collaborative development.",
+    "International Business Machines Corporation (IBM) has a robust technology layout focusing on Manufacturing Process Technology, Propellant Manufacturing Process Technology, and Ignition System Technology. In Manufacturing, IBM leverages advanced semiconductor and nanotechnology for high-performance chips. For Propellant, it innovates in aerospace fuel production, enhancing efficiency and safety. In Ignition Systems, IBM's AI-driven solutions optimize performance and reduce emissions, making it a leader in automotive and aerospace industries.",
+    "Oracle International Corporation, a leading tech firm, excels in Manufacturing Process Technology with advanced semiconductor manufacturing techniques for high-performance chips. In Component Structure Technology, Oracle leverages innovative designs for robust server and storage systems, ensuring efficient data processing and storage solutions. Their focus on cutting-edge technologies positions them at the forefront of the tech industry.",
+    "维萨国际服务协会致力于技术创新，其技术布局涵盖多个领域。在通货膨胀方法技术方面，协会研发了高效节能的解决方案，优化了能源分配。在点火系统技术领域，其创新点火技术提高了燃烧效率，降低了排放。在组件结构技术方面，维萨通过轻量化设计，提升了产品性能和耐用性。这些技术进步显著推动了协会在相关领域的领先地位。"
+  ],
+  "visualization": {
+    "bar_dir": "./patent_entity_count_bar.png",
+    "heatmap_dir": "./patent_entity_technology_heatmap.png"
+  },
+  "json_data": {
+    "company_tech_json": {
+      "metadata": {
+        "data_type": "Company Patent Technology Distribution",
+        "generated_at": "2025-04-29",
+        "companies_count": 5,
+        "technology_categories_count": 8
+      },
+      "companies": [
+        {
+          "company_name": "谷歌有限责任公司",
+          "patent_counts": {
+            "by_category": {
+              "High Burn Rate, High Heat, Low Hygroscopic Gas Generating Agent Formulation Technology-Propellant Formulation Technology": 1,
+              "High Burn Rate, High Heat, Low Hygroscopic Gas Generating Agent Formulation Technology-Propellant Manufacturing Process Technology": 1,
+              "High-Pressure Gas Sealing and Storage Technology": 2,
+              "High-Pressure Gas Sealing and Storage Technology-Manufacturing Process Technology": 1,
+              "High-Pressure Gas Sealing and Storage Technology-Resistant Material Technology": 1,
+              "Overall Structural Design Technology of Gas Generators-Component Structure Technology": 1,
+              "Overall Structural Design Technology of Gas Generators-Ignition System Technology": 1,
+              "Overall Structural Design Technology of Gas Generators-Inflation Method Technology": 1
+            }
+          }
+        },
+        {
+          "company_name": "MICROSOFT TECHNOLOGY LICENSING, LLC",
+          "patent_counts": {
+            "by_category": {
+              "High Burn Rate, High Heat, Low Hygroscopic Gas Generating Agent Formulation Technology-Propellant Formulation Technology": 0,
+              "High Burn Rate, High Heat, Low Hygroscopic Gas Generating Agent Formulation Technology-Propellant Manufacturing Process Technology": 0,
+              "High-Pressure Gas Sealing and Storage Technology": 0,
+              "High-Pressure Gas Sealing and Storage Technology-Manufacturing Process Technology": 0,
+              "High-Pressure Gas Sealing and Storage Technology-Resistant Material Technology": 0,
+              "Overall Structural Design Technology of Gas Generators-Component Structure Technology": 6,
+              "Overall Structural Design Technology of Gas Generators-Ignition System Technology": 0,
+              "Overall Structural Design Technology of Gas Generators-Inflation Method Technology": 0
+            }
+          }
+        },
+        {
+          "company_name": "国际商业机器公司",
+          "patent_counts": {
+            "by_category": {
+              "High Burn Rate, High Heat, Low Hygroscopic Gas Generating Agent Formulation Technology-Propellant Formulation Technology": 0,
+              "High Burn Rate, High Heat, Low Hygroscopic Gas Generating Agent Formulation Technology-Propellant Manufacturing Process Technology": 1,
+              "High-Pressure Gas Sealing and Storage Technology": 2,
+              "High-Pressure Gas Sealing and Storage Technology-Manufacturing Process Technology": 2,
+              "High-Pressure Gas Sealing and Storage Technology-Resistant Material Technology": 0,
+              "Overall Structural Design Technology of Gas Generators-Component Structure Technology": 0,
+              "Overall Structural Design Technology of Gas Generators-Ignition System Technology": 1,
+              "Overall Structural Design Technology of Gas Generators-Inflation Method Technology": 0
+            }
+          }
+        },
+        {
+          "company_name": "ORACLE INTERNATIONAL CORPORATION",
+          "patent_counts": {
+            "by_category": {
+              "High Burn Rate, High Heat, Low Hygroscopic Gas Generating Agent Formulation Technology-Propellant Formulation Technology": 0,
+              "High Burn Rate, High Heat, Low Hygroscopic Gas Generating Agent Formulation Technology-Propellant Manufacturing Process Technology": 0,
+              "High-Pressure Gas Sealing and Storage Technology": 1,
+              "High-Pressure Gas Sealing and Storage Technology-Manufacturing Process Technology": 1,
+              "High-Pressure Gas Sealing and Storage Technology-Resistant Material Technology": 0,
+              "Overall Structural Design Technology of Gas Generators-Component Structure Technology": 2,
+              "Overall Structural Design Technology of Gas Generators-Ignition System Technology": 0,
+              "Overall Structural Design Technology of Gas Generators-Inflation Method Technology": 0
+            }
+          }
+        },
+        {
+          "company_name": "维萨国际服务协会",
+          "patent_counts": {
+            "by_category": {
+              "High Burn Rate, High Heat, Low Hygroscopic Gas Generating Agent Formulation Technology-Propellant Formulation Technology": 0,
+              "High Burn Rate, High Heat, Low Hygroscopic Gas Generating Agent Formulation Technology-Propellant Manufacturing Process Technology": 0,
+              "High-Pressure Gas Sealing and Storage Technology": 0,
+              "High-Pressure Gas Sealing and Storage Technology-Manufacturing Process Technology": 0,
+              "High-Pressure Gas Sealing and Storage Technology-Resistant Material Technology": 0,
+              "Overall Structural Design Technology of Gas Generators-Component Structure Technology": 1,
+              "Overall Structural Design Technology of Gas Generators-Ignition System Technology": 1,
+              "Overall Structural Design Technology of Gas Generators-Inflation Method Technology": 1
+            }
+          }
+        }
+      ]
+    },
+    "applicant_rank_json": "[\n  {\n    \"current_assignee\": \"谷歌有限责任公司\",\n    \"patent_office_and_count\": \"CN(7)\",\n    \"total_patent_count\": 7\n  },\n  {\n    \"current_assignee\": \"MICROSOFT TECHNOLOGY LICENSING, LLC\",\n    \"patent_office_and_count\": \"US(5), WO(1)\",\n    \"total_patent_count\": 6\n  },\n  {\n    \"current_assignee\": \"国际商业机器公司\",\n    \"patent_office_and_count\": \"CN(4)\",\n    \"total_patent_count\": 4\n  },\n  {\n    \"current_assignee\": \"ORACLE INTERNATIONAL CORPORATION\",\n    \"patent_office_and_count\": \"US(3)\",\n    \"total_patent_count\": 3\n  },\n  {\n    \"current_assignee\": \"维萨国际服务协会\",\n    \"patent_office_and_count\": \"CN(3)\",\n    \"total_patent_count\": 3\n  }\n]"
+  },
+  "patent_miner": [
+    "谷歌有限责任公司: {'Core Technology Directions': ['Machine Learning Model Training', 'Data Augmentation Strategies', 'Active Learning Techniques', 'Reinforcement Learning Applications', 'Unsupervised Federated Learning'], 'Technical Problem Solving Analysis': {'CN113826125A': {'Technical Pain Points': 'Training machine learning models with limited labeled data', 'Proposed Solutions': 'Using unsupervised data augmentation to generate enhanced training data', 'Effect Indicators': 'Improved model performance on perception tasks'}, 'CN111758105A': {'Technical Pain Points': 'Determining effective data augmentation strategies for model training', 'Proposed Solutions': 'Learning data augmentation strategies through iterative quality assessment', 'Effect Indicators': 'Enhanced model accuracy through optimized data augmentation'}, 'CN114600117A': {'Technical Pain Points': 'Efficiently labeling large datasets for model training', 'Proposed Solutions': 'Active learning through sample consistency evaluation', 'Effect Indicators': 'Reduced labeling effort with maintained model performance'}, 'CN118607671A': {'Technical Pain Points': 'Generating quality feedback for reinforcement learning models', 'Proposed Solutions': 'Using information retrieval feedback to train reward models', 'Effect Indicators': 'Improved model decision-making through better feedback signals'}, 'CN116134453A': {'Technical Pain Points': 'Training machine learning models in a federated setting without labeled data', 'Proposed Solutions': 'Unsupervised federated learning of global model layers', 'Effect Indicators': 'Enhanced model performance in distributed environments'}}, 'Representative Case Description': [{'Patent ID': 'CN113826125A', 'Description': 'This patent addresses the challenge of training machine learning models with limited labeled data by using unsupervised data augmentation. The method generates enhanced training data, which improves model performance on perception tasks such as vision and speech.'}, {'Patent ID': 'CN111758105A', 'Description': 'This patent focuses on learning effective data augmentation strategies for model training. By iteratively assessing the quality of data augmentation strategies, the method enhances model accuracy through optimized data augmentation.'}, {'Patent ID': 'CN114600117A', 'Description': 'This patent introduces an active learning technique that reduces the effort required to label large datasets. By evaluating sample consistency, the method efficiently selects samples for labeling, maintaining model performance with less labeled data.'}, {'Patent ID': 'CN118607671A', 'Description': 'This patent leverages information retrieval feedback to improve reinforcement learning models. By training a reward model with reference data, the method generates better feedback signals, enhancing model decision-making.'}, {'Patent ID': 'CN116134453A', 'Description': 'This patent addresses the challenge of training machine learning models in a federated setting without labeled data. Through unsupervised federated learning, the method enhances model performance in distributed environments.'}]}",
+    "MICROSOFT TECHNOLOGY LICENSING, LLC: {'Core Technology Directions': ['Adversarial Pretraining of Machine Learning Models', 'Generalized Reinforcement Learning Agents', 'Training Reinforcement Machine Learning Systems with Sub-Goal Based Shaped Reward Functions'], 'Technical Problem Solving Analysis': {'Technical Pain Points': ['Improving the robustness and generalization of machine learning models', 'Enhancing the efficiency and effectiveness of reinforcement learning processes', 'Optimizing the training of reinforcement learning systems through structured sub-goals'], 'Proposed Solutions': ['Adversarial pretraining with noise addition and self-supervised learning (US11803758B2, US20210326751A1, US20240013055A1)', 'Selective regularization in reinforcement learning policies (US11526812B2)', 'Sub-goal based shaped reward functions for training reinforcement learning systems (WO2021221801A1, US20210334696A1)'], 'Effect Indicators': ['Increased model robustness and generalization capabilities', 'Improved policy optimization and data collection efficiency', 'Enhanced training accuracy and model configuration adjustments']}, 'Representative Case Description': [{'Patent ID': 'US11803758B2', 'Description': 'This patent introduces a method for adversarial pretraining of machine learning models by adding noise to representations and using self-supervised learning, enhancing model robustness.'}, {'Patent ID': 'US11526812B2', 'Description': 'This patent describes a generalized reinforcement learning agent with selective regularization, improving the efficiency of reinforcement learning processes.'}, {'Patent ID': 'WO2021221801A1', 'Description': 'This patent outlines a method for training reinforcement learning systems using sub-goal based shaped reward functions, optimizing training through structured sub-goals.'}]}",
+    "国际商业机器公司: {'Core Technology Directions': ['Fairness Improvement in Supervised Machine Learning Models', 'Hierarchical Random Anonymization of Data', 'Automatic Interpretation of Reinforcement Learning Actions'], 'Technical Problem Solving Analysis': {'CN113692594A': {'Technical Pain Points': 'Improving fairness in supervised machine learning models', 'Proposed Solutions': 'Linking supervised machine learning models to reinforcement learning meta-models and iteratively adjusting hyperparameters and model parameters', 'Effect Indicators': 'Improved fairness values in supervised machine learning models'}, 'CN112005255B': {'Technical Pain Points': 'Data anonymization in machine learning processes', 'Proposed Solutions': 'Using machine learning components to generate similar datasets and evaluating confidence scores for specific features', 'Effect Indicators': 'Enhanced data anonymization and confidence in anonymized data'}, 'CN112005255A': {'Technical Pain Points': 'Data anonymization in machine learning processes', 'Proposed Solutions': 'Using machine learning components to generate similar datasets and evaluating confidence scores for specific features', 'Effect Indicators': 'Enhanced data anonymization and confidence in anonymized data'}, 'CN112488307A': {'Technical Pain Points': 'Interpretation of actions in reinforcement learning models', 'Proposed Solutions': 'Using occupancy measures to automatically identify features driving reinforcement learning models to recommend actions', 'Effect Indicators': 'Improved interpretability of reinforcement learning actions'}}, 'Representative Case Description': [{'Patent ID': 'CN113692594A', 'Description': 'This patent addresses the challenge of improving fairness in supervised machine learning models by linking them to reinforcement learning meta-models and iteratively adjusting hyperparameters and model parameters. The result is an improved fairness value in the supervised machine learning model.'}, {'Patent ID': 'CN112005255B', 'Description': 'This patent focuses on enhancing data anonymization in machine learning processes by generating similar datasets and evaluating confidence scores for specific features. The outcome is better anonymization and increased confidence in the anonymized data.'}, {'Patent ID': 'CN112488307A', 'Description': \"This patent tackles the issue of interpreting actions in reinforcement learning models by using occupancy measures to automatically identify features that drive the model to recommend actions. This leads to improved interpretability of the model's actions.\"}]}",
+    "ORACLE INTERNATIONAL CORPORATION: {'Core Technology Directions': ['Intelligent Assistant Systems for Machine Learning', 'Natural Language Processing for Machine Learning Solutions', 'Sparse Ensembling of Unsupervised Models'], 'Technical Problem Solving Analysis': {'Technical Pain Points': ['Lack of expertise in machine learning and software programming among users', 'Complexity in generating and optimizing machine learning models', 'Inefficiency in selecting optimal ensembles of unsupervised models'], 'Proposed Solutions': ['Use of chatbots to translate natural language inputs into structural representations of machine learning solutions', 'Automated generation of machine learning systems to assist non-expert users', 'Implementation of gating networks to select optimal ensembles of unsupervised models'], 'Effect Indicators': ['Increased accessibility of machine learning for non-expert users', 'Reduced complexity in developing and training machine learning models', 'Improved efficiency in model selection and optimization']}, 'Representative Case Description': [{'Patent ID': 'US20230237348A1', 'Description': 'This patent introduces a chatbot that enables users to generate machine learning systems through natural language interactions, making AI accessible to non-experts.'}, {'Patent ID': 'US12020131B2', 'Description': 'This patent addresses the inefficiency in model selection by proposing a sparse ensembling technique that uses a gating network to choose an optimal ensemble of unsupervised models.'}, {'Patent ID': 'US11847578B2', 'Description': 'Similar to US20230237348A1, this patent also focuses on a chatbot that assists users in developing machine learning models, emphasizing the use of ontologies to translate natural language inputs.'}]}",
+    "维萨国际服务协会: {'Core Technology Directions': ['Privacy Protection in Unsupervised Learning', 'GPU-Accelerated Machine Learning', 'Secure Distance Computation'], 'Technical Problem Solving Analysis': [{'Technical Pain Point': 'Privacy leakage in unsupervised learning', 'Solution': 'Use of N-out-of-1 Oblivious Transfer (OT) for secure distance computation', 'Effect Indicators': 'Improved efficiency, scalability, and privacy protection'}, {'Technical Pain Point': 'Slow processing in machine learning tasks', 'Solution': 'Distribution of random samples across multiple GPUs for parallel processing', 'Effect Indicators': 'Faster community detection and model training'}, {'Technical Pain Point': 'Cluster identity leakage', 'Solution': 'Privacy-preserving multiplication via OT', 'Effect Indicators': 'Enhanced privacy and security in data processing'}], 'Representative Case Description': [{'Patent ID': 'CN114730389B', 'Description': 'This patent addresses the issue of privacy leakage in unsupervised learning by introducing a system that uses N-out-of-1 Oblivious Transfer (OT) to compute secure distances between data points, thereby protecting privacy while improving efficiency and scalability.'}, {'Patent ID': 'CN110869943A', 'Description': 'This patent tackles the problem of slow processing in machine learning by distributing random samples across multiple GPUs, enabling parallel processing and faster community detection, which ultimately speeds up the training of AI models.'}, {'Patent ID': 'CN116756602A', 'Description': 'This patent focuses on preventing cluster identity leakage in unsupervised learning by employing privacy-preserving multiplication techniques via OT, ensuring that privacy is maintained while processing data from multiple entities.'}]}"
+  ],
+  "company_info": [
+    "谷歌有限责任公司在技术布局与发展方面专注于多个领域。在点火系统技术方面，其研发了高效点火装置；在制造工艺技术上，采用先进自动化生产线；在膨胀方法技术中，创新了材料膨胀技术；在组件结构技术上，优化了结构设计；在推进剂制造工艺上，提升了生产效率；在推进剂配方技术中，开发了高性能配方；在耐材技术领域，研发了耐高温、耐腐蚀材料。这些技术共同推动了公司产品的高性能与可靠性。",
+    "Microsoft Technology Licensing, LLC, a subsidiary of Microsoft, specializes in technology licensing and development. Their focus on Component Structure Technology involves creating modular, scalable software components that enhance interoperability and efficiency. By leveraging advanced programming languages and frameworks, they develop robust, reusable components that streamline software development processes, fostering innovation and compatibility across diverse platforms. Their work in this area supports Microsoft's commitment to open-source technologies and collaborative development.",
+    "International Business Machines Corporation (IBM) has a robust technology layout focusing on Manufacturing Process Technology, Propellant Manufacturing Process Technology, and Ignition System Technology. In Manufacturing, IBM leverages advanced semiconductor and nanotechnology for high-performance chips. For Propellant, it innovates in aerospace fuel production, enhancing efficiency and safety. In Ignition Systems, IBM's AI-driven solutions optimize performance and reduce emissions, making it a leader in automotive and aerospace industries.",
+    "Oracle International Corporation, a leading tech firm, excels in Manufacturing Process Technology with advanced semiconductor manufacturing techniques for high-performance chips. In Component Structure Technology, Oracle leverages innovative designs for robust server and storage systems, ensuring efficient data processing and storage solutions. Their focus on cutting-edge technologies positions them at the forefront of the tech industry.",
+    "维萨国际服务协会致力于技术创新，其技术布局涵盖多个领域。在通货膨胀方法技术方面，协会研发了高效节能的解决方案，优化了能源分配。在点火系统技术领域，其创新点火技术提高了燃烧效率，降低了排放。在组件结构技术方面，维萨通过轻量化设计，提升了产品性能和耐用性。这些技术进步显著推动了协会在相关领域的领先地位。"
+  ],
+  "report": {
+    "trand_part": "## (1) Patent Application Trend Analysis\n![Trend Chart](./trend_chart.png \"Patent Application Trend Chart\")\n\nThe patent application trend analysis reveals a significant increase in patent applications globally, particularly from 2017 onwards. Chinese patent applications show a rapid growth trajectory, especially from 2017 to 2020, while US applications remain relatively stable with minor fluctuations. The global trend mirrors the growth in Chinese applications, indicating China's increasing influence in this technological field. The data suggests that the technology has entered a phase of rapid development and scaling, particularly in China.\n### (1)Initial Development Period (2007-2013)\n\nDuring the initial development period, patent applications in the field of machine learning and data processing were minimal globally, with only a few applications recorded. Both China and the US had very low application numbers, indicating the early stages of technological exploration and development. The US had one application in 2013, while China had one application in 2007 and another in 2013. This suggests that both countries were beginning to explore machine learning technologies, but the field was still in its infancy with limited innovation and application.\n\nThe top applicants during this period included EMC IP HOLDING COMPANY LLC, Fuji Xerox Co., Ltd., and Internal Sales Company. EMC IP HOLDING COMPANY LLC from the US focused on developing a general framework for cross-validation of machine learning algorithms using SQL on distributed systems, as seen in patent US9235813B1. This innovation aimed to improve the efficiency and accuracy of machine learning models by leveraging distributed database systems. Fuji Xerox Co., Ltd. from China proposed a data processing device and method in patent CN101206727B, which utilized unsupervised and supervised learning techniques to classify and map data sets, demonstrating an early exploration of machine learning applications in data processing. Internal Sales Company from China introduced an instance-weighted learning (IWL) machine learning model in patent CN104956359A, which emphasized the importance of quality values in training classifiers, showcasing a focus on enhancing the learning process through weighted instances. These innovations highlight the initial steps in machine learning technology development, with a focus on improving model accuracy, data processing efficiency, and learning methodologies.\n\n### (2)Growth Period (2013-2017)\n\nDuring the growth period, China began to show a significant increase in patent applications, indicating a shift towards more active research and development in the field of machine learning. The US also saw a steady number of applications, but the growth rate was not as pronounced as in China. This period marks the beginning of China's emergence as a key player in machine learning technology, with domestic institutions and companies driving innovation and development.\n\nThe top five applicants during this period demonstrate diverse technical routes in machine learning. Central South University focused on incremental machine learning methods based on transparent computing, emphasizing efficiency and accuracy through data splitting and feedback learning. Yuanhui Technology developed methods for training machine learning models across multiple tasks, ensuring performance across different tasks while maintaining efficiency. Tsinghua University introduced an automatic selection method for machine learning algorithms, leveraging historical data and preset coefficients to optimize algorithm performance. Xiamen Kuai Shang Tong Technology proposed an active learning method that combines supervised and unsupervised learning, reducing manual annotation workload while maintaining learning effectiveness. EMC IP Holding Company LLC in the US focused on a general framework for cross-validation of machine learning algorithms using SQL on distributed systems, emphasizing scalability and error minimization. Chinese institutions, particularly Central South University and Tsinghua University, highlighted innovation in efficiency and automation, while EMC focused on distributed system integration and cross-validation.\n\n### (3)Rapid Development Period (2017-2020)\n\nDuring the Rapid Development Period, China dominated the patent application landscape, with a significant surge in applications peaking in 2020. This period marked a phase of rapid technological advancement and scaling in China, particularly in the field of machine learning and artificial intelligence. In contrast, the United States also saw an increase in patent applications, but at a slower rate, indicating a more gradual development pace. The global trend reflects China's growing influence in technological innovation, with Chinese applications far outnumbering those from other countries.\n\nThe top five applicants during this period—谷歌有限责任公司, MICROSOFT TECHNOLOGY LICENSING, LLC, 国际商业机器公司, 维萨国际服务协会, and HRL LABORATORIES, LLC—demonstrated diverse technical routes in machine learning and AI. 谷歌有限责任公司 focused on unsupervised data augmentation and federated learning, emphasizing the enhancement of model training through data manipulation and distributed learning. MICROSOFT TECHNOLOGY LICENSING, LLC explored adversarial pretraining and reinforcement learning, aiming to improve model robustness and adaptability. 国际商业机器公司 concentrated on fairness improvement in supervised learning and data anonymization, addressing ethical and privacy concerns in AI. 维萨国际服务协会 developed privacy-preserving unsupervised learning systems, highlighting the importance of data security in collaborative learning environments. HRL LABORATORIES, LLC investigated methods for understanding machine-learning decisions based on camera data, focusing on interpretability and transparency in AI models. Chinese research institutions, particularly 谷歌有限责任公司 and 国际商业机器公司, showcased innovation in integrating advanced data processing techniques with ethical considerations, setting a benchmark for responsible AI development.\n\n### (4)Stabilization Period (2020-2024)\n\nDuring the stabilization period, both Chinese and US patent applications in the field of machine learning technologies experienced a decline, indicating a maturing phase of the technology. China maintained a higher number of applications compared to the US, reflecting its continued focus on innovation in this area. The global trend also showed a reduction in patent filings, suggesting a saturation point in the development of machine learning technologies. This period highlights a shift from rapid innovation to refinement and optimization of existing technologies.\n\nThe top five applicants during this period—谷歌有限责任公司, MICROSOFT TECHNOLOGY LICENSING, LLC, ORACLE INTERNATIONAL CORPORATION, 维萨国际服务协会, and 华为技术有限公司—demonstrated distinct technical routes in machine learning. 谷歌有限责任公司 focused on unsupervised and federated learning, emphasizing data augmentation and model training efficiency. Their patents, such as CN113826125A, highlighted methods for enhancing model performance through augmented training data. MICROSOFT TECHNOLOGY LICENSING, LLC concentrated on adversarial pretraining and reinforcement learning, as seen in US11803758B2, which introduced noise-adjusted representations to improve model robustness. ORACLE INTERNATIONAL CORPORATION explored sparse ensembling and chatbot-driven ML solutions, with US12020131B2 proposing a gating network to optimize model ensembles. 维萨国际服务协会 prioritized privacy-preserving unsupervised learning, as evidenced by CN114730389B, which introduced secure distance computation for joint learning. 华为技术有限公司 focused on semi-supervised and reinforcement learning, with CN112183577A proposing a one-bit labeling method to reduce annotation pressure. These diverse approaches reflect the applicants' unique contributions to advancing machine learning technologies during the stabilization period.\n\n",
+    "tech_part1": "## 2. Patent Applicant Analysis Report\n\n### (1) Patent Applicant Ranking Analysis\n\nThe patent applicant ranking analysis reveals the top five companies based on their total patent counts. **Google LLC (谷歌有限责任公司)** leads with a total of 7 patents, all filed in China (CN). **Microsoft Technology Licensing, LLC** follows closely with 6 patents, primarily filed in the United States (US) and one in the World Intellectual Property Organization (WO). **International Business Machines Corporation (国际商业机器公司)** ranks third with 4 patents, all filed in China (CN). **Oracle International Corporation** and **Visa International Service Association (维萨国际服务协会)** share the fourth position, each with 3 patents, filed in the US and China (CN), respectively. The data highlights Google's dominant presence in the Chinese market, while Microsoft maintains a strong foothold in the US and international patent offices.\n\n![Patent Applicant Ranking Bar Chart](./patent_entity_count_bar.png)  \n*Figure 1: Patent Applicant Ranking by Total Patent Count*\n\n### (2) Patent Applicant Technical Distribution\n\nThe technology distribution analysis provides insights into the patent portfolios of the top applicants across eight technology categories. **Google LLC** demonstrates a diversified portfolio, with patents spanning multiple categories, including High-Pressure Gas Sealing and Storage Technology (2 patents) and Overall Structural Design Technology of Gas Generators (3 patents). **Microsoft Technology Licensing, LLC** focuses exclusively on the Component Structure Technology subcategory, with all 6 patents concentrated in this area. **International Business Machines Corporation** shows a balanced distribution, with significant activity in High-Pressure Gas Sealing and Storage Technology (2 patents) and its Manufacturing Process Technology (2 patents). **Oracle International Corporation** and **Visa International Service Association** exhibit narrower focuses, with Oracle primarily active in Component Structure Technology (2 patents) and Visa in Overall Structural Design Technology (3 patents). The analysis underscores the varying strategic priorities of these companies, with Google and IBM leading in technological diversity, while Microsoft and Oracle concentrate on specific subcategories.\n\n![Patent Applicant Technology Distribution Heatmap](./patent_entity_technology_heatmap.png)  \n*Figure 2: Patent Applicant Technology Distribution Heatmap*",
+    "tech_part2": "### Patent Applicant Technical Layout Analysis\n\n#### Introduction\n**Google LLC** is a global technology leader renowned for its innovation in various domains, including machine learning, artificial intelligence, and data processing. The company’s strategic focus on advanced technologies has positioned it as a pioneer in developing cutting-edge solutions that enhance performance, efficiency, and reliability across its product portfolio. Google’s R&D philosophy emphasizes solving complex technical challenges through innovative approaches, as evidenced by its extensive patent portfolio.\n\n#### Part One: Technology Distribution and Focus\nGoogle’s patent distribution reveals a strong focus on **Machine Learning Model Training**, **Data Augmentation Strategies**, **Active Learning Techniques**, **Reinforcement Learning Applications**, and **Unsupervised Federated Learning**. The company’s patent activity is particularly concentrated in areas such as **High-Pressure Gas Sealing and Storage Technology** and **Overall Structural Design Technology of Gas Generators**, with notable investments in **Component Structure Technology** and **Ignition System Technology**. This aligns with Google’s broader mission to develop high-performance and reliable systems through advanced engineering and material innovations.\n\nThe data indicates that Google’s technology strategy is driven by the need to address challenges in **efficient data processing**, **model training with limited labeled data**, and **optimizing machine learning workflows**. These focus areas are critical for maintaining Google’s leadership in AI and machine learning, enabling the company to deliver scalable and robust solutions across its product ecosystem.\n\n#### Part Two: Innovation Focus and Key Achievements\nGoogle’s patents demonstrate a clear focus on solving specific technical problems in machine learning and AI. Below are some representative patents that highlight the company’s innovative solutions and their benefits:\n\n1. **Patent ID: CN113826125A**  \n   - **Problem:** Training machine learning models with limited labeled data.  \n   - **Solution:** Use of unsupervised data augmentation to generate enhanced training data.  \n   - **Benefit:** Improved model performance on perception tasks such as vision and speech.  \n\n2. **Patent ID: CN111758105A**  \n   - **Problem:** Determining effective data augmentation strategies for model training.  \n   - **Solution:** Learning data augmentation strategies through iterative quality assessment.  \n   - **Benefit:** Enhanced model accuracy through optimized data augmentation.  \n\n3. **Patent ID: CN114600117A**  \n   - **Problem:** Efficiently labeling large datasets for model training.  \n   - **Solution:** Active learning through sample consistency evaluation.  \n   - **Benefit:** Reduced labeling effort with maintained model performance.  \n\n4. **Patent ID: CN118607671A**  \n   - **Problem:** Generating quality feedback for reinforcement learning models.  \n   - **Solution:** Using information retrieval feedback to train reward models.  \n   - **Benefit:** Improved model decision-making through better feedback signals.  \n\n5. **Patent ID: CN116134453A**  \n   - **Problem:** Training machine learning models in a federated setting without labeled data.  \n   - **Solution:** Unsupervised federated learning of global model layers.  \n   - **Benefit:** Enhanced model performance in distributed environments.  \n\nThese patents underscore Google’s commitment to advancing machine learning technologies by addressing critical challenges in data efficiency, model robustness, and scalability. The innovative solutions proposed in these patents not only improve technical performance but also contribute to the broader adoption of AI technologies across industries.\n\n#### Conclusion\nGoogle LLC’s patent portfolio reflects its strategic focus on machine learning and AI, with a strong emphasis on solving complex technical problems through innovative approaches. The company’s investments in **data augmentation**, **active learning**, and **federated learning** demonstrate its commitment to enhancing model performance and efficiency. By leveraging its expertise in advanced technologies, Google continues to solidify its position as a leader in the AI and machine learning landscape, driving innovation and delivering high-impact solutions to its users.",
+    "full_report": "## (1) Patent Application Trend Analysis\n![Trend Chart](./trend_chart.png \"Patent Application Trend Chart\")\n\nThe patent application trend analysis reveals a significant increase in patent applications globally, particularly from 2017 onwards. Chinese patent applications show a rapid growth trajectory, especially from 2017 to 2020, while US applications remain relatively stable with minor fluctuations. The global trend mirrors the growth in Chinese applications, indicating China's increasing influence in this technological field. The data suggests that the technology has entered a phase of rapid development and scaling, particularly in China.\n### (1)Initial Development Period (2007-2013)\n\nDuring the initial development period, patent applications in the field of machine learning and data processing were minimal globally, with only a few applications recorded. Both China and the US had very low application numbers, indicating the early stages of technological exploration and development. The US had one application in 2013, while China had one application in 2007 and another in 2013. This suggests that both countries were beginning to explore machine learning technologies, but the field was still in its infancy with limited innovation and application.\n\nThe top applicants during this period included EMC IP HOLDING COMPANY LLC, Fuji Xerox Co., Ltd., and Internal Sales Company. EMC IP HOLDING COMPANY LLC from the US focused on developing a general framework for cross-validation of machine learning algorithms using SQL on distributed systems, as seen in patent US9235813B1. This innovation aimed to improve the efficiency and accuracy of machine learning models by leveraging distributed database systems. Fuji Xerox Co., Ltd. from China proposed a data processing device and method in patent CN101206727B, which utilized unsupervised and supervised learning techniques to classify and map data sets, demonstrating an early exploration of machine learning applications in data processing. Internal Sales Company from China introduced an instance-weighted learning (IWL) machine learning model in patent CN104956359A, which emphasized the importance of quality values in training classifiers, showcasing a focus on enhancing the learning process through weighted instances. These innovations highlight the initial steps in machine learning technology development, with a focus on improving model accuracy, data processing efficiency, and learning methodologies.\n\n### (2)Growth Period (2013-2017)\n\nDuring the growth period, China began to show a significant increase in patent applications, indicating a shift towards more active research and development in the field of machine learning. The US also saw a steady number of applications, but the growth rate was not as pronounced as in China. This period marks the beginning of China's emergence as a key player in machine learning technology, with domestic institutions and companies driving innovation and development.\n\nThe top five applicants during this period demonstrate diverse technical routes in machine learning. Central South University focused on incremental machine learning methods based on transparent computing, emphasizing efficiency and accuracy through data splitting and feedback learning. Yuanhui Technology developed methods for training machine learning models across multiple tasks, ensuring performance across different tasks while maintaining efficiency. Tsinghua University introduced an automatic selection method for machine learning algorithms, leveraging historical data and preset coefficients to optimize algorithm performance. Xiamen Kuai Shang Tong Technology proposed an active learning method that combines supervised and unsupervised learning, reducing manual annotation workload while maintaining learning effectiveness. EMC IP Holding Company LLC in the US focused on a general framework for cross-validation of machine learning algorithms using SQL on distributed systems, emphasizing scalability and error minimization. Chinese institutions, particularly Central South University and Tsinghua University, highlighted innovation in efficiency and automation, while EMC focused on distributed system integration and cross-validation.\n\n### (3)Rapid Development Period (2017-2020)\n\nDuring the Rapid Development Period, China dominated the patent application landscape, with a significant surge in applications peaking in 2020. This period marked a phase of rapid technological advancement and scaling in China, particularly in the field of machine learning and artificial intelligence. In contrast, the United States also saw an increase in patent applications, but at a slower rate, indicating a more gradual development pace. The global trend reflects China's growing influence in technological innovation, with Chinese applications far outnumbering those from other countries.\n\nThe top five applicants during this period—谷歌有限责任公司, MICROSOFT TECHNOLOGY LICENSING, LLC, 国际商业机器公司, 维萨国际服务协会, and HRL LABORATORIES, LLC—demonstrated diverse technical routes in machine learning and AI. 谷歌有限责任公司 focused on unsupervised data augmentation and federated learning, emphasizing the enhancement of model training through data manipulation and distributed learning. MICROSOFT TECHNOLOGY LICENSING, LLC explored adversarial pretraining and reinforcement learning, aiming to improve model robustness and adaptability. 国际商业机器公司 concentrated on fairness improvement in supervised learning and data anonymization, addressing ethical and privacy concerns in AI. 维萨国际服务协会 developed privacy-preserving unsupervised learning systems, highlighting the importance of data security in collaborative learning environments. HRL LABORATORIES, LLC investigated methods for understanding machine-learning decisions based on camera data, focusing on interpretability and transparency in AI models. Chinese research institutions, particularly 谷歌有限责任公司 and 国际商业机器公司, showcased innovation in integrating advanced data processing techniques with ethical considerations, setting a benchmark for responsible AI development.\n\n### (4)Stabilization Period (2020-2024)\n\nDuring the stabilization period, both Chinese and US patent applications in the field of machine learning technologies experienced a decline, indicating a maturing phase of the technology. China maintained a higher number of applications compared to the US, reflecting its continued focus on innovation in this area. The global trend also showed a reduction in patent filings, suggesting a saturation point in the development of machine learning technologies. This period highlights a shift from rapid innovation to refinement and optimization of existing technologies.\n\nThe top five applicants during this period—谷歌有限责任公司, MICROSOFT TECHNOLOGY LICENSING, LLC, ORACLE INTERNATIONAL CORPORATION, 维萨国际服务协会, and 华为技术有限公司—demonstrated distinct technical routes in machine learning. 谷歌有限责任公司 focused on unsupervised and federated learning, emphasizing data augmentation and model training efficiency. Their patents, such as CN113826125A, highlighted methods for enhancing model performance through augmented training data. MICROSOFT TECHNOLOGY LICENSING, LLC concentrated on adversarial pretraining and reinforcement learning, as seen in US11803758B2, which introduced noise-adjusted representations to improve model robustness. ORACLE INTERNATIONAL CORPORATION explored sparse ensembling and chatbot-driven ML solutions, with US12020131B2 proposing a gating network to optimize model ensembles. 维萨国际服务协会 prioritized privacy-preserving unsupervised learning, as evidenced by CN114730389B, which introduced secure distance computation for joint learning. 华为技术有限公司 focused on semi-supervised and reinforcement learning, with CN112183577A proposing a one-bit labeling method to reduce annotation pressure. These diverse approaches reflect the applicants' unique contributions to advancing machine learning technologies during the stabilization period.\n\n\n\n## 2. Patent Applicant Analysis Report\n\n### (1) Patent Applicant Ranking Analysis\n\nThe patent applicant ranking analysis reveals the top five companies based on their total patent counts. **Google LLC (谷歌有限责任公司)** leads with a total of 7 patents, all filed in China (CN). **Microsoft Technology Licensing, LLC** follows closely with 6 patents, primarily filed in the United States (US) and one in the World Intellectual Property Organization (WO). **International Business Machines Corporation (国际商业机器公司)** ranks third with 4 patents, all filed in China (CN). **Oracle International Corporation** and **Visa International Service Association (维萨国际服务协会)** share the fourth position, each with 3 patents, filed in the US and China (CN), respectively. The data highlights Google's dominant presence in the Chinese market, while Microsoft maintains a strong foothold in the US and international patent offices.\n\n![Patent Applicant Ranking Bar Chart](./patent_entity_count_bar.png)  \n*Figure 1: Patent Applicant Ranking by Total Patent Count*\n\n### (2) Patent Applicant Technical Distribution\n\nThe technology distribution analysis provides insights into the patent portfolios of the top applicants across eight technology categories. **Google LLC** demonstrates a diversified portfolio, with patents spanning multiple categories, including High-Pressure Gas Sealing and Storage Technology (2 patents) and Overall Structural Design Technology of Gas Generators (3 patents). **Microsoft Technology Licensing, LLC** focuses exclusively on the Component Structure Technology subcategory, with all 6 patents concentrated in this area. **International Business Machines Corporation** shows a balanced distribution, with significant activity in High-Pressure Gas Sealing and Storage Technology (2 patents) and its Manufacturing Process Technology (2 patents). **Oracle International Corporation** and **Visa International Service Association** exhibit narrower focuses, with Oracle primarily active in Component Structure Technology (2 patents) and Visa in Overall Structural Design Technology (3 patents). The analysis underscores the varying strategic priorities of these companies, with Google and IBM leading in technological diversity, while Microsoft and Oracle concentrate on specific subcategories.\n\n![Patent Applicant Technology Distribution Heatmap](./patent_entity_technology_heatmap.png)  \n*Figure 2: Patent Applicant Technology Distribution Heatmap*\n\n### Patent Applicant Technical Layout Analysis\n\n#### Introduction\n**Google LLC** is a global technology leader renowned for its innovation in various domains, including machine learning, artificial intelligence, and data processing. The company’s strategic focus on advanced technologies has positioned it as a pioneer in developing cutting-edge solutions that enhance performance, efficiency, and reliability across its product portfolio. Google’s R&D philosophy emphasizes solving complex technical challenges through innovative approaches, as evidenced by its extensive patent portfolio.\n\n#### Part One: Technology Distribution and Focus\nGoogle’s patent distribution reveals a strong focus on **Machine Learning Model Training**, **Data Augmentation Strategies**, **Active Learning Techniques**, **Reinforcement Learning Applications**, and **Unsupervised Federated Learning**. The company’s patent activity is particularly concentrated in areas such as **High-Pressure Gas Sealing and Storage Technology** and **Overall Structural Design Technology of Gas Generators**, with notable investments in **Component Structure Technology** and **Ignition System Technology**. This aligns with Google’s broader mission to develop high-performance and reliable systems through advanced engineering and material innovations.\n\nThe data indicates that Google’s technology strategy is driven by the need to address challenges in **efficient data processing**, **model training with limited labeled data**, and **optimizing machine learning workflows**. These focus areas are critical for maintaining Google’s leadership in AI and machine learning, enabling the company to deliver scalable and robust solutions across its product ecosystem.\n\n#### Part Two: Innovation Focus and Key Achievements\nGoogle’s patents demonstrate a clear focus on solving specific technical problems in machine learning and AI. Below are some representative patents that highlight the company’s innovative solutions and their benefits:\n\n1. **Patent ID: CN113826125A**  \n   - **Problem:** Training machine learning models with limited labeled data.  \n   - **Solution:** Use of unsupervised data augmentation to generate enhanced training data.  \n   - **Benefit:** Improved model performance on perception tasks such as vision and speech.  \n\n2. **Patent ID: CN111758105A**  \n   - **Problem:** Determining effective data augmentation strategies for model training.  \n   - **Solution:** Learning data augmentation strategies through iterative quality assessment.  \n   - **Benefit:** Enhanced model accuracy through optimized data augmentation.  \n\n3. **Patent ID: CN114600117A**  \n   - **Problem:** Efficiently labeling large datasets for model training.  \n   - **Solution:** Active learning through sample consistency evaluation.  \n   - **Benefit:** Reduced labeling effort with maintained model performance.  \n\n4. **Patent ID: CN118607671A**  \n   - **Problem:** Generating quality feedback for reinforcement learning models.  \n   - **Solution:** Using information retrieval feedback to train reward models.  \n   - **Benefit:** Improved model decision-making through better feedback signals.  \n\n5. **Patent ID: CN116134453A**  \n   - **Problem:** Training machine learning models in a federated setting without labeled data.  \n   - **Solution:** Unsupervised federated learning of global model layers.  \n   - **Benefit:** Enhanced model performance in distributed environments.  \n\nThese patents underscore Google’s commitment to advancing machine learning technologies by addressing critical challenges in data efficiency, model robustness, and scalability. The innovative solutions proposed in these patents not only improve technical performance but also contribute to the broader adoption of AI technologies across industries.\n\n#### Conclusion\nGoogle LLC’s patent portfolio reflects its strategic focus on machine learning and AI, with a strong emphasis on solving complex technical problems through innovative approaches. The company’s investments in **data augmentation**, **active learning**, and **federated learning** demonstrate its commitment to enhancing model performance and efficiency. By leveraging its expertise in advanced technologies, Google continues to solidify its position as a leader in the AI and machine learning landscape, driving innovation and delivering high-impact solutions to its users."
+  }
+}

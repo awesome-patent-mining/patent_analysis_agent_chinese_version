@@ -22,7 +22,7 @@ class Config:
     COS_THRESHOLD = 0.5
     RERANK_THRESHOLD = 19
     MAX_TOKENS = 4095
-    YAML_CONFIG = 'C:\\Users\\admin\\patent_analysis_agent\\patent_analysis_agent\\research_agent\\core\\llm_config.yaml'
+    YAML_CONFIG = r'E:\Users\SUYUNYI\ISTIC\ChenLiang\2025\patent_analysis_agent_english_version\research_agent\core\llm_config.yaml'
     #YAML_CONFIG = r"./research_agent/core/llm_config.yaml"            # yaml配置文件路径
     #YAML_CONFIG = r"/root/patent_analysis_agent/patent_analysis_agent/research_agent/core/llm_config.yaml"
     # 最大token数
@@ -32,20 +32,32 @@ class Config:
     THRESHOLD = 0.5        # 重排序相似度阈值,默认0.35
     BATCH_SIZE = 64         # 生成embedding时分批处理数量
 
-    # MYSQL_HOST = "59.110.150.237"
-    # MYSQL_PORT = 3306
-    # MYSQL_USERNAME = "liziyou"
-    # MYSQL_PASSWORD = "[(!Admin123)]"
-    # MYSQL_DB = "liziyou_db"
-    # MYSQL_CHARSET = "utf8mb4"
-    # IPC_DICT_PATH = r"C:\Users\admin\patent_survey_draft\ipc_dictionary_1.txt"
     MYSQL_HOST = "59.110.150.237"
     MYSQL_PORT = 3306
-    MYSQL_USERNAME = "chenliang"
+    MYSQL_USERNAME = "liziyou"
     MYSQL_PASSWORD = "[(!Admin123)]"
-    MYSQL_DB = "chenliang_db"
+    MYSQL_DB = "liziyou_db"
     MYSQL_CHARSET = "utf8mb4"
+
+
+    # MYSQL_HOST = "59.110.150.237"
+    # MYSQL_PORT = 3306
+    # MYSQL_USERNAME = "shulei"
+    # MYSQL_PASSWORD = "[(!Admin123)]"
+    # MYSQL_DB = "shulei_db"
+    # MYSQL_CHARSET = "utf8mb4"
+    # IPC_DICT_PATH = r"E:\Users\SUYUNYI\ISTIC\ChenLiang\2025\Microsoft_agent\patent_analysis_agent-main\research_agent\core\ipc_dictionary_1.txt"
     patent_table = "patent_info"
-    language = "中文"
+
+    language = "English"
+    #IPC_DICT_PATH = r"C:\Users\admin\patent_survey_draft\ipc_dictionary_1.txt"
+    # MYSQL_HOST = "59.110.150.237"
+    # MYSQL_PORT = 3306
+    # MYSQL_USERNAME = "chenliang"
+    # MYSQL_PASSWORD = "[(!Admin123)]"
+    # MYSQL_DB = "chenliang_db"
+    # MYSQL_CHARSET = "utf8mb4"
+    # patent_table = "patent_info"
+    #language = "中文"
     # Word模版文件路径
-    REFERENCE_DOC = r'D:\Users\SUYUNYI\ISTIC\ChenLiang\2025\Microsoft_agent\patent_analysis_agent-main\research_agent\core\reference.docx'
+    REFERENCE_DOC = r'E:\Users\SUYUNYI\ISTIC\ChenLiang\2025\Microsoft_agent\patent_analysis_agent-main\research_agent\core\reference.docx'

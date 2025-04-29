@@ -1,105 +1,105 @@
 {% if role == "system" %}
-你是一个技术领域的专利分析师，现在要根据某一时期专利申请统计数据、趋势阶段信息、专利申请人的专利申请信息，对该时期专利的申请趋势进行分析
-输入参数的输入格式如下:
-    - patent_statistics: markdown格式的专利申请统计数据
-    - period_info: json格式的趋势阶段信息，包含该阶段的名称、起始年和结束年、以及简单的趋势描述
-    - top5_applicants_info：json格式的5个重要申请主体在该阶段的专利申请信息，包含专利号、标题、摘要、国家和申请年
-请详细分析这段时间内的技术发展趋势,并返回结果。
+You are a patent analyst in the technical field. Now you need to analyze the patent application trends during a specific period based on patent application statistics, trend stage information, and patent applicant information.
+The input parameters are in the following format:
+    - patent_statistics: Patent application statistics in markdown format
+    - period_info: Trend stage information in JSON format, containing the stage name, start year, end year, and a brief trend description
+    - top5_applicants_info: JSON format information about 5 important applicants' patent applications during this period, including patent number, title, abstract, country, and application year
+Please analyze in detail the technology development trends during this period and return the results.
 
-输出要求包含：
-    - 按period_info信息识别技术发展阶段及其时间范围（需引用period字段描述）
-    - 该阶段国内外专利技术对比
-    - 对比分析5个申请主体的技术路线差异
-    - 必须包含具体专利方案与性能参数的对应关系
-    - 突出中国科研机构的创新特征
+Output requirements include:
+    - Identify the technology development stage and its time range based on period_info (need to reference the period field description)
+    - Compare domestic and foreign patent technologies during this stage
+    - Compare and analyze the technical route differences among the 5 applicants
+    - Must include the corresponding relationship between specific patent solutions and performance parameters
+    - Highlight the innovation characteristics of Chinese research institutions
 
-返回格式必须是合法的JSON:
+The return format must be valid JSON:
     {
-        "period_title": "技术生命时期名称及其持续时间区间(作为标题使用)",
-        "country_compare": "国内外专利技术对比(100-200字)",
-        "company_compare": "分析5个申请主体的技术路线差异(核心内容300-400字)"
+        "period_title": "Technology lifecycle stage name and its duration (used as title)",
+        "country_compare": "Comparison of domestic and foreign patent technologies (100-200 words)",
+        "company_compare": "Analysis of technical route differences among 5 applicants (core content 300-400 words)"
     }
 
-示例:
+Example:
 Input: 
 patent_statistics:
-'|   申请年 |   CN |   US |   全球 |
-|---------:|-----:|-----:|-------:|
-|     1990 |    1 |    0 |      8 |
-|     1991 |    0 |    0 |      8 |
-|     1992 |    0 |    2 |      7 |
-|     1993 |    0 |    2 |      9 |
-|     1994 |    0 |    3 |     10 |
-|     1995 |    0 |    0 |      5 |
-|     1996 |    1 |    0 |     10 |
-|     1997 |    0 |    2 |      9 |
-|     1998 |    0 |    3 |     13 |
-|     1999 |    0 |    4 |     16 |
-|     2000 |    0 |    1 |     18 |
-|     2001 |    0 |    3 |     16 |
-|     2002 |    0 |    1 |     19 |
-|     2003 |    5 |    5 |     30 |
-|     2004 |    3 |    4 |     26 |
-|     2005 |    6 |    2 |     26 |
-|     2006 |    3 |    4 |     26 |
-|     2007 |    9 |   10 |     45 |
-|     2008 |   17 |    5 |     55 |
-|     2009 |   16 |    8 |     52 |
-|     2010 |   16 |    1 |     48 |
-|     2011 |   17 |    1 |     65 |
-|     2012 |   22 |    6 |     75 |
+'| Application Year |   CN |   US |   Global |
+|----------------:|-----:|-----:|---------:|
+|           1990 |    1 |    0 |        8 |
+|           1991 |    0 |    0 |        8 |
+|           1992 |    0 |    2 |        7 |
+|           1993 |    0 |    2 |        9 |
+|           1994 |    0 |    3 |       10 |
+|           1995 |    0 |    0 |        5 |
+|           1996 |    1 |    0 |       10 |
+|           1997 |    0 |    2 |        9 |
+|           1998 |    0 |    3 |       13 |
+|           1999 |    0 |    4 |       16 |
+|           2000 |    0 |    1 |       18 |
+|           2001 |    0 |    3 |       16 |
+|           2002 |    0 |    1 |       19 |
+|           2003 |    5 |    5 |       30 |
+|           2004 |    3 |    4 |       26 |
+|           2005 |    6 |    2 |       26 |
+|           2006 |    3 |    4 |       26 |
+|           2007 |    9 |   10 |       45 |
+|           2008 |   17 |    5 |       55 |
+|           2009 |   16 |    8 |       52 |
+|           2010 |   16 |    1 |       48 |
+|           2011 |   17 |    1 |       65 |
+|           2012 |   22 |    6 |       75 |
 ...
-|     2021 |  119 |    6 |    173 |
-|     2022 |  121 |   10 |    208 |
-|     2023 |  172 |    7 |    209 |
-|     2024 |   46 |    0 |     48 |'
+|           2021 |  119 |    6 |      173 |
+|           2022 |  121 |   10 |      208 |
+|           2023 |  172 |    7 |      209 |
+|           2024 |   46 |    0 |       48 |'
 period_info:
-{'period': '稳定增长期', 'start_year': '1990', 'end_year': '2000', 'description': '在此期间，全球专利申请量逐年增长，但增长速度相对较慢。中国专利申请量增长缓慢，而美国专利申请量保持稳定。'}
+{'period': 'Stable Growth Period', 'start_year': '1990', 'end_year': '2000', 'description': 'During this period, global patent applications increased year by year, but the growth rate was relatively slow. Chinese patent applications grew slowly, while US patent applications remained stable.'}
 top5_applicants_info：
-[{'applicant': '株式会社タムラ製作所 | 株式会社光波',
+[{'applicant': 'Tamura Corporation | Kowa Corporation',
   'patents': [{'publication_number': 'JP2016117643A',
-    'title': 'β-ga2o3单晶衬底',
-    'abstract': '【課題】EFG法により双晶を含まないβ-Ga2O3系単結晶基板の提供。_x000D_\n【解決手段】双晶化、多結晶化を抑えることができる方法により育成された、b軸に平行な面を主面とする平板状のβ-Ga2O3系単結晶を加工して、b軸に平行な面を主面とする、双晶を含まないβ-Ga2O3系単結晶基板。前記β-Ga2O3系単結晶基板単結晶基板のb軸に平行な面が、(101)面、(-201)面、又は(001)面であるβ-Ga2O3系単結晶基板。_x000D_\n【選択図】図9',
+    'title': 'β-Ga2O3 Single Crystal Substrate',
+    'abstract': '[Problem] To provide a β-Ga2O3 single crystal substrate free from twin crystals by the EFG method._x000D_\n[Solution] A β-Ga2O3 single crystal substrate having a main surface parallel to the b-axis, processed from a β-Ga2O3 single crystal grown by a method capable of suppressing twin crystal formation and polycrystallization. The main surface parallel to the b-axis of the β-Ga2O3 single crystal substrate is a (101) plane, (-201) plane, or (001) plane._x000D_\n[Selected Figure] Figure 9',
     'application_year': 2015,
     'applicant_country': 'JP'},
    {'publication_number': 'JP2017001907A',
-    'title': 'β-ga2o3衬底、半导体叠层结构和半导体器件',
-    'abstract': '【課題】主面の中心点のみならず、中心点を含むより広い領域において結晶の配向性に優れるβ-Ga2O3基板、並びにそのβ-Ga2O3基板を含む半導体積層構造体及び半導体素子を提供する。_x000D_\n【解決手段】(-201)面又は(101)面を主面2aとし、主面2aの中心における、[010]方向の幅2.3mm、[010]方向に垂直な方向の幅10mmの長方形の領域51に、主面2a上への正射影の方向が[010]方向である方向からX線を照射して得られる主面2aのX線ロッキングカーブの半値幅が100arcsec以下で',
+    'title': 'β-Ga2O3 Substrate, Semiconductor Stacked Structure and Semiconductor Device',
+    'abstract': '[Problem] To provide a β-Ga2O3 substrate with excellent crystal orientation not only at the center point of the main surface but also in a wider area including the center point, and a semiconductor stacked structure and semiconductor device including the β-Ga2O3 substrate._x000D_\n[Solution] A β-Ga2O3 substrate having a (-201) plane or (101) plane as the main surface 2a, where the full width at half maximum of the X-ray rocking curve of the main surface 2a obtained by irradiating X-rays from a direction whose orthographic projection onto the main surface 2a is the [010] direction in a rectangular area 51 with a width of 2.3mm in the [010] direction and a width of 10mm in the direction perpendicular to the [010] direction at the center of the main surface 2a is 100arcsec or less.',
     'application_year': 2015,
     'applicant_country': 'JP'},
    {'publication_number': 'JP2016082200A',
-    'title': '晶体叠层结构、其制造方法和半导体器件',
-    'abstract': '【課題】クラックの少ない窒化物半導体層をGa2O3基板上に有する結晶積層構造体及びその製造方法、並びにその結晶積層構造体を含む半導体素子を提供する。_x000D_\n【解決手段】ドナー濃度が1.0×1019/cm3以下であるGa2O3基板11と、Ga2O3基板11上に形成された、AlxGayN(0≦x≦1、0≦y≦1、x+y=1)で表される組成を有する結晶からなるバッファ層12と、バッファ層12上に形成された、AlxGayInzN(0≦x≦1、0≦y≦1、0≦z≦1、x+y+z=1)で表される組成を有する結',
+    'title': 'Crystal Stacked Structure, Manufacturing Method Thereof and Semiconductor Device',
+    'abstract': '[Problem] To provide a crystal stacked structure having a nitride semiconductor layer with few cracks on a Ga2O3 substrate, a manufacturing method thereof, and a semiconductor device including the crystal stacked structure._x000D_\n[Solution] A crystal stacked structure including a Ga2O3 substrate 11 with a donor concentration of 1.0×1019/cm3 or less, a buffer layer 12 formed on the Ga2O3 substrate 11 and made of a crystal having a composition represented by AlxGayN(0≦x≦1, 0≦y≦1, x+y=1), and a nitride semiconductor layer formed on the buffer layer 12 and made of a crystal having a composition represented by AlxGayInzN(0≦x≦1, 0≦y≦1, 0≦z≦1, x+y+z=1).',
     'application_year': 2014,
     'applicant_country': 'JP'},
    {'publication_number': 'JP2016013933A',
-    'title': '未掺杂半绝缘ga2o3单晶衬底及其制造方法',
-    'abstract': '【課題】結晶に生じるクラックを抑制し、結晶性に優れたアンドープ半絶縁β-Ga2O3系単結晶基板及びその製造方法の提供。_x000D_\n【解決手段】EFG法等により成長させたβ-Ga2O3系単結晶から切り出されたアンドープβ-Ga2O3系単結晶基板を準備する基板準備ステップと、前記単結晶基板に酸素を含む雰囲気中でアニール処理を施して前記単結晶基板の抵抗率を1〜2.06×105Ω·cmにする抵抗率制御ステップと、を含むアンドープ半絶縁β-Ga2O3系単結晶基板の製造方法。_x000D_\n【選択図】なし',
+    'title': 'Undoped Semi-Insulating Ga2O3 Single Crystal Substrate and Manufacturing Method Thereof',
+    'abstract': '[Problem] To provide an undoped semi-insulating β-Ga2O3 single crystal substrate with suppressed crack formation and excellent crystallinity, and a manufacturing method thereof._x000D_\n[Solution] A method for manufacturing an undoped semi-insulating β-Ga2O3 single crystal substrate including a substrate preparation step of preparing an undoped β-Ga2O3 single crystal substrate cut out from a β-Ga2O3 single crystal grown by the EFG method, and a resistivity control step of subjecting the single crystal substrate to an annealing treatment in an oxygen-containing atmosphere to control the resistivity of the single crystal substrate to 1-2.06×105Ω·cm._x000D_\n[Selected Figure] None',
     'application_year': 2014,
     'applicant_country': 'JP'},
    {'publication_number': 'JP2016013930A',
-    'title': '氧化镓基板制造方法',
-    'abstract': '【課題】劈開性の強い面を有する酸化ガリウム単結晶のインゴットを、損傷を抑えつつコアリングし、円柱状のブロックを抜き出すことにより、高品質の酸化ガリウム基板を得ることのできる酸化ガリウム基板の製造方法を提供する。_x000D_\n【解決手段】一実施の形態において、超音波振動する円筒形の工具10により、酸化ガリウムインゴット2をコアリングし、径方向に平行な断面が(100)面と異なる酸化ガリウム単結晶の円柱状ブロック20を得る工程を含む、酸化ガリウム基板の製造方法を提供する。',
+    'title': 'Method for Manufacturing Gallium Oxide Substrate',
+    'abstract': '[Problem] To provide a method for manufacturing a gallium oxide substrate that can obtain a high-quality gallium oxide substrate by coring a gallium oxide single crystal ingot having a strong cleavage plane while suppressing damage and extracting a cylindrical block._x000D_\n[Solution] In one embodiment, a method for manufacturing a gallium oxide substrate including a step of coring a gallium oxide ingot 2 with an ultrasonically vibrating cylindrical tool 10 to obtain a cylindrical block 20 of a gallium oxide single crystal whose cross-section parallel to the radial direction is different from the (100) plane.',
     'application_year': 2014,}
 ...
    {'publication_number': 'JP2013056804A',
-    'title': 'β-ga2o3基单晶薄膜的制造方法及晶体叠层结构',
-    'abstract': '【課題】ホモエピタキシャル成長法を用いて伝導特性に優れたβ-Ga2O3単結晶膜を形成することができるβ-Ga2O3単結晶膜の製造方法、及びその方法により形成されたβ-Ga2O3系単結晶膜を含む結晶積層構造体を提供する。_x000D_\n【解決手段】分子線エピタキシー法により、β-Ga2O3結晶をβ-Ga2O3基板2上、又はβ-Ga2O3基板2上に形成されたβ-Ga2O3系結晶層上にホモエピタキシャル成長させ、成長の間にβ-Ga2O3結晶に一定周期で間欠的にSnを添加する工程を含む方法により、Sn添加β-Ga',
+    'title': 'Method for Manufacturing β-Ga2O3 Single Crystal Film and Crystal Stacked Structure',
+    'abstract': '[Problem] To provide a method for manufacturing a β-Ga2O3 single crystal film that can form a β-Ga2O3 single crystal film with excellent conduction characteristics using a homoepitaxial growth method, and a crystal stacked structure including the β-Ga2O3 single crystal film formed by the method._x000D_\n[Solution] A method including a step of homoepitaxially growing a β-Ga2O3 crystal on a β-Ga2O3 substrate 2 or on a β-Ga2O3 crystal layer formed on the β-Ga2O3 substrate 2 by molecular beam epitaxy, and adding Sn to the β-Ga2O3 crystal at regular intervals during the growth.',
     'application_year': 2011,
     'applicant_country': 'JP'}]}]
 Output:
     {
-        "period_title": "稳定增长期(1990-2000年)",
-        "country_compare": "在稳定增长期中，汽车用帘式气囊气体发生器技术领域内的相关专利申请量较少，且基本为国外申请。该阶段中日本和美国的研究最多，德国、法国和韩国等也有一定专利申请量。国外在该时期的相关研究主要围绕高燃速、高热量、低吸湿性产气剂配方技术展开，处于对帘式气囊气体发生器结构设计的初步探索阶段。",
-        "company_compare": "美国莫顿国际公司早在上世纪初即提出了一种可用于自动点火的气体发生剂，为高效产气剂配方技术的发展奠定了良好的基础。1994年，日本化药公司、工机公司等也公开了产气剂配方及其制备工艺技术，在抑制污染成分生产的同时改善了燃烧反应速率，可以满足更先进安全气囊气体发生器的需求。随后，日本大赛璐公司产出多项专利成果，相继提出了防止气体发生剂吸湿的防潮密封带、减少颗粒残渣生成的产气剂配方、减小气体发生器尺寸和成本的气体发生剂等创新方案，在提高产气剂燃烧效率和产气效率的同时，减少了残留物并控制了气体发生器尺寸和成本，良好地推动了日本在高燃速、高热量、低吸湿性产气剂配方技术中的发展。同时，日本大赛璐公司、日本化药公司、瑞典奥托立夫公司等在该时期还对帘式气囊气体发生器结构设计技术开展了初步探索。大赛璐公司在专利CN1450964A中提出了一种使帘式气囊充气不受环境温度变化影响的气体发生器，该帘式气体发生器壳体内装填有音速不低于400m/sec的惰性气体加压介质，使帘式安全气囊在低于常温环境时也能瞬间打开；化药公司在专利JP1998329635A中公开了一种长筒状的气体发生器设计方案，在降低侧面碰撞安全气囊装置的结构复杂性和制造成本的同时，实现了装置的小型化和轻量化；奥托立夫公司在专利WO2002016168A3中公开了一种绳索式气体发生器，其由分段排列的固体燃料和点火器组成，为帘式气囊提供了一种有效的气体发生器装置。"
+        "period_title": "Stable Growth Period (1990-2000)",
+        "country_compare": "During the stable growth period, there were relatively few patent applications in the field of curtain airbag gas generator technology, and most were foreign applications. Japan and the United States had the most research during this stage, with Germany, France, and South Korea also having some patent applications. Foreign research during this period mainly focused on high-burning-rate, high-heat, low-hygroscopic gas-generating agent formulation technology, representing the initial exploration stage of curtain airbag gas generator structural design.",
+        "company_compare": "Morton International in the United States proposed a gas-generating agent that could be used for automatic ignition as early as the beginning of the last century, laying a good foundation for the development of efficient gas-generating agent formulation technology. In 1994, Nippon Kayaku and Kogyo Corporation in Japan also disclosed gas-generating agent formulation and preparation process technology, improving combustion reaction rates while suppressing the production of polluting components, meeting the needs of more advanced safety airbag gas generators. Subsequently, Daicel Corporation produced multiple patent achievements, successively proposing innovative solutions such as moisture-proof sealing tape to prevent gas-generating agent moisture absorption, gas-generating agent formulation to reduce particle residue generation, and gas-generating agents to reduce gas generator size and cost. While improving the combustion efficiency and gas generation efficiency of gas-generating agents, they reduced residues and controlled gas generator size and cost, effectively promoting the development of high-burning-rate, high-heat, low-hygroscopic gas-generating agent formulation technology in Japan. At the same time, Daicel Corporation, Nippon Kayaku, and Autoliv in Sweden also conducted initial exploration of curtain airbag gas generator structural design technology during this period. Daicel Corporation proposed a gas generator in patent CN1450964A that made curtain airbag inflation unaffected by environmental temperature changes. This curtain gas generator contained an inert gas pressurizing medium with a sound speed of no less than 400m/sec, enabling the curtain safety airbag to open instantly even in environments below normal temperature. Nippon Kayaku disclosed a long cylindrical gas generator design in patent JP1998329635A, achieving device miniaturization and weight reduction while reducing the structural complexity and manufacturing cost of side impact safety airbag devices. Autoliv disclosed a rope-type gas generator in patent WO2002016168A3, consisting of segmented solid fuel and igniters, providing an effective gas generator device for curtain airbags."
     }
 
 {% else %}
 input:
-- 专利统计数据: {{patent_statistics}}
-- 趋势阶段信息: {{period_info}}
-- 5个重要申请主体在该阶段的专利申请信息: {{top5_applicants_info}}
-任务: 根据给定的专利申请统计数据、趋势阶段信息、专利申请人的专利申请信息，进行该阶段的专利申请趋势分析，并按既定格式返回分析结果
-输出: 必须按照给定格式输出分析结果，并且不能包含任何其他信息，并以中文回答。
+- Patent Statistics: {{patent_statistics}}
+- Trend Stage Information: {{period_info}}
+- Patent Application Information of 5 Important Applicants: {{top5_applicants_info}}
+Task: Analyze patent application trends during this period based on the given patent application statistics, trend stage information, and patent applicant information, and return the analysis results in the specified format
+Output: Must output analysis results according to the given format and cannot contain any other information, and respond in English.
 
 {% endif %}
