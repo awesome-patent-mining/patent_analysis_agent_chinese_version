@@ -46,6 +46,5 @@ class Config:
     MYSQL_DB = "chenliang_db"
     MYSQL_CHARSET = "utf8mb4"
     patent_table = "patent_info"
-    language = "中文"
     # Word模版文件路径
     REFERENCE_DOC = r'D:\Users\SUYUNYI\ISTIC\ChenLiang\2025\Microsoft_agent\patent_analysis_agent-main\research_agent\core\reference.docx'

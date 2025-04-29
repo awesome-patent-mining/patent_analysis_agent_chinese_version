@@ -6,11 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="858cba73-7f4f-4fcb-9a83-93d9e348428a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/research_agent/core/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/core/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/core/generate_tech_genealogy.py" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/core/generate_tech_genealogy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/research_agent/core/patent_tech_analysis_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/core/patent_tech_analysis_1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research_agent/core/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/core/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/research_agent/core/query_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/core/query_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/research_agent/core/storage.py" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/core/storage.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +78,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "deletionFromPopupRequiresConfirmation": "false",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/admin/patent_analysis_agent_english_version",
+    "last_opened_file_path": "C:/Users/admin/patent_analysis_agent_english_version/research_agent/core",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "two.files.diff.last.used.file": "C:/Users/admin/patent_analysis_agent/patent_analysis_agent/research_agent/core/patent_tech_analysis_1.py"
   }
@@ -89,11 +88,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\patent_analysis_agent_english_version\research_agent\core" />
       <recent name="C:\Users\admin\patent_analysis_agent\patent_analysis_agent\research_agent\core" />
       <recent name="C:\Users\admin\patent_analysis_agent\patent_analysis_agent\research_agent\core\prompts" />
       <recent name="C:\Users\admin\patent_analysis_agent\patent_analysis_agent\research_agent" />
       <recent name="C:\Users\admin\patent_analysis_agent\patent_analysis_agent\figs" />
-      <recent name="C:\Users\admin\FX15_patent_agent_github" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\admin\patent_analysis_agent\patent_analysis_agent" />
@@ -343,34 +342,9 @@
           <option name="timeStamp" value="53" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/research_agent/core/patent_tech_analysis_1.py</url>
-          <line>324</line>
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/research_agent/core/patent_tech_analysis_1.py</url>
-          <line>347</line>
-          <option name="timeStamp" value="68" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/research_agent/core/patent_tech_analysis_1.py</url>
-          <line>350</line>
-          <option name="timeStamp" value="69" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/research_agent/core/patent_tech_analysis_1.py</url>
-          <line>247</line>
-          <option name="timeStamp" value="70" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app.py</url>
           <line>161</line>
           <option name="timeStamp" value="72" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/research_agent/core/patent_tech_analysis_1.py</url>
-          <line>295</line>
-          <option name="timeStamp" value="73" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

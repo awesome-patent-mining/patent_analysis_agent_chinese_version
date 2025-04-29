@@ -144,8 +144,10 @@ class Query:
                     'main']
                 # 专利受理局
                 patent_office = patent_item['bibliographic_data']['publication_reference']['country']
+                app_country = patent_item['bibliographic_data']['publication_reference']['country']
 
-                patent_info = {'patent_id':patent_id,'abstract': abstract, 'ipc': ipc, 'patent_office': patent_office}
+
+                patent_info = {'patent_id':patent_id,'abstract': abstract, 'ipc': ipc, 'patent_office': patent_office,'app_country': app_country}
 
                 results.append(patent_info)
 
@@ -186,11 +188,11 @@ class Query:
     async def query_by_content(
             self,
             text: str,
-            limit: int = 10,
-            apd_from: Optional[int] = 20200101,
-            apd_to: Optional[int] = 20220101,
-            pbd_from: Optional[int] = 20200101,
-            pbd_to: Optional[int] = 20220101,
+            limit: int = 50,
+            apd_from: Optional[int] = 19500101,
+            apd_to: Optional[int] = 20250101,
+            pbd_from: Optional[int] = 19500101,
+            pbd_to: Optional[int] = 20250101,
             offset: int = 0,
             countries: Optional[List[str]] = None,
             relevancy: Optional[str] = None

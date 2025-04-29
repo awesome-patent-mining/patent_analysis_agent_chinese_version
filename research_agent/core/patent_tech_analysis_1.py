@@ -312,6 +312,12 @@ class PatentTechAnalyzer:
         added_columns = await self.query.batch_query_simple_bibliography(deque(df_all['patent_id']))
         df_added_columns = pd.DataFrame(added_columns)
         merged_df = pd.merge(df_all, df_added_columns, on='patent_id', how='inner')
+        print(merged_df)
+        #merged_df中有个字段apdt和pbdt,这两个字段是整数，请将其处理成字符串，并取其前四位更新到apdt和pbdt中
+        merged_df['apdt'] = merged_df['apdt'].astype(str).str[:4]
+        merged_df['pbdt'] = merged_df['pbdt'].astype(str).str[:4]
+        #请新建一个字段'app_country',将‘patent_office’字段对应的内容赋予'app_country'字段
+        merged_df['app_country'] = merged_df['patent_office']
         #在patent_result_deque中增加新添加的字段
         for idx,patent_result_i in enumerate(patent_result_deque):
             patent_list_i = patent_result_i.get('patents', [])
@@ -325,7 +331,7 @@ class PatentTechAnalyzer:
         field_list = [
             'patent_id', 'pn', 'apno', 'title', 'original_assignee',
             'current_assignee', 'inventor', 'apdt', 'pbdt', 'abstract',
-            'ipc', 'patent_office', 'relevancy'
+            'ipc', 'patent_office', 'relevancy','app_country'
         ]
 
         # 确保字段对齐并填充缺失列
@@ -382,8 +388,8 @@ class PatentTechAnalyzer:
 if __name__ == "__main__":
     # 示例数据（实际使用时从Query类获取）
     analyzer = PatentTechAnalyzer()
-    asyncio.run(analyzer.run('../general_analysis_output/1',  [{'Primary Technology': ['Machine Learning'], 'Secondary Technology': ['Supervised Learning', 'Unsupervised Learning', 'Reinforcement Learning']}]))
-    # [{'Primary Technology': ['Machine Learning'], 'Secondary Technology': ['Supervised Learning', 'Unsupervised Learning', 'Reinforcement Learning']}, {'Primary Technology': ['Natural Language Processing'], 'Secondary Technology': ['Text Analysis', 'Speech Recognition', 'Language Generation']}, {'Primary Technology': ['Computer Vision'], 'Secondary Technology': ['Image Recognition', 'Object Detection', 'Video Analysis']}, {'Primary Technology': ['Robotics'], 'Secondary Technology': ['Autonomous Navigation', 'Manipulation and Control', 'Human-Robot Interaction']}, {'Primary Technology': ['Expert Systems'], 'Secondary Technology': ['Knowledge Representation', 'Inference Engines', 'Decision Support Systems']}]
+    asyncio.run(analyzer.run('../general_analysis_output/1', [{'一级技术': ['机器学习'], '二级技术': ['监督学习', '无监督学习', '强化学习']}, {'一级技术': ['深度学习'], '二级技术': ['卷积神经网络', '循环神经网络', '生成对抗网络']}]))
+
     '''
     sample_patents = [
         {
