@@ -10,7 +10,7 @@ class Config:
     LANGUAGE='English'
     BATCHSIZE_BIBLIOGRAPHY = 100
     #DEFAULT_MODEL = "deepseek-chat"
-    CPM_FOR_SIMPLE_BIBLIOGRAPHY =  10
+    CPM_FOR_SIMPLE_BIBLIOGRAPHY =  20
     CPM_FOR_SEMANTIC_SEARCH = 10
     # DEFAULT_MODEL = "deepseek-chat"
     RERANK_BATCH_SIZE = 10   # 使用llm进行重排时候，设定的batch大小
@@ -24,10 +24,10 @@ class Config:
     MAX_TOKENS = 4095
     #YAML_CONFIG = r'E:\Users\SUYUNYI\ISTIC\ChenLiang\2025\patent_analysis_agent_english_version\research_agent\core\llm_config.yaml'
 
-    #YAML_CONFIG = 'C:\\Users\\admin\\patent_analysis_agent\\patent_analysis_agent\\research_agent\\core\\llm_config.yaml'
+    YAML_CONFIG = 'C:\\Users\\admin\\patent_analysis_agent\\patent_analysis_agent\\research_agent\\core\\llm_config.yaml'
 
     #YAML_CONFIG = r"./research_agent/core/llm_config.yaml"            # yaml配置文件路径
-    YAML_CONFIG = r"/root/patent_analysis_agent_english_version/research_agent/core/llm_config.yaml"
+    #YAML_CONFIG = r"/root/patent_analysis_agent_english_version/research_agent/core/llm_config.yaml"
     # 最大token数
     # 其他配置参数
     TOP_K = 10              # query_by_content返回前多少个相关文档
@@ -61,7 +61,7 @@ class Config:
     MYSQL_DB = "chenliang_db"
     MYSQL_CHARSET = "utf8mb4"
     #patent_table = "patent_info"
-    #language = "中文"
+    language = "English"
     # Word模版文件路径
     #REFERENCE_DOC = r'E:\Users\SUYUNYI\ISTIC\ChenLiang\2025\Microsoft_agent\patent_analysis_agent-main\research_agent\core\reference.docx'
 

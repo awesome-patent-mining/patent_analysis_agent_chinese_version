@@ -282,7 +282,7 @@ def heatmap_visualization(save_dir, analysis_result):
     for company, patents in result_dict.items():
         for _, types in patents.items():
             if len(types) > 1:
-                secondary_types.add(f"{types[0]}_{types[1]}")
+                secondary_types.add(f"{types[1]}")
 
     secondary_types = sorted(list(secondary_types))
 

@@ -23,7 +23,7 @@ class PatentTechAnalyzer:
     def __init__(self):
         self.tech_gene_generator = Tech_Gene_Generator()
         self.technology_map = None
-
+        self.patent_num = 0
         self.query = Query()
         self.current_year = datetime.now().year
     def set_technology_map(self, technology_map):
@@ -362,6 +362,7 @@ class PatentTechAnalyzer:
             db.create_patents_table()
             db.insert_patents_batch(unique_patents)
             print(f"共批量入库{len(unique_patents)}条专利。")
+            self.patent_num = len(unique_patents)
         except Exception as e:
             print(f"数据库操作出错: {e}")
         finally:

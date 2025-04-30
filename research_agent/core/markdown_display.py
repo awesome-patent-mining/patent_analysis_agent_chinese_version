@@ -49,25 +49,18 @@ def parse_markdown_with_images(markdown_content):
     
     return parts
 
-def display_markdown_with_images_from_file(markdown_file_path,time_dir):
-
+def display_markdown_with_images_from_file(markdown_file_path, time_dir):
     """
     Read Markdown content from file path and display on Streamlit.
     
     Args:
+        markdown_file_path (str): Path to the Markdown file.
         time_dir (str): Directory path where image files are located.
     """
-
     # Read Markdown file
     word_file_path = markdown_file_path.replace('.md', '.docx')
     
     # Convert to docx
-
-    # 读取 Markdown 文件
-    #markdown_file_path = os.path.join(time_dir, '专利分析报告.md')
-    #Word_file_path = os.path.join(time_dir, '专利分析报告.docx')
-    Word_file_path = markdown_file_path.replace('.md', '.docx')
-    # 转换为 docx
     pypandoc.convert_file(
         markdown_file_path, 'docx', outputfile=word_file_path,
         extra_args=[f'--resource-path={time_dir}',
@@ -90,14 +83,6 @@ def display_markdown_with_images_from_file(markdown_file_path,time_dir):
             caption = part['title'] if part['title'] else part['alt_text']
             st.image(full_image_path, caption=caption, use_container_width=True)
 
-        # Add Word download button
-    with open(word_file_path, "rb") as file:
-        st.download_button(
-            label="📥 Download Patent Report (Word)",
-            data=file,
-            file_name="patent_analysis_report.docx",
-            mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-        ) 
 
 # Example usage
 if __name__ == "__main__":

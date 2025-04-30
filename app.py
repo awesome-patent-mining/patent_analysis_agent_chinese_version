@@ -232,7 +232,7 @@ with content:
         st.header("📊 Step 5 - Analysis Completed")
         st.success("✅ Processing results are ready!")
         st.metric("Processing Efficiency", "98.7%", "1.2%")
-        st.progress(80)
+        #st.progress(80)
         
         # Add options for continuing analysis
         col1, col2 = st.columns(2)

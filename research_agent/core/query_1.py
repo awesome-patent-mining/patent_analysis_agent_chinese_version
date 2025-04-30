@@ -192,7 +192,7 @@ class Query:
     async def query_by_content(
             self,
             text: str,
-            limit: int = 5,
+            limit: int = 50,
             apd_from: Optional[int] = 19500101,
             apd_to: Optional[int] = 20250101,
             pbd_from: Optional[int] = 19500101,
