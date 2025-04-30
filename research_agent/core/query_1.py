@@ -144,8 +144,13 @@ class Query:
                     abstract = abstract_package[0]['text']
                 else:
                     abstract = ''
-                ipc = patent_item['bibliographic_data']['classification_data']['classification_ipcr'][
-                    'main']
+                ipc_package = patent_item['bibliographic_data']['classification_data'].get('classification_ipcr', {})
+                #ipc = patent_item['bibliographic_data']['classification_data']['classification_ipcr'][
+                #    'main']
+                if ipc_package!={}:
+                    ipc = abstract_package['main']
+                else:
+                    ipc = ''
                 # 专利受理局
                 patent_office = patent_item['bibliographic_data']['publication_reference']['country']
                 app_country = patent_item['bibliographic_data']['publication_reference']['country']
