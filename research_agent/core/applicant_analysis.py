@@ -35,6 +35,7 @@ load_dotenv()
 # Load configuration
 configs = parse_config(Config.YAML_CONFIG)
 
+
 def create_connection():
     """
     Create and return a database connection
@@ -67,6 +68,7 @@ def create_connection():
         print(f"Error occurred: {e}")
         return None
 
+
 # Technology map definition
 MAP_TECH = '''
 ### Preparation Technology
@@ -81,6 +83,7 @@ MAP_TECH = '''
     - Gas Sensor
     - Power Electronic Devices
 '''
+
 
 def get_applicant_data(top_n=5):
     """
@@ -126,7 +129,6 @@ def get_applicant_data(top_n=5):
     my_sql.execute(query)
     result = my_sql.fetchall()
 
-
     # If no results, return empty lists
     if not result:
         return [], []
@@ -153,6 +155,7 @@ def get_applicant_data(top_n=5):
     applicant_data = my_sql.fetchall()
 
     return result[:top_n], applicant_data
+
 
 async def analysis_classification(deepseek_llm, company_name, data, map_tech):
     """
@@ -227,6 +230,7 @@ async def analysis_classification(deepseek_llm, company_name, data, map_tech):
         print(f"JSON parsing error: {e}")
         return {"company_name": company_name, "classification_results": {}, "verification_status": "Processing failed", "comprehensive_technology_mining": ""}
 
+
 async def search_applicants(search_llm, company_name, domain):
     """
     Search for company information in specific domain
@@ -262,6 +266,7 @@ async def search_applicants(search_llm, company_name, domain):
     result = await search_llm.completion(messages=messages, tools=tools)
     return result
 
+
 def heatmap_visualization(save_dir, analysis_result):
     """
     Generate patent technology distribution heatmap
@@ -274,7 +279,8 @@ def heatmap_visualization(save_dir, analysis_result):
         str: Saved file path
     """
     # Extract data from analysis results
-    result_dict = {r["company_name"]: r["classification_results"] for r in analysis_result}
+    result_dict = {r["company_name"]: r["classification_results"]
+                   for r in analysis_result}
     companies = list(result_dict.keys())
     secondary_types = set()
 
@@ -282,7 +288,7 @@ def heatmap_visualization(save_dir, analysis_result):
     for company, patents in result_dict.items():
         for _, types in patents.items():
             if len(types) > 1:
-                secondary_types.add(f"{types[1]}")
+                secondary_types.add(f"{types[0]}_{types[1]}")
 
     secondary_types = sorted(list(secondary_types))
 
@@ -336,15 +342,18 @@ def heatmap_visualization(save_dir, analysis_result):
     ax.grid(which="minor", color="gray", linestyle='-', linewidth=0.5)
 
     # Set title
-    ax.set_title("Patent Secondary Classification Distribution Heatmap", fontsize=16)
+    ax.set_title(
+        "专利二级分类分布热力图", fontsize=16)
 
     # Adjust layout and save
     fig.tight_layout()
-    output_path = os.path.join(save_dir, 'patent_entity_technology_heatmap.png')
+    output_path = os.path.join(
+        save_dir, 'patent_entity_technology_heatmap.png')
     plt.savefig(output_path, dpi=300, bbox_inches='tight')
     plt.close()
 
     return "./patent_entity_technology_heatmap.png"
+
 
 def bar_visualization(save_dir, applicant_rank):
     """
@@ -372,8 +381,8 @@ def bar_visualization(save_dir, applicant_rank):
     # Draw bar chart
     plt.figure(figsize=(10, 6))
     plt.barh(names, counts, color='skyblue')
-    plt.xlabel('Application Count')
-    plt.title('Patent Applicants and Their Application Counts')
+    plt.xlabel('申请数量')
+    plt.title('专利申请人及其申请数量')
     plt.gca().invert_yaxis()  # Invert y-axis to show highest count at top
 
     # Save to specified folder
@@ -382,6 +391,7 @@ def bar_visualization(save_dir, applicant_rank):
     plt.close()  # Close figure to release memory
 
     return "./patent_entity_count_bar.png"
+
 
 def visualization(save_dir, applicant_rank, analysis_result):
     """
@@ -408,6 +418,7 @@ def visualization(save_dir, applicant_rank, analysis_result):
 
     return bar_path, heatmap_path
 
+
 def data_to_json(analysis_result, applicant_rank):
     """
     Convert analysis results to JSON format
@@ -424,7 +435,8 @@ def data_to_json(analysis_result, applicant_rank):
         return {}, "[]"
 
     # Extract technology classification results
-    result_dict = {r["company_name"]: r["classification_results"] for r in analysis_result}
+    result_dict = {r["company_name"]: r["classification_results"]
+                   for r in analysis_result}
 
     # Create technology classification statistics dictionary
     tech_stats = defaultdict(lambda: defaultdict(int))
@@ -482,6 +494,7 @@ def data_to_json(analysis_result, applicant_rank):
     applicant_rank_json = json.dumps(json_data, ensure_ascii=False, indent=2)
     return df_to_structured_json(df), applicant_rank_json
 
+
 async def generate_applicant_report(deepseek_llm, applicant_rank_json, bar_dir, company_tech_json, heatmap_dir):
     """
     Generate patent applicant analysis report
@@ -512,20 +525,26 @@ async def generate_applicant_report(deepseek_llm, applicant_rank_json, bar_dir, 
                     * **Technology Distribution Heatmap Path (to integrate):** `{heatmap_dir}`
                         * *Description:* Points to technology distribution heatmap. **Insert directly as placeholder.**
 
-                2.  **Content Generation:**
+                3.  **Content Generation:**
                     * **Patent Applicant Analysis:** Write a paragraph summarizing applicant ranking and key findings based on `applicant_rank_json` data.
                     * **Patent Applicant Technology Distribution Analysis:** Analyze `company_tech_json` to identify technology layout characteristics of major applicants.
                     * **Insert Chart Placeholders:** Insert placeholders at appropriate positions: `![Patent Applicant Ranking Bar Chart]({bar_dir})`, `![Patent Applicant Technology Distribution Heatmap]({heatmap_dir})` with brief captions.
-                Format:
+                中文格式:
+                ## 二、专利申请人分析报告
+                ### (1) 专利申请人排名分析
+                ### (2) 专利申请人技术分布
+                英文格式:
                 ## 2. Patent Applicant Analysis Report
                 ### (1) Patent Applicant Ranking Analysis
                 ### (2) Patent Applicant Technical Distribution
+                Ensure the final report is coherent, accurate, and reads naturally in **{Config.language}**.
                 """}]
 
     # Get report parts one and two
     report_part1 = await deepseek_llm.completion(prompt_applicant_rank)
 
     return report_part1
+
 
 async def generate_applicant_tech_report(deepseek_llm, company_tech_json, company_info, patent_miner):
     """
@@ -546,7 +565,6 @@ async def generate_applicant_tech_report(deepseek_llm, company_tech_json, compan
         **Role:** You are an experienced AI patent analyst, specializing in integrating complex patent data and company information into insightful narrative reports.
         **Task Objective:** Generate a comprehensive, professional, and well-structured patent analysis report based on the provided input data. The report should highlight the applicant's technology distribution, core innovation focus, and key technical achievements.
         **Input Data and Processing Instructions:** You will receive the following structured data, please process and utilize it strictly according to the following instructions:
-        **Output Language:** {Config.language}
         1.  **`company_info` (Applicant Background Information):**
             * **Content:** Provides background information about target applicants, including but not limited to their history, market position, key business areas, strategic initiatives (such as M&A), R&D philosophy, or overall mission.
             * **Your Task:** Use this data as the introduction part of the report.
@@ -589,9 +607,12 @@ async def generate_applicant_tech_report(deepseek_llm, company_tech_json, compan
         3.  **Tone and Style:** Professional, analytical, objective, and informative. Avoid subjective speculation or exaggeration.
         4.  **Data Usage Principle:** **Strictly use only the provided input data (`company_tech_json`, `company_info`, `patent_miner`).** Your work is to analyze, synthesize, paraphrase, and interpret this data, extracting deep insights, not simply listing original information points.
 
-        Format:
+        中文格式：
+        ### (3) 专利申请人技术布局分析
+        (在这里插入专利申请人技术布局分析报告，以下是一个范例：大赛璐公司作为日本化工领域具有影响力的企业，在产气剂制备方面拥有较高技术实力，长期以来，其对车用安全气囊气体发生器进行了大量投入，研究和开发了多种新型产气剂配方，并与其他汽车制造企业紧密合作，不断优化产品设计，在气体发生器小型化、轻量化以及效率提升等方面取得了显著突破，并积累了大量创新成果。该公司相关专利通过采用硝酸铵、氮化物、聚合物复合物等新型燃料，减少毒性气体的排放，通过采用缓燃型燃料和双四唑化合物、金属氢氧化物等高燃烧效率组合物，优化气体产率并降低燃烧温度。如在专利EP2910536B1中提出了一种包括三嗪化合物或胍化合物的燃料、包括碱金属硝酸盐或金属碳酸盐的氧化剂的气体发生剂，其可长期维持稳定点火性能；在专利JP5481723B2中公开了一种含有作为燃料的含氮有机化合物和作为氧化剂的硝酸铵的气体发生剂组合物，其压力指数小、燃烧速度的压力依赖性低；在专利CN117412886A中公开了一种利用隔离壁有效地将点火器与气体发生剂隔离的点火器组件，提升了燃烧室的密封性，并简化了焊接工序，减少了对焊接热量的影响。)
+        英文格式：
         ### (3) Patent Applicant Technical Layout Analysis
-        (Insert patent applicant technical layout analysis report here)
+        (在这里插入专利申请人技术布局分析报告，以下是一个范例)
         """},
         {"role": "user",
          "content": f"""
@@ -599,12 +620,15 @@ async def generate_applicant_tech_report(deepseek_llm, company_tech_json, compan
         * **Applicant Background Information:** `{company_info}`
         * **Technology Distribution JSON Data:** `{company_tech_json}`
         * **Patent Applicant and Their Technical Details with Representative Patents:** `{patent_miner}`
+        Ensure the final report is coherent, accurate, and reads naturally in **{Config.language}**.
+
         """}]
 
     # Get report part three
     report_part2 = await deepseek_llm.completion(prompt_applicant_tech)
 
     return report_part2
+
 
 async def generate_full_report(save_dir=None, top_n=5, map_tech=None):
     """
@@ -647,7 +671,8 @@ async def generate_full_report(save_dir=None, top_n=5, map_tech=None):
     if not applicant_data:
         print("No patent applicant data found")
         with open(log_path, "w", encoding="utf-8") as f:
-            json.dump({"error": "No patent applicant data found"}, f, ensure_ascii=False, indent=2)
+            json.dump({"error": "No patent applicant data found"},
+                      f, ensure_ascii=False, indent=2)
         return "No patent applicant data found", None
 
     # Convert to DataFrame
@@ -845,20 +870,24 @@ async def generate_full_report(save_dir=None, top_n=5, map_tech=None):
     print("Patent applicant analysis report generation completed")
     return full_report, report_path
 
+
 async def main():
     """Main function"""
     start_time = time.time()  # Record start time
     save_dir = os.path.join(os.path.dirname(
         os.path.dirname(os.path.abspath(__file__))), "detail_analysis_output")
     # Create time-based subdirectory
-    time_str = datetime.now().strftime("%Y%m%d_%H%M%S")  # Format example: 20231225_143022
+    # Format example: 20231225_143022
+    time_str = datetime.now().strftime("%Y%m%d_%H%M%S")
     time_dir = os.path.join(save_dir, time_str)
     report, report_path = await generate_full_report(time_dir)
     end_time = time.time()  # Record end time
-    elapsed_time = end_time - start_time  # Calculate time consumption (seconds)
+    # Calculate time consumption (seconds)
+    elapsed_time = end_time - start_time
 
     print(f"Report generated and saved to: {report_path}")
-    print(f"Total time consumption: {elapsed_time:.2f} seconds")  # Keep 2 decimal places
+    # Keep 2 decimal places
+    print(f"Total time consumption: {elapsed_time:.2f} seconds")
     return report, report_path
 
 # Program entry
