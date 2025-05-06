@@ -7,7 +7,7 @@ import os
 import asyncio
 from functools import wraps
 from jinja2 import Environment
-from json_repair import repair_json
+# from json_repair import repair_json
 from research_agent.core.config import Config
 from research_agent.core.general_llm import LLM
 from pyaml_env import parse_config
