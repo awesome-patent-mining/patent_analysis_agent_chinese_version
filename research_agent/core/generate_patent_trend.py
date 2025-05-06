@@ -1,21 +1,20 @@
+import pandas as pd
+import matplotlib.dates as mdates
+from jinja2 import Environment
+from pyaml_env import parse_config
+from pathlib import Path
+import json_repair
+import matplotlib.pyplot as plt
+from typing import List, Dict
+import time
+from research_agent.core.config import Config
+from research_agent.core.general_llm import LLM
+import pymysql
+import asyncio
 import os
 import sys
-sys.path.append(os.path.abspath('../..')) 
+sys.path.append(os.path.abspath('../..'))
 
-import asyncio
-import pymysql
-from research_agent.core.general_llm import LLM
-from research_agent.core.config import Config
-import time
-from typing import List, Dict
-import matplotlib.pyplot as plt
-import json_repair
-from pathlib import Path
-from pyaml_env import parse_config
-from jinja2 import Environment
-import matplotlib.dates as mdates
-import pandas as pd
-import os
 
 # nest_asyncio.apply()
 # sys.path.append(os.path.abspath('../..'))
@@ -42,7 +41,7 @@ class PatentTrendAnalyzer:
         # LLM and prompt initialization
         absolute_path = os.path.abspath(Config.YAML_CONFIG)
         configs = parse_config(absolute_path)
-        self.language = ""
+        self.language = Config.LANGUAGE
         # self.ipc_dict = self.parse_ipc_txt_to_dict(Config.IPC_DICT_PATH)
         self.llm = LLM(config=configs[Config.DEFAULT_MODEL])
 
@@ -53,13 +52,14 @@ class PatentTrendAnalyzer:
         return self.language
 
     def _prepare_prompts(
-            self, patent_stat: str
+            self, patent_stat: str, language: str
     ):
         system_prompt = self.generate_patent_application_trend_prompt.render(
             role="system")
         user_prompt = self.generate_patent_application_trend_prompt.render(
             role="user",
-            patent_statistics=patent_stat
+            patent_statistics=patent_stat,
+            language=language
         )
         return [
             {"role": "system", "content": system_prompt},
@@ -175,19 +175,20 @@ class PatentTrendAnalyzer:
                     str(phase['start_year']), format='%Y')
                 phase_end = pd.to_datetime(str(phase['end_year']), format='%Y')
                 phase_mid = phase_start + (phase_end - phase_start) / 2
-                
+
                 # Calculate phase width in years
                 phase_width = (phase_end - phase_start).days / 365.25
-                
+
                 # Calculate base font size (adjust these values as needed)
                 base_font_size = 16
                 min_font_size = 10
                 max_font_size = 16
-                
+
                 # Calculate dynamic font size based on phase width
                 # Longer phases get larger font, shorter phases get smaller font
-                font_size = min(max_font_size, max(min_font_size, base_font_size * (phase_width / 5)))
-                
+                font_size = min(max_font_size, max(
+                    min_font_size, base_font_size * (phase_width / 5)))
+
                 # Add vertical lines
                 plt.axvline(x=phase_start, color='gray',
                             linestyle='--', alpha=0.7)
@@ -245,6 +246,7 @@ class PatentTrendAnalyzer:
         # Generate completion
         prompt_messages = self._prepare_prompts(
             patent_stat=pat_statistics,
+            language=self.language
         )
         response = await self.llm.completion(prompt_messages)
 
@@ -291,7 +293,8 @@ class PatentTrendAnalyzer:
 
         # Generate completion
         prompt_messages = self._prepare_prompts(
-            patent_stat=combined_stats
+            patent_stat=combined_stats,
+            language=self.language
         )
         response = await self.llm.completion(prompt_messages)
 
@@ -414,8 +417,10 @@ class PatentTrendAnalyzer:
             for i, period in enumerate(tasks, 1):
                 # Add two newlines to ensure blank lines between paragraphs
                 file.write(f'### ({i}){period["period_title"]}\n\n')
-                file.write(period['country_compare'] + '\n\n')  # Add two newlines
-                file.write(period['company_compare'] + '\n\n')  # Add two newlines
+                file.write(period['country_compare'] +
+                           '\n\n')  # Add two newlines
+                file.write(period['company_compare'] +
+                           '\n\n')  # Add two newlines
                 b = f'### ({i}){period["period_title"]}\n\n' + \
                     period['country_compare'] + '\n\n' + \
                     period['company_compare'] + '\n\n'
@@ -456,7 +461,7 @@ class PatentTrendAnalyzer:
         # Write analysis results to Markdown file
         self.write_analysis_to_markdown(
             file_path=os.path.join(output_dir, 'patent_analysis.md'),
-            title='## (1) Patent Application Trend Analysis',
+            title='##  （一）专利申请趋势分析',
             alt_text='Trend Chart',
             image_path='./trend_chart.png',
             title_text='Patent Application Trend Chart',
