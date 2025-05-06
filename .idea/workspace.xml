@@ -6,6 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="858cba73-7f4f-4fcb-9a83-93d9e348428a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_cn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_en.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/research_agent/core/applicant_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/core/applicant_analysis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/research_agent/core/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/core/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/research_agent/core/patent_tech_analysis_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/core/patent_tech_analysis_1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/research_agent/core/query_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/research_agent/core/query_1.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,44 +57,44 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.general_llm.executor&quot;: &quot;Run&quot;,
-    &quot;Python.generate_tech_genealogy.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.mysql_utils.executor&quot;: &quot;Run&quot;,
-    &quot;Python.paper_review.executor&quot;: &quot;Run&quot;,
-    &quot;Python.patent_tech_analysis.executor&quot;: &quot;Run&quot;,
-    &quot;Python.patent_tech_analysis_1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.propose_question.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.query.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.run_app.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.storage.executor&quot;: &quot;Run&quot;,
-    &quot;Python.trial_2.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.trial_4.executor&quot;: &quot;Run&quot;,
-    &quot;Python.trial_5.executor&quot;: &quot;Run&quot;,
-    &quot;Python.trial_6.executor&quot;: &quot;Run&quot;,
-    &quot;Python.web_search.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.web_search_zhipu.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/admin/patent_analysis_agent_english_version/app_1.py&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;two.files.diff.last.used.file&quot;: &quot;C:/Users/admin/patent_analysis_agent_english_version/app_1.py&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.general_llm.executor": "Run",
+    "Python.generate_tech_genealogy.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.mysql_utils.executor": "Run",
+    "Python.paper_review.executor": "Run",
+    "Python.patent_tech_analysis.executor": "Run",
+    "Python.patent_tech_analysis_1.executor": "Run",
+    "Python.propose_question.executor": "Debug",
+    "Python.query.executor": "Debug",
+    "Python.run_app.executor": "Debug",
+    "Python.storage.executor": "Run",
+    "Python.trial_2.executor": "Debug",
+    "Python.trial_4.executor": "Run",
+    "Python.trial_5.executor": "Run",
+    "Python.trial_6.executor": "Run",
+    "Python.web_search.executor": "Debug",
+    "Python.web_search_zhipu.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "deletionFromPopupRequiresConfirmation": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/admin/patent_analysis_agent_chinese_version",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "two.files.diff.last.used.file": "C:/Users/admin/patent_analysis_agent_english_version/app_1.py"
   }
-}</component>
+}]]></component>
   <component name="ReadonlyStatusHandler">
     <option name="SHOW_DIALOG" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\patent_analysis_agent_chinese_version" />
       <recent name="C:\Users\admin\patent_analysis_agent_english_version" />
       <recent name="C:\Users\admin\patent_analysis_agent_english_version\research_agent\core" />
       <recent name="C:\Users\admin\patent_analysis_agent\patent_analysis_agent\research_agent\core" />
       <recent name="C:\Users\admin\patent_analysis_agent\patent_analysis_agent\research_agent\core\prompts" />
-      <recent name="C:\Users\admin\patent_analysis_agent\patent_analysis_agent\research_agent" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\admin\patent_analysis_agent\patent_analysis_agent" />
@@ -346,6 +351,11 @@
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/research_agent/core/storage.py</url>
           <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/research_agent/core/query_1.py</url>
+          <line>164</line>
+          <option name="timeStamp" value="76" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

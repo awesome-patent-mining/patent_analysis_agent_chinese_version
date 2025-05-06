@@ -215,13 +215,14 @@ class PatentTechAnalyzer:
         # 生成总体统计数据
         tech_counts, year_counts, country_counts, year_img, country_img = self._generate_overall_stats(save_dir,all_results)
 
-        report_lines.append("### Patent Data Overview")
-        report_lines.append("---")
+        report_lines.append("### 专利数据总览")
+
 
         if tech_counts:
             # 各技术专利数量 - 优化后的表格
-            report_lines.append("#### Overview---")
-            report_lines.append(f"- **Total Number of Patents**: {unique_patent_df.shape[0]}\n\n")
+            #report_lines.append("#### Overview---")
+            report_lines.append(f"- **相关专利数量**: {unique_patent_df.shape[0]}\n\n")
+            report_lines.append("---")
             #report_lines.append("#### 各技术领域专利数量")
             '''
             tech_df = pd.DataFrame({
@@ -245,9 +246,9 @@ class PatentTechAnalyzer:
 
         # 总体年份趋势
         if year_counts is not None and not year_counts.empty:
-            report_lines.append("#### Patent Application Yearly Trend")
+            report_lines.append("#### 专利申请量年度变化趋势")
             if year_img:
-                report_lines.append(f'![Trend Chart](year_count.png)')
+                report_lines.append(f'![](year_count.png)')
             #report_lines.append("**详细数据:**")
 
             #markdown_table = year_counts.to_markdown(index=False, tablefmt="github")
@@ -266,9 +267,9 @@ class PatentTechAnalyzer:
 
         # 总体国家分布
         if country_counts is not None and not country_counts.empty:
-            report_lines.append("#### Patent Distribution by Country/Region")
+            report_lines.append("#### 不同国家/地区的专利数量分布")
             if country_img:
-                report_lines.append(f'![Country Patent Chart](country_count.png)')
+                report_lines.append(f'![](country_count.png)')
             #report_lines.append("**Top 10 国家/地区:**")
 
             #markdown_table = country_counts.to_markdown(index=False, tablefmt="github")
@@ -298,7 +299,7 @@ class PatentTechAnalyzer:
         all_results = {}
 
         self.set_technology_map(tech_map)
-        patent_result_deque = await self.query.query_by_tech_map(tech_map)
+        patent_result_deque = await self.query.query_by_tech_map_zh(tech_map)
         for patent_result_i in patent_result_deque:
             # 获取当前元素的 'patent' 列表，并将其扩展到结果列表中
             all_patents.extend(patent_result_i.get('patents', []))
@@ -317,7 +318,7 @@ class PatentTechAnalyzer:
         added_columns = await self.query.batch_query_simple_bibliography(deque(df_all['patent_id']))
         df_added_columns = pd.DataFrame(added_columns)
         merged_df = pd.merge(df_all, df_added_columns, on='patent_id', how='inner')
-        print(merged_df)
+        #print(merged_df)
         #merged_df中有个字段apdt和pbdt,这两个字段是整数，请将其处理成字符串，并取其前四位更新到apdt和pbdt中
         merged_df['apdt'] = merged_df['apdt'].astype(str).str[:4]
         merged_df['pbdt'] = merged_df['pbdt'].astype(str).str[:4]
@@ -394,7 +395,8 @@ class PatentTechAnalyzer:
 if __name__ == "__main__":
     # 示例数据（实际使用时从Query类获取）
     analyzer = PatentTechAnalyzer()
-    asyncio.run(analyzer.run('../general_analysis_output/1', [{'Primary Technology': ['Machine Learning'], 'Secondary Technology': ['Supervised Learning', 'Unsupervised Learning', 'Reinforcement Learning']}]))
+    asyncio.run(analyzer.run('../general_analysis_output/1', [{'Primary Technology': ['Text Preprocessing Technology'], 'Secondary Technology': ['Tokenization Technology', 'Stemming and Lemmatization Technology', 'Stop Words Removal Technology']}, {'Primary Technology': ['Text Representation Technology'], 'Secondary Technology': ['Bag of Words Technology', 'TF-IDF Technology', 'Word Embedding Technology']}, {'Primary Technology': ['Machine Learning Models for NLP'], 'Secondary Technology': ['Supervised Learning Models', 'Unsupervised Learning Models', 'Reinforcement Learning Models']}, {'Primary Technology': ['Natural Language Understanding Technology'], 'Secondary Technology': ['Named Entity Recognition Technology', 'Sentiment Analysis Technology', 'Question Answering Technology']}, {'Primary Technology': ['Natural Language Generation Technology'], 'Secondary Technology': ['Text Summarization Technology', 'Machine Translation Technology', 'Dialogue Generation Technology']}]
+))
 
     '''
     sample_patents = [

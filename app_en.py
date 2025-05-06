@@ -27,6 +27,7 @@ data_source_options = {
 
 step_name_dict = {1: "Enter technical topic", 2: "Generate technical map", 3: "Retrieve patent data",
                   4: "Generate patent report", 5: "Finish"}
+
 if 'current_step' not in st.session_state:
     st.session_state.current_step = 1
 
@@ -36,12 +37,20 @@ if 'tech_topic' not in st.session_state:
 if 'patent_data_generated' not in st.session_state:
     st.session_state.patent_data_generated = False  # To track whether patent data has already been generated
 
-
 if 'tech_genealogy' not in st.session_state:
     st.session_state.tech_genealogy = None
 
 if 'last_used_topic' not in st.session_state:
     st.session_state.last_used_topic = ""  # Record the last topic used to generate the technical map
+
+#记录分析用到的专利数量
+if 'patent_num' not in st.session_state:
+    st.session_state.patent_num = None
+
+# 初始化步骤计时
+for i in range(1, 6):
+    if f'step{i}_time' not in st.session_state:
+        st.session_state[f'step{i}_time'] = None
 
 # Custom CSS styles
 st.markdown("""
@@ -121,31 +130,29 @@ with content:
             placeholder="Artificial Intelligence",
             value=st.session_state.tech_topic  # Retain input consistency
         )
-        # Save the entered technical topic to session_state
         st.session_state.tech_topic = tech_topic
 
-        # Dropdown menu, returns values 1, 2, 3
         selected_data_source = st.selectbox(
             "Select data source for generating the technical map:",
             options=list(data_source_options.keys()),
             format_func=lambda x: data_source_options[x],
             index=list(data_source_options.keys()).index(st.session_state.data_source_type)
         )
-        # Save the selection in real time
         st.session_state.data_source_type = selected_data_source
 
     elif st.session_state.current_step == 2:
         st.header("⚙️ Step 2 - Generate Technical Map")
         st.write("---")
+
+
         st.session_state.map_tech = st.session_state.tech_genealogy
         initial_data = flatten_tech_structure_en(st.session_state.tech_genealogy)
 
-        # Initialize table data
         if "df" not in st.session_state:
             st.session_state.df = pd.DataFrame(initial_data)
-        # Show the table
         st.write(f"**Technical Map for {st.session_state.tech_topic}**")
         st.dataframe(st.session_state.df, use_container_width=True)
+
 
     elif st.session_state.current_step == 3:
         st.header("🚀 Step 3 - Retrieve Patent Data")
@@ -165,8 +172,12 @@ with content:
 
                         loop.run_until_complete(
                             general_report_generator.run(save_dir=save_dir, tech_map=st.session_state.tech_genealogy))
+                        # 记录获取到的专利总数
+                        st.session_state.patent_num = general_report_generator.patent_num
                         end_time = time.time()
                         elapsed_time = end_time - start_time
+                        st.session_state.step3_time = elapsed_time
+
                         print(f"Patent statistics report generated and saved to: {save_dir}")
                         print(f"Total time: {elapsed_time:.2f} seconds")
 
@@ -177,7 +188,6 @@ with content:
                         else:
                             st.error("Patent statistics file not found")
 
-                        # Mark data as generated
                         st.session_state.patent_data_generated = True
 
                     except Exception as e:
@@ -185,7 +195,6 @@ with content:
                         st.exception(e)
         else:
             st.info("Patent data has already been retrieved. Proceed to the next step.")
-
 
     elif st.session_state.current_step == 4:
         st.header("📊 Step 4 - Generate Patent Report")
@@ -204,8 +213,11 @@ with content:
 
                         full_report, report_path = loop.run_until_complete(
                             generate_full_report(save_dir=time_dir, map_tech=st.session_state.map_tech))
+
                         end_time = time.time()
                         elapsed_time = end_time - start_time
+                        st.session_state.step4_time = elapsed_time
+
                         print(f"Patent report generated and saved to: {time_dir}")
                         print(f"Total time: {elapsed_time:.2f} seconds")
 
@@ -213,14 +225,13 @@ with content:
                         word_file_path = os.path.join(time_dir, 'patent_analysis_report.docx')
                         if os.path.exists(report_path):
                             display_markdown_with_images_from_file(markdown_file_path=report_path, time_dir=time_dir)
-                                    # Add Word download button
                             with open(word_file_path, "rb") as file:
                                 st.download_button(
                                     label="📥 Download Patent Report (Word)",
                                     data=file,
                                     file_name="patent_analysis_report.docx",
                                     mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-                                ) 
+                                )
                         else:
                             st.error("Patent report file not found")
 
@@ -230,81 +241,126 @@ with content:
 
     elif st.session_state.current_step == 5:
         st.header("📊 Step 5 - Analysis Completed")
-        st.success("✅ Processing results are ready!")
-        st.metric("Processing Efficiency", "98.7%", "1.2%")
-        #st.progress(80)
-        
-        # Add options for continuing analysis
-        col1, col2 = st.columns(2)
-        with col1:
+
+        # 显示彩色卡片式的专利统计与耗时统计
+        st.markdown(
+            f"""
+            <div style="background: linear-gradient(90deg,#E6F3FF 40%,#f2f7fa 100%);padding:18px 26px;border-radius:12px;border-left:5px solid #339af0;margin-bottom:18px">
+                <h3 style="margin-bottom:0.2em;color:#2176ae;">✅ Patent analysis completed in <span style='color:#1b7a5a'>{st.session_state.tech_topic}</span></h3>
+                <p style="font-size:1.13em;color:#2b5876;margin-top:0.3em;">
+                    <b>{st.session_state.patent_num}</b> patents were used in this analysis.
+                </p>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
+        # 获取耗时
+        step1_time = st.session_state.get('step1_time', 0) or 0
+        step2_time = st.session_state.get('step2_time', 0) or 0
+        step3_time = st.session_state.get('step3_time', 0) or 0
+        step4_time = st.session_state.get('step4_time', 0) or 0
+        # 步骤一不计入总耗时
+        total_time = step2_time + step3_time + step4_time
+        total_minutes = int(total_time // 60)
+        total_seconds = int(total_time % 60)
+
+        # 展示四列metric：步骤一为“——”
+        col1, col2, col3, col4 = st.columns(4)
+        col1.metric("Step 1", "——")
+        col2.metric("Step 2", f"{step2_time:.2f}", "s")
+        col3.metric("Step 3", f"{step3_time:.2f}", "s")
+        col4.metric("Step 4", f"{step4_time:.2f}", "s")
+
+        # 总耗时卡片，英文，格式"Total Duration: XX min YY sec"
+        st.markdown(
+            f"""
+            <div style="margin-top:10px;margin-bottom:8px;">
+                <span style="font-weight:bold;font-size:17px;color:#2b5876;">
+                    ⏱️ Total Duration: <span style="color:#207567;">{total_minutes} min {total_seconds} sec</span>
+                </span>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
+        st.markdown("<hr style='margin:18px 0 10px 0'>", unsafe_allow_html=True)
+
+        # 两个操作按钮
+        action_col1, action_col2 = st.columns(2)
+        with action_col1:
             if st.button("🔄 Start New Patent Analysis", key="continue_analysis"):
-                # Reset session state
                 st.session_state.current_step = 1
                 st.session_state.uploaded_file = None
                 st.session_state.file_details = None
                 st.session_state.analysis_started = False
+                for i in range(1, 6):
+                    st.session_state[f'step{i}_time'] = None
                 st.rerun()
-        
-        with col2:
+
+        with action_col2:
             if st.button("🏁 End Analysis", key="end_analysis"):
                 st.success("Thank you for using the Patent Analysis System!")
 
-# Navigation buttons
-col1, col2, col3 = st.columns([1, 2, 1])
+# Navigation buttons, only show when not in step 5
+if st.session_state.current_step != 5:
+    col1, col2, col3 = st.columns([1, 2, 1])
 
-with col1:
-    prev_disabled = st.session_state.current_step <= 1
-    prev_btn = st.button(
-        "◀ Previous Step",
-        disabled=prev_disabled,
-        use_container_width=True,
-        help="Go back to the previous step" if not prev_disabled else "This is the first step"
-    )
+    with col1:
+        prev_disabled = st.session_state.current_step <= 1
+        prev_btn = st.button(
+            "◀ Previous Step",
+            disabled=prev_disabled,
+            use_container_width=True,
+            help="Go back to the previous step" if not prev_disabled else "This is the first step"
+        )
 
-with col3:
-    next_disabled = st.session_state.current_step >= 5
-    next_btn = st.button(
-        "Next Step ▶",
-        type="primary",
-        disabled=next_disabled,
-        use_container_width=True,
-        help="Continue to the next step" if not next_disabled else "This is the last step"
-    )
+    with col3:
+        next_disabled = st.session_state.current_step >= 5
+        next_btn = st.button(
+            "Next Step ▶",
+            type="primary",
+            disabled=next_disabled,
+            use_container_width=True,
+            help="Continue to the next step" if not next_disabled else "This is the last step"
+        )
 
-if 'show_topic_warn' not in st.session_state:
-    st.session_state.show_topic_warn = False
+    if 'show_topic_warn' not in st.session_state:
+        st.session_state.show_topic_warn = False
 
-if prev_btn and not prev_disabled:
-    st.session_state.current_step -= 1
-    st.session_state.show_topic_warn = False
-    st.rerun()
-
-if next_btn and not next_disabled:
-    if st.session_state.current_step == 1:
-        if not st.session_state.tech_topic.strip():
-            st.session_state.show_topic_warn = True
-            st.rerun()
-        else:
-            st.session_state.show_topic_warn = False
-            with st.spinner('⏳ Generating technical map, please wait...'):
-                try:
-                    # Generate technical map
-                    st.session_state.tech_genealogy = asyncio.run(
-                        tech_genealogy_generator.generate_tech_genealogy(
-                            topic=st.session_state.tech_topic,
-                            genealogy_type=st.session_state.data_source_type
-                        )
-                    )
-                    st.session_state.last_used_topic = st.session_state.tech_topic
-                    st.session_state.last_used_data_source_type = st.session_state.data_source_type
-                    st.session_state.current_step += 1
-                    st.rerun()
-                except Exception as e:
-                    st.error(f"Error generating technical map: {str(e)}")
-    else:
-        st.session_state.current_step += 1
+    if prev_btn and not prev_disabled:
+        st.session_state.current_step -= 1
         st.session_state.show_topic_warn = False
         st.rerun()
 
-if st.session_state.current_step == 1 and st.session_state.show_topic_warn:
-    st.warning("Please enter a technical topic")
+    if next_btn and not next_disabled:
+        if st.session_state.current_step == 1:
+            if not st.session_state.tech_topic.strip():
+                st.session_state.show_topic_warn = True
+                st.rerun()
+            else:
+                st.session_state.show_topic_warn = False
+                with st.spinner('⏳ Generating technical map, please wait...'):
+                    try:
+                        step2_start_time = time.time()
+                        st.session_state.tech_genealogy = asyncio.run(
+                            tech_genealogy_generator.generate_tech_genealogy(
+                                topic=st.session_state.tech_topic,
+                                genealogy_type=st.session_state.data_source_type
+                            )
+                        )
+                        step2_end_time = time.time()
+                        st.session_state.step2_time = step2_end_time - step2_start_time
+                        st.session_state.last_used_topic = st.session_state.tech_topic
+                        st.session_state.last_used_data_source_type = st.session_state.data_source_type
+                        st.session_state.current_step += 1
+                        st.rerun()
+                    except Exception as e:
+                        st.error(f"Error generating technical map: {str(e)}")
+        else:
+            st.session_state.current_step += 1
+            st.session_state.show_topic_warn = False
+            st.rerun()
+
+    if st.session_state.current_step == 1 and st.session_state.show_topic_warn:
+        st.warning("Please enter a technical topic")

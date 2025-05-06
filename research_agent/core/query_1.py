@@ -87,12 +87,13 @@ class Query:
         self.default_countries = []  # Default to Chinese patents
         self.default_relevancy = "50%"
 
-    async def _make_request(self, url, payload: Dict) -> List[Dict]:
-        """Make a request to the Zhihuiya API.
+    async def _make_request(self, url, payload: Dict, max_retries: int = 3) -> List[Dict]:
+        """Make a request to the Zhihuiya API with retry logic for rate limiting.
 
         Args:
             url (str): The API URL
             payload (Dict): The request payload
+            max_retries (int): The maximum number of retries when hitting rate limit
 
         Returns:
             List[Dict]: The response data or empty list if request fails
@@ -104,22 +105,38 @@ class Query:
             "authorization": f"Bearer {token}"
         }
 
-        try:
-            async with aiohttp.ClientSession() as session:
-                async with session.post(
-                        url,
-                        params=params,
-                        json=payload,
-                        headers=headers
-                ) as response:
-                    response.raise_for_status()
-                    api_response = await response.json()
-                    print(f"API Response: {api_response}")  # 打印 API 响应数据
-                    return api_response
-        except Exception as e:
-            print(f"Error making request: {e}")
-            return []
-
+        retry_count = 0
+        while retry_count <= max_retries:
+            try:
+                async with aiohttp.ClientSession() as session:
+                    async with session.post(
+                            url,
+                            params=params,
+                            json=payload,
+                            headers=headers
+                    ) as response:
+                        response.raise_for_status()
+                        api_response = await response.json()
+                        print(f"API Response: {api_response}")  # Print API response
+                        error_code = api_response.get("error_code", None)
+                        if error_code == 0:
+                            return api_response
+                        elif error_code == 67200002:
+                            retry_count += 1
+                            if retry_count > max_retries:
+                                print(f"Reached max retries ({max_retries}) for rate limit.")
+                                return []
+                            print(
+                                f"API rate limit hit (error_code 67200002), sleeping for 10 seconds (attempt {retry_count}/{max_retries})...")
+                            await asyncio.sleep(10)
+                            continue  # Retry
+                        else:
+                            print(f"API returned error_code: {error_code}")
+                            return []
+            except Exception as e:
+                print(f"Error making request: {e}")
+                return []
+        return []
     async def batch_query_simple_bibliography(self,queue: deque):
         """
         异步处理队列数据，规定每次最多处理 batch_size 个元素，且一分钟内最多调用 call_per_min 次
@@ -144,11 +161,12 @@ class Query:
                     abstract = abstract_package[0]['text']
                 else:
                     abstract = ''
+                #print(patent_item)
                 ipc_package = patent_item['bibliographic_data']['classification_data'].get('classification_ipcr', {})
                 #ipc = patent_item['bibliographic_data']['classification_data']['classification_ipcr'][
                 #    'main']
                 if ipc_package!={}:
-                    ipc = abstract_package['main']
+                    ipc = ipc_package['main']
                 else:
                     ipc = ''
                 # 专利受理局
@@ -162,7 +180,7 @@ class Query:
 
         return results
 
-    async def query_by_tech_map(self,tech_map: List[dict]):
+    async def query_by_tech_map_en(self,tech_map: List[dict]):
         """
         直接使用生成的技术图谱进行查询
         异步处理队列数据，规定每次最多处理 batch_size 个元素，且一分钟内最多调用 call_per_min 次
@@ -174,6 +192,37 @@ class Query:
         for tech_node in tech_map:
             main_techs = tech_node.get("Primary Technology", [])
             sub_techs = tech_node.get("Secondary Technology", [])
+            for main_tech in main_techs:
+                for sub in sub_techs:
+                    key = f"{main_tech} - {sub}"
+                    tech_query_result.append({'tech_point':key,'patents':[]})
+        queue = deque(tech_query_result)
+        # 创建一个新的 deque 来存储处理后的元素
+        processed_deque = deque()
+        while queue:
+            # 从队列中取出最多 b 个元素
+            element = queue.popleft()
+            # 获取调用权限（满足速率限制）
+            await self.rateLimiter_for_query_content.acquire()
+            # 调用异步处理函数
+            processed_element = await self.query_by_content(element['tech_point'])
+            element['patents'] = processed_element
+            processed_deque.append(element)
+
+        return processed_deque
+
+    async def query_by_tech_map_zh(self,tech_map: List[dict]):
+        """
+        直接使用生成的技术图谱进行查询
+        异步处理队列数据，规定每次最多处理 batch_size 个元素，且一分钟内最多调用 call_per_min 次
+        :param tech_map: 技术图谱
+        """
+        tech_query_result = []
+        all_patent_result = []  # 存储处理结果
+        #将技术图谱转换为队列
+        for tech_node in tech_map:
+            main_techs = tech_node.get("一级技术", [])
+            sub_techs = tech_node.get("二级技术", [])
             for main_tech in main_techs:
                 for sub in sub_techs:
                     key = f"{main_tech} - {sub}"
@@ -543,7 +592,7 @@ if __name__ == "__main__":
         #
         patent_id = "b053642f-3108-4ea9-b629-420b0ab959e3,122fc785-3e61-4b34-9f7b-5cf7d76e621a,e07104fb-8283-4c43-a2f1-bd85feb64de6"
         patent_data = await query.get_simple_bibliography_async(patent_id)
-        print(patent_data)
+        #print(patent_data)
         # insert_patent_to_db(patent_data)
         #
         #title = "储能"

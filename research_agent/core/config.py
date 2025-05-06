@@ -7,7 +7,7 @@ class Config:
     WEB_SEARCH_API_KEY = "sk-8dc49d891f2043fe87120bb70dfa8603"
     # DEFAULT_MODEL = "deepseek-chat"                     # 默认文本生成模型
     WEB_SEARCH_TOP_N = 5
-    LANGUAGE='English'
+    LANGUAGE='Chinese'
     BATCHSIZE_BIBLIOGRAPHY = 100
     #DEFAULT_MODEL = "deepseek-chat"
     CPM_FOR_SIMPLE_BIBLIOGRAPHY =  20
@@ -24,10 +24,10 @@ class Config:
     MAX_TOKENS = 4095
     #YAML_CONFIG = r'E:\Users\SUYUNYI\ISTIC\ChenLiang\2025\patent_analysis_agent_english_version\research_agent\core\llm_config.yaml'
 
-    YAML_CONFIG = 'C:\\Users\\admin\\patent_analysis_agent\\patent_analysis_agent\\research_agent\\core\\llm_config.yaml'
+    #YAML_CONFIG = 'C:\\Users\\admin\\patent_analysis_agent\\patent_analysis_agent\\research_agent\\core\\llm_config.yaml'
 
     #YAML_CONFIG = r"./research_agent/core/llm_config.yaml"            # yaml配置文件路径
-    #YAML_CONFIG = r"/root/patent_analysis_agent_english_version/research_agent/core/llm_config.yaml"
+    YAML_CONFIG = r"/root/patent_analysis_agent_english_version/research_agent/core/llm_config.yaml"
     # 最大token数
     # 其他配置参数
     TOP_K = 10              # query_by_content返回前多少个相关文档
@@ -56,12 +56,12 @@ class Config:
     IPC_DICT_PATH = r"C:\Users\admin\patent_survey_draft\ipc_dictionary_1.txt"
     MYSQL_HOST = "59.110.150.237"
     MYSQL_PORT = 3306
-    MYSQL_USERNAME = "chenliang"
+    MYSQL_USERNAME = "chenliang_2"
     MYSQL_PASSWORD = "[(!Admin123)]"
-    MYSQL_DB = "chenliang_db"
+    MYSQL_DB = "chenliang_2_db"
     MYSQL_CHARSET = "utf8mb4"
     #patent_table = "patent_info"
-    language = "English"
+    language = "Chinese"
     # Word模版文件路径
     #REFERENCE_DOC = r'E:\Users\SUYUNYI\ISTIC\ChenLiang\2025\Microsoft_agent\patent_analysis_agent-main\research_agent\core\reference.docx'
 

@@ -292,7 +292,10 @@ def heatmap_visualization(save_dir, analysis_result):
 
     # Create data matrix
     data = np.zeros((len(companies), len(secondary_types)))
-
+    print('len(companies), len(secondary_types)')
+    print(len(companies), len(secondary_types))
+    print(companies)
+    print(secondary_types)
     # Fill data
     for i, company in enumerate(companies):
         for _, types in result_dict[company].items():
